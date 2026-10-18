@@ -475,7 +475,7 @@ def ai_map(C):
         <div class="h2wrap"><h2 id="lb-h">AI use labels on assignments</h2></div>
         <p>Students learn three AI use labels in <a href="../ch01/1-4.html">Lesson 1.4</a>: <strong>No AI</strong>, <strong>AI-supported</strong>, and <strong>AI-integrated</strong>. Labels are set assignment by assignment, and every Mile Marker in the book carries one.</p>
         <ul class="dots">{"".join(labs)}</ul>
-        <p>Students also have the <a href="https://octc-id.github.io/student-ai-use-guide/index.html">Using AI in Your Coursework</a> guide, linked from Lesson 1.4.</p>
+        <p>Students also have the <a href="https://octc-instructional-design.github.io/Bb_Start_Here/ai-literacy.html">AI Literacy page in OCTC Student Resources</a>, linked from Lesson 1.4. It uses the same wording as this book, and its detail pages are linked from Lessons 1.4 and 4.3.</p>
       </div></div>
     </section>
 ''')
