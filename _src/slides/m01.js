@@ -1,18 +1,5 @@
 const { build } = require('./deck.js');
-const { pair, bar } = require('./helpers.js');
-
-// row of small cards: [icon, head, body]
-async function cards(s, k, items, y, h, opts = {}) {
-  const { M, W, HEX, txt, card, ico, C } = k, gap = 0.3, n = items.length, w = (W - 2 * M - (n - 1) * gap) / n;
-  for (const [i, [ic, head, body]] of items.entries()) {
-    const x = M + i * (w + gap), gold = opts.gold === i;
-    card(s, x, y, w, h, gold ? HEX.softGold : HEX.softBlue, 'card');
-    await ico(s, ic, x + 0.3, y + 0.3, 0.75, gold ? HEX.navy : HEX.white, gold ? HEX.gold : HEX.blue);
-    txt(s, body ? [{ text: head, options: { bold: true, fontSize: 26, color: C.text2, breakLine: true } }, { text: body, options: { paraSpaceBefore: 6 } }]
-               : [{ text: head, options: { bold: true, fontSize: 26, color: C.text2 } }],
-      { x: x + 0.3, y: y + 1.2, w: w - 0.6, h: h - 1.4 });
-  }
-}
+const { pair, bar, cards } = require('./helpers.js');
 
 build({
   n: 1, file: 'FYE100-Module01-Instructor-Slides.pptx',

@@ -29,6 +29,11 @@ async function icon(name, color, px = 256) {
   return 'image/png;base64,' + buf.toString('base64');
 }
 const b64 = (p) => 'image/png;base64,' + fs.readFileSync(p).toString('base64');
+// QR code PNG (navy on white) for an outside link, so students can scan it from the projector
+function qrData(url) {
+  const py = "import qrcode,sys,io,base64;q=qrcode.QRCode(border=2,box_size=12,error_correction=qrcode.constants.ERROR_CORRECT_M);q.add_data(sys.argv[1]);q.make(fit=True);im=q.make_image(fill_color='#011d41',back_color='white');b=io.BytesIO();im.save(b,format='PNG');print(base64.b64encode(b.getvalue()).decode())";
+  return 'image/png;base64,' + execFileSync('python3', ['-c', py, url]).toString().trim();
+}
 
 async function build(S) {
   const TK = TEACH(S.n); S.disc = TK.discussion;
@@ -58,7 +63,7 @@ async function build(S) {
   pres.defineSlideMaster({ title: 'FYE Discussion', background: { color: HEX.navy },
     objects: [
       { placeholder: { options: { name: 'kicker', type: 'body', align: 'left', x: 4.3, y: 0.7, w: 8.4, h: 0.45, fontSize: T.kicker, bold: true, color: C.accent2, charSpacing: 3, margin: 0 }, text: '' } },
-      { placeholder: { options: { name: 'title', type: 'title', align: 'left', x: 4.3, y: 1.2, w: 8.4, h: 1.5, fontSize: 44, bold: true, color: C.background1, valign: 'top', margin: 0 }, text: '' } },
+      { placeholder: { options: { name: 'title', type: 'title', align: 'left', x: 4.3, y: 1.2, w: 8.4, h: 1.5, fontSize: 40, bold: true, color: C.background1, valign: 'top', margin: 0 }, text: '' } },
     ] });
 
   const sec = (t) => pres.addSection({ title: t });
@@ -72,6 +77,12 @@ async function build(S) {
   const card = (s, x, y, w, h, fill, name) => s.addShape(pres.shapes.ROUNDED_RECTANGLE,
     { x, y, w, h, rectRadius: 0.12, fill: { color: fill }, line: { color: fill }, shadow: shadow(), objectName: 'Decorative: ' + name });
   const txt = (s, t, o) => s.addText(t, Object.assign({ isTextBox: true, margin: 0, fontSize: T.body, color: C.text1, valign: 'top' }, o));
+  // scannable code plus the short address under it; the image carries alt text, so it is not decorative
+  const qr = (s, url, label, x, y, d = 1.6) => {
+    s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: x - 0.12, y: y - 0.12, w: d + 0.24, h: d + 0.24, rectRadius: 0.1, fill: { color: HEX.white }, line: { color: HEX.line, width: 1 }, objectName: 'Decorative: QR frame' });
+    s.addImage({ data: qrData(url), x, y, w: d, h: d, altText: `QR code for ${label}: ${url}`, objectName: `QR code: ${label}` });
+    txt(s, url.replace(/^https?:\/\//, '').replace(/\/$/, ''), { x: x - 0.6, y: y + d + 0.18, w: d + 1.2, h: 0.4, fontSize: 20, align: 'center', color: C.accent6, objectName: `Address: ${label}` });
+  };
   const ico = async (s, name, x, y, d, fg, bg) => {
     s.addShape(pres.shapes.OVAL, { x, y, w: d, h: d, fill: { color: bg }, line: { color: bg }, objectName: 'Decorative: icon circle' });
     s.addImage({ data: await icon(name, fg), x: x + d * 0.22, y: y + d * 0.22, w: d * 0.56, h: d * 0.56, objectName: 'Decorative: ' + name });
@@ -131,7 +142,7 @@ async function build(S) {
   sec('Lessons');
   for (const L of S.lessons) {
     const s = content('Lessons', L.kicker, L.title);
-    await L.draw(s, { pres, C, HEX, T, W, H, M, txt, card, ico, b64, BOOK, icon });
+    await L.draw(s, { pres, C, HEX, T, W, H, M, txt, card, ico, b64, BOOK, icon, qr });
     notes(s, L.notes);
   }
 
@@ -153,7 +164,7 @@ async function build(S) {
     const MM = S.mm;
     const s = content('This week\'s work', `Mile Marker #${S.n}`, MM.title);
     let y = 2.05;
-    const compact = MM.qs.length > 3, step = compact ? 0.92 : 1.45, d = compact ? 0.62 : 0.75;
+    const compact = MM.qs.length > 3, step = MM.qs.length === 4 ? 1.08 : compact ? 0.92 : 1.45, d = compact ? 0.62 : 0.75;
     MM.qs.forEach((q, i) => {
       s.addShape(pres.shapes.OVAL, { x: M, y, w: d, h: d, fill: { color: HEX.gold }, line: { color: HEX.gold }, objectName: 'Decorative: number circle' });
       txt(s, String(i + 1), { x: M, y, w: d, h: d, fontSize: compact ? 24 : 28, bold: true, color: C.text2, align: 'center', valign: 'middle', objectName: `Question ${i + 1} number` });
@@ -175,8 +186,8 @@ async function build(S) {
     s.addText('TALK IT THROUGH · IN CLASS', { placeholder: 'kicker' });
     s.addText(S.disc.title, { placeholder: 'title' });
     txt(s, S.disc.prompt.map((p, i, a) => ({ text: p, options: { bullet: { type: 'number' }, breakLine: i < a.length - 1 } })),
-      { x: 4.3, y: 2.95, w: 8.3, h: 1.9, fontSize: 26, color: C.background1, paraSpaceAfter: 12, objectName: 'Discussion questions' });
-    txt(s, S.disc.format, { x: 4.3, y: 4.95, w: 5.6, h: 0.8, fontSize: 22, color: 'D6EEFA', italic: true });
+      { x: 4.3, y: 2.95, w: 8.3, h: 2.0, fontSize: 24, color: C.background1, paraSpaceAfter: 12, objectName: 'Discussion questions' });
+    txt(s, S.disc.format, { x: 4.3, y: 5.05, w: 5.6, h: 0.8, fontSize: 22, color: 'D6EEFA', italic: true });
     notes(s, S.notes.disc);
   }
 

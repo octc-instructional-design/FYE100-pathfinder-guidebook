@@ -1,0 +1,56 @@
+{
+  "slides": {
+    "file": "FYE100-Module03-Instructor-Slides.pptx",
+    "about": "Title, a Breaking Camp housekeeping slide for your announcements, one slide per lesson (Lesson 3.2 is paired with the two Trail Tools), this week's work, Mile Marker #3, and an in-class discussion. Every slide has a talk track in the speaker notes, so the deck also works as a script for an online mini-lecture."
+  },
+  "coaching": [
+    {"head": "The time log has to start early.",
+     "body": "Mile Marker #3, Question 1 is built on the Where My Time Goes log. Students who open the module on Sunday have nothing to analyze. Tell them on day one to start logging, even if it's only two or three days of entries."},
+    {"head": "Question 1: \"I procrastinate\" isn't a pattern.",
+     "body": "Push for one specific pattern from the log (\"I lose most evenings between 9 and 11 to my phone\") and what it costs. The rubric looks for something that couldn't apply to just anyone."},
+    {"head": "Commitments aren't time-wasters.",
+     "body": "Working adults and parents sometimes feel judged by the 168-hours framing. Make the distinction explicit: work, kids, and caregiving are commitments to plan around. Leaks are the time that slips away without a choice."},
+    {"head": "Lesson 3.6 can land personally.",
+     "body": "Some students recognize themselves in the description of executive function differences for the first time. Question 4 invites them to notice what resonated without naming a diagnosis. Respond warmly, keep it private, and point to Accessibility Services if a student asks about support."},
+    {"head": "Low batteries can mean something bigger.",
+     "body": "Question 2 asks which battery is most depleted. If a student describes every battery as empty, or describes burnout, follow up privately and connect them with the Counseling Center."},
+    {"head": "The Trail Tools are optional attachments.",
+     "body": "Students can fill in the tools in the guidebook or use the fillable PDFs in Blackboard. Attaching them to the Mile Marker is optional, so don't require it in your feedback."},
+    {"head": "Use the feedback survey.",
+     "body": "The optional Student Course Feedback Survey sits in Module 3 so you hear from students while there's still time to adjust. Mention it in class or in an announcement, and tell students what you changed because of it."}
+  ],
+  "activities": [
+    {"title": "The switching-cost race",
+     "time": "8 minutes",
+     "materials": "Paper and a timer",
+     "steps": ["Round 1: students write \"Time is the pilot\" and then the numbers 1 to 14, and time themselves.",
+               "Round 2: they write the same letters and numbers alternating (T, 1, i, 2, m, 3...) and time it again.",
+               "Compare the times and ask what that means for texting while studying."],
+     "why": "Students feel the switching cost from Lesson 3.4 instead of hearing about it.",
+     "online": "Describe the race in your recorded mini-lecture and invite students to try it before they read Lesson 3.4."},
+    {"title": "Must, Should, Could",
+     "time": "15 minutes",
+     "materials": "Sticky notes, or My Week at a Glance open on devices",
+     "steps": ["Students write everything they need to do this week, one item per note.",
+               "They sort the notes into Must, Should, and Could (Lesson 3.2). If everything is a Must, challenge them to find the real deadlines.",
+               "They block their two or three Musts into My Week at a Glance during their best hour."],
+     "why": "Students leave with a draft plan for Mile Marker #3, Question 3.",
+     "online": "Suggest students do the sort before filling in My Week at a Glance, and share one Must in the discussion."},
+    {"title": "Battery check",
+     "time": "10 minutes",
+     "materials": "Index cards",
+     "steps": ["Students rate each of the five batteries from 1 (empty) to 5 (full) on a card, anonymously.",
+               "Collect the cards and tally the lowest battery for the room.",
+               "Pairs share one realistic way to recharge the room's lowest battery this week."],
+     "why": "Normalizes low energy, and shows students they're not the only one running on empty.",
+     "online": "Run the ratings as an anonymous poll and share the results in your next announcement."}
+  ],
+  "discussion": {
+    "title": "Where did the hour go?",
+    "prompt": ["Where did time slip away this week? Name the culprit.",
+               "When is your best hour, and what would it take to protect it?"],
+    "format": "Talk with a partner for 3 minutes, then we'll tally the top time-wasters.",
+    "source": "An in-class version of the online discussion: Where Does My Time Go?",
+    "facilitate": "Tally the culprits on the board; phones usually win. When students name work, kids, or caregiving, separate commitments (planned around) from leaks (noticed and plugged). Close with Lesson 3.3: protect your best hour."
+  }
+}

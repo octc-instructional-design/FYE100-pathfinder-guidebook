@@ -1,0 +1,56 @@
+{
+  "slides": {
+    "file": "FYE100-Module05-Instructor-Slides.pptx",
+    "about": "Title, a Breaking Camp housekeeping slide for your announcements, one slide per lesson plus the two Trail Tools and the Financial Aid Trail Tip, this week's work, Mile Marker #5, and an in-class discussion. Every slide has a talk track in the speaker notes, so the deck also works as a script for an online mini-lecture."
+  },
+  "coaching": [
+    {"head": "Set the privacy ground rule early.",
+     "body": "Money is personal, and some students are dealing with real hardship. Say it plainly in class and in your announcement: no assignment in this module asks for dollar amounts, and nobody is judged for their situation."},
+    {"head": "Question 2 is the hardest to write.",
+     "body": "Students are asked to describe their financial situation honestly without numbers. Some write too little; a few overshare. Model the level of detail: \"I work part-time and cover my own gas and phone; anything unexpected is hard\" is enough."},
+    {"head": "Money leaks are the student's call.",
+     "body": "Lesson 5.3 defines a leak as spending that doesn't match what the student values. Avoid feedback that judges choices (coffee, gaming, gifts). Ask whether it matches their priorities instead."},
+    {"head": "Question 5 rewards privacy habits.",
+     "body": "The strongest answers say what the student left out of their AI prompts and how they described their situation in general terms. \"I didn't use AI\" is a complete answer."},
+    {"head": "Financial Aid questions will come to you.",
+     "body": "The Trail Tip names two numbers that protect aid: a 2.0 GPA and a 67% completion rate. Students often don't know that a withdrawal counts against completion. Send schedule-change questions to Financial Aid before students act."},
+    {"head": "Money stress can be a warning sign.",
+     "body": "If a student mentions they can't afford food, housing, or to stay enrolled, follow up privately and connect them with their Success Coach and the money help listed in Lesson 5.2."},
+    {"head": "The Inventory matters to the course.",
+     "body": "The Appreciative Advising Inventory is completion only, but students' answers shape the course. Tell students what changed last time because of it; the Results in Action page in this guide has the details."}
+  ],
+  "activities": [
+    {"title": "Leak or priority?",
+     "time": "10 minutes",
+     "materials": "A list of eight to ten everyday purchases on the screen",
+     "steps": ["Show purchases like a streaming service, a delivery fee, a gym membership, gas, a gift, and a late fee.",
+               "Students decide for each one, privately: leak or priority, for them?",
+               "Discuss: did everyone agree? Why not? Connect it to the lesson's definition of a leak."],
+     "why": "Shows that a leak depends on what each person values, and gives students language for Mile Marker #5, Question 1.",
+     "online": "Post the list as an anonymous poll and share the spread of answers in your next announcement."},
+    {"title": "Give every dollar a job",
+     "time": "15 minutes",
+     "materials": "A sample monthly income and expenses for a fictional student, plus the Budget Builder",
+     "steps": ["In pairs, students build a zero-based budget for the fictional student until every dollar has a job.",
+               "Introduce a surprise: a $150 car repair. What changes?",
+               "Debrief: what made the surprise easier or harder to absorb?"],
+     "why": "Practices the Budget Builder with numbers that aren't anyone's own, so nobody has to share.",
+     "online": "Share the fictional student's numbers and the surprise expense, and suggest students try it before building their own."},
+    {"title": "The two numbers",
+     "time": "5 minutes",
+     "materials": "The Financial Aid Trail Tip on the screen",
+     "steps": ["Ask students to guess the two numbers that protect financial aid before showing them.",
+               "Reveal the 2.0 GPA and 67% completion rate, and explain how a withdrawal affects completion.",
+               "Ask: who would you contact before dropping a class?"],
+     "why": "A quick, high-stakes fact many students learn too late.",
+     "online": "Put the two numbers in an announcement this week, with the Financial Aid contact."}
+  ],
+  "discussion": {
+    "title": "The money tip you wish you'd known",
+    "prompt": ["What's one money tip you wish you'd learned sooner?",
+               "Did someone teach you, or did you learn it the hard way?"],
+    "format": "Talk with a partner for 3 minutes, then we'll build a class top-ten list.",
+    "source": "An in-class version of the online discussion: What's One Money Tip You Really Wish You'd Learned Sooner?",
+    "facilitate": "Set the ground rule first: no numbers, and tips are enough. If a student shares hardship, thank them, keep it moving, and follow up privately if needed."
+  }
+}

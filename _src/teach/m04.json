@@ -1,0 +1,60 @@
+{
+  "slides": {
+    "file": "FYE100-Module04-Instructor-Slides.pptx",
+    "about": "Title, a Breaking Camp housekeeping slide for your announcements, one slide per lesson and Trail Tip, this week's work (including Merit Activity #1), Mile Marker #4, and an in-class discussion. Every slide has a talk track in the speaker notes, so the deck also works as a script for an online mini-lecture."
+  },
+  "coaching": [
+    {"head": "Students need to read the source document before the AI Chat.",
+     "body": "Is This Legit? is a role-play built on a source document that lives in Blackboard. Students who skip it flounder in the chat. Put \"read first\" in your announcement, and use the instructor key in Blackboard when you review the chats."},
+    {"head": "Question 1: \"I studied more\" isn't a strategy.",
+     "body": "Look for a named strategy and how the student used it. The four from Lesson 4.2 (retrieval practice, spaced practice, asking why, and interleaving) give students words for what they tried."},
+    {"head": "Question 2 rewards honesty over success.",
+     "body": "A strategy that didn't work, explained honestly, is a strong answer. Say so in your feedback; students often assume they have to report that everything went well."},
+    {"head": "SMART goals drift back to vague.",
+     "body": "Question 3 is where \"study more\" reappears. Ask: could someone else tell whether you did it, and when? A goal like \"Quiz myself for 15 minutes after each biology class, starting this week\" is the target."},
+    {"head": "Question 4 is about honesty, not where AI use landed.",
+     "body": "Full credit doesn't depend on staying at brainstorming. It depends on an honest account of where AI use landed and whether that was intentional. \"I didn't use AI\" is a complete answer. Don't penalize candor; it's what the question is building."},
+    {"head": "Merit #1 is the first real deadline outside Blackboard.",
+     "body": "Students forget that the reflection goes on the Merit platform, and that there are three separate links. Remind them early in the week, and point them to the Merit Guide for what counts and what proof to include."},
+    {"head": "Say your recording policy out loud.",
+     "body": "The Recording in the Classroom Trail Tip tells students to ask first. Tell them your answer before they ask, including your position on AI note-takers."}
+  ],
+  "meetup": {
+    "topic": "What to do when a plan stops working",
+    "why": "First grades are landing, and the time plans from Module 3 are being tested."
+  },
+  "activities": [
+    {"title": "SIFT it live",
+     "time": "15 minutes",
+     "materials": "Two or three claims on the screen: a viral post, a headline, and an AI answer",
+     "steps": ["Groups take one claim and run the four SIFT moves from Lesson 4.3 on their phones.",
+               "Each group reports what they found and which move did the most work.",
+               "Close with the AI answer: how did they check something that had no source attached?"],
+     "why": "Builds the habit before the AI Chat asks students to do it on their own.",
+     "online": "Post one claim in an announcement and invite students to SIFT it before they start the AI Chat."},
+    {"title": "Retrieval practice, right now",
+     "time": "5 minutes",
+     "materials": "Paper",
+     "steps": ["Without looking at notes, students write everything they remember about SIFT or the five BE behaviors.",
+               "They check against the book and circle what they missed.",
+               "Ask: which felt harder, rereading or this? Which will they remember next week?"],
+     "why": "Students experience retrieval practice from Lesson 4.2 instead of hearing it described, and it gives them a strategy to write about for Mile Marker #4.",
+     "online": "Open your recorded mini-lecture with a two-question recall prompt and ask students to pause and answer before continuing."},
+    {"title": "Where's the line?",
+     "time": "10 minutes",
+     "materials": "The AI Creep Meter from Lesson 4.4 on the screen",
+     "steps": ["Read a short scenario of AI creep, like the one at the start of Lesson 4.4, one step at a time.",
+               "At each step, students hold up fingers for where it sits on the Creep Meter.",
+               "Discuss where the line would be for an AI-supported assignment, and what attribution would look like."],
+     "why": "Makes the Creep Meter concrete before students place their own use on it in Question 4.",
+     "online": "Walk through the scenario in your recorded mini-lecture and pause at each step."}
+  ],
+  "discussion": {
+    "title": "Would you have shared it?",
+    "prompt": ["What's something you saw online lately that you believed at first?",
+               "What made you stop, or what would have? Which SIFT move fits?"],
+    "format": "Talk with a partner for 3 minutes, then share one example with the room.",
+    "source": "Builds toward the AI Chat: Is This Legit? (Module 4 has no online discussion.)",
+    "facilitate": "Collect two or three examples, such as health claims, celebrity news, or AI images. For each, ask which SIFT move would have caught it; it's usually Stop or Trace. Keep it light. The goal is the habit, not embarrassment."
+  }
+}
