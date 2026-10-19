@@ -941,7 +941,7 @@ GUIDES = [
    ('results-in-action.html','Notes','Results in Action',"What each Inventory showed, and what changed in the course because of it.",6,
      [('fa26','Fall 2026 Inventory')]),
    ('teaching.html','6','Teaching the Modules',"Slides, coaching notes, and in-class ideas for every module.",None,
-     [('modules','Modules')]),
+     [('modules','Modules'),('capstone','Capstone overview')]),
   ] + [(f'teach-{n:02d}.html','Teaching',f'Module {n}: {t}',"Slides, coaching notes, active learning ideas, and an in-class discussion.",None,
         [('glance','At a glance'),('slides','Slides'),('coaching','Coaching notes'),('activities','Active learning ideas'),('discussion','In-class discussion')])
        for n, t in TEACH_MODS]),

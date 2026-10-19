@@ -36,7 +36,7 @@ function qrData(url) {
 }
 
 async function build(S) {
-  const TK = TEACH(S.n); S.disc = TK.discussion;
+  if (!S.disc) S.disc = TEACH(S.n).discussion;  // a spec can bring its own discussion (e.g., the capstone deck)
   const pres = new pptxgen();
   pres.layout = 'LAYOUT_WIDE';
   pres.theme = { headFontFace: THEME.headFontFace, bodyFontFace: THEME.bodyFontFace };
@@ -93,7 +93,7 @@ async function build(S) {
   {
     const s = pres.addSlide({ masterName: 'FYE Title', sectionTitle: 'Opening' });
     s.addImage({ path: S.art, x: 0, y: 0, w: W, h: H, objectName: 'Decorative: module cover art' });
-    s.addText(`MODULE ${S.n}`, { placeholder: 'kicker' });
+    s.addText(S.kicker || `MODULE ${S.n}`, { placeholder: 'kicker' });
     s.addText(S.title, { placeholder: 'title' });
     s.addText(S.tagline, { placeholder: 'body' });
     txt(s, 'Instructor name  ·  Section', { x: 4.3, y: 5.15, w: 6, h: 0.45, fontSize: 20, color: 'D6EEFA', objectName: 'Instructor and section (edit me)' });
@@ -101,7 +101,7 @@ async function build(S) {
   }
 
   // ---- 2. Housekeeping (instructor)
-  {
+  if (S.house) {
     const s = content('Opening', `Instructor slide · Housekeeping`, S.house.title);
     txt(s, S.house.sub, { x: M, y: 1.8, w: 11.5, h: 0.5, fontSize: T.body, color: C.accent6, italic: true });
     card(s, M, 2.55, 7.6, 4.1, HEX.softBlue, 'announcements panel');
@@ -119,7 +119,7 @@ async function build(S) {
   // ---- 3. This week
   sec('This week');
   {
-    const s = content('This week', `Module ${S.n} · This week`, S.week.title);
+    const s = content('This week', S.week.kicker || `Module ${S.n} · This week`, S.week.title);
     let y = 2.15;
     for (const [ic, line] of S.week.items) {
       await ico(s, ic, M, y, 0.75, HEX.white, HEX.blue);
@@ -127,12 +127,14 @@ async function build(S) {
       y += 1.05;
     }
     card(s, 8.6, 2.15, W - 8.6 - M, 4.2, HEX.softBlue, 'skills panel');
-    txt(s, 'Skills you\'ll build', { x: 8.95, y: 2.4, w: 3.6, h: 0.45, fontSize: T.h, bold: true, color: C.text2 });
+    txt(s, S.week.skillsLabel || 'Skills you\'ll build', { x: 8.95, y: 2.4, w: 3.6, h: 0.45, fontSize: T.h, bold: true, color: C.text2 });
     const many = S.week.skills.length > 3, cs = many ? 0.68 : 0.8, st = many ? 0.8 : 1.0;
     let yy = many ? 2.95 : 3.05;
     for (const [k, name] of S.week.skills) {
-      s.addImage({ data: b64(`${BOOK}images/shared/10es/10es-${String(k).padStart(2, '0')}.png`), x: 8.95, y: yy, w: cs, h: cs, objectName: 'Decorative: skill coin' });
-      txt(s, [{ text: `#${k} `, options: { bold: true, color: C.accent4 } }, { text: name }], { x: 8.95 + cs + 0.2, y: yy - 0.05, w: 3.75 - cs - 0.2, h: cs + 0.1, fontSize: 20, valign: 'middle' });
+      if (k) s.addImage({ data: b64(`${BOOK}images/shared/10es/10es-${String(k).padStart(2, '0')}.png`), x: 8.95, y: yy, w: cs, h: cs, objectName: 'Decorative: skill coin' });
+      else { s.addShape(pres.shapes.OVAL, { x: 8.95, y: yy, w: cs, h: cs, fill: { color: HEX.white }, line: { color: HEX.blue, width: 2, dashType: 'dash' }, objectName: 'Decorative: choice coin' });
+             txt(s, '?', { x: 8.95, y: yy, w: cs, h: cs, fontSize: 26, bold: true, color: C.accent1, align: 'center', valign: 'middle', objectName: 'Decorative: choice mark' }); }
+      txt(s, k ? [{ text: `#${k} `, options: { bold: true, color: C.accent4 } }, { text: name }] : [{ text: name, options: { bold: true, color: C.accent4 } }], { x: 8.95 + cs + 0.2, y: yy - 0.05, w: 3.75 - cs - 0.2, h: cs + 0.1, fontSize: 20, valign: 'middle' });
       yy += st;
     }
     notes(s, S.notes.week);
@@ -147,8 +149,8 @@ async function build(S) {
   }
 
   // ---- assignments
-  sec('This week\'s work');
-  {
+  if (S.work) sec('This week\'s work');
+  if (S.work) {
     const s = content('This week\'s work', 'Assignments', S.work.title);
     const rows = S.work.items, rh = 1.1, wq = S.work.qr ? 3.4 : 0, rw = W - 2 * M - (wq ? wq + 0.35 : 0); let y = 2.05;
     if (wq) {
@@ -166,7 +168,7 @@ async function build(S) {
     }
     notes(s, S.notes.work);
   }
-  {
+  if (S.mm) {
     const MM = S.mm;
     const s = content('This week\'s work', `Mile Marker #${S.n}`, MM.title);
     let y = 2.05;
@@ -189,7 +191,7 @@ async function build(S) {
   {
     const s = pres.addSlide({ masterName: 'FYE Discussion', sectionTitle: 'Discussion' });
     s.addImage({ path: S.art, x: 0, y: 0, w: W, h: H, objectName: 'Decorative: module cover art' });
-    s.addText('TALK IT THROUGH · IN CLASS', { placeholder: 'kicker' });
+    s.addText(S.disc.kicker || 'TALK IT THROUGH · IN CLASS', { placeholder: 'kicker' });
     s.addText(S.disc.title, { placeholder: 'title' });
     txt(s, S.disc.prompt.map((p, i, a) => ({ text: p, options: { bullet: { type: 'number' }, breakLine: i < a.length - 1 } })),
       { x: 4.3, y: 2.95, w: 8.3, h: 2.0, fontSize: 24, color: C.background1, paraSpaceAfter: 12, objectName: 'Discussion questions' });

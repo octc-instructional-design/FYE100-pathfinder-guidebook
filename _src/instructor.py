@@ -570,6 +570,32 @@ def teach_overview(C, TK):
         </div>
       </div></div>
     </section>
+''' + capstone_block()
+
+
+def capstone_block():
+    import pathlib, zipfile, re as _re
+    f = 'FYE100-STARTStories-Overview-Slides.pptx'
+    deck = pathlib.Path(__file__).resolve().parent.parent / 'downloads/slides' / f
+    if not deck.exists():
+        return ''
+    with zipfile.ZipFile(deck) as z:
+        n = sum(1 for x in z.namelist() if _re.match(r'ppt/slides/slide\d+\.xml$', x))
+    url = f'{SITE}downloads/slides/{f}'
+    view = 'https://view.officeapps.live.com/op/view.aspx?src=' + url.replace(':', '%3A').replace('/', '%2F')
+    return f'''
+    <span class="rest" aria-hidden="true"></span>
+
+    <section id="capstone" aria-labelledby="cap-h">
+      <div class="row"><div class="main">
+        <div class="h2wrap"><h2 id="cap-h">Capstone overview: STAR(T) Stories</h2></div>
+        <p>One deck for the whole capstone: why STAR(T), the five steps, a worked example, the four skills, where to find stories, how to tell them in 2 to 4 minutes, three fixes that move a story up, and a submission checklist. It ends with an in-class practice round. Introduce it in Module 9, use it for working time in Module 11, and come back to it in Module 12.</p>
+        <div class="dl-row">
+          <a class="dl-btn" href="../../downloads/slides/{f}" download>[[download]]<span><b>Download the slides</b><small>PowerPoint, {n} slides with speaker notes</small></span></a>
+          <a class="dl-btn" href="{view}">[[see]]<span><b>View online</b><small>Opens in Microsoft's web viewer</small></span></a>
+        </div>
+      </div></div>
+    </section>
 '''
 
 

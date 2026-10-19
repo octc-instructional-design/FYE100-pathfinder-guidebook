@@ -47,6 +47,19 @@ await p.evaluate((variant)=>{
       <circle cx="9" cy="-9" r="3.6" fill="#f2a71b" stroke="#b98200" stroke-width=".8"/>
     </g>`);
   }
+  if(variant==='mic'){ // owl telling its story: a microphone and a few stars
+    add(`<g transform="translate(225 523) scale(1.5)">
+      <rect x="-1.6" y="0" width="3.2" height="16" rx="1.4" fill="#011d41"/>
+      <circle cx="0" cy="-3" r="6" fill="#f2a71b" stroke="#011d41" stroke-width="1.4"/>
+      <path d="M-3.5 -5 h7 M-4.5 -2 h9 M-3.5 1 h7" stroke="#b98200" stroke-width="1"/>
+    </g>
+    <g fill="#ffc94a">
+      <path d="M248 498 l2.2 4.6 5 .7 -3.6 3.5 .9 5 -4.5 -2.4 -4.5 2.4 .9 -5 -3.6 -3.5 5 -.7z"/>
+      <path d="M262 515 l1.5 3 3.3 .5 -2.4 2.3 .6 3.3 -3 -1.6 -3 1.6 .6 -3.3 -2.4 -2.3 3.3 -.5z"/>
+      <path d="M176 504 l1.3 2.7 3 .4 -2.2 2.1 .5 3 -2.6 -1.4 -2.6 1.4 .5 -3 -2.2 -2.1 3 -.4z"/>
+    </g>`);
+    const t=document.querySelector('.banner-art g[transform] text'); if(t){t.textContent='STAR(T)'; const r=t.parentNode.querySelector('rect[rx]'); r.setAttribute('width','92'); r.setAttribute('x','-46');}
+  }
   if(variant==='crew'){ // a second, smaller owl beside the first on the branch
     const g=document.querySelector('.hero-tree g[transform]'); const c=g.cloneNode(true);
     c.setAttribute('transform','translate(272 546) scale(.15) translate(-250 -442)'); g.parentNode.appendChild(c);
