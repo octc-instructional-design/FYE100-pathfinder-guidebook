@@ -193,7 +193,8 @@ def build_epub():
     for k, t, _ in items:
         manifest.append(f'<item id="{k}" href="{k}.xhtml" media-type="application/xhtml+xml"/>')
     for i, im in enumerate(sorted(imgs)):
-        manifest.append(f'<item id="img{i}" href="images/{im}" media-type="image/png"/>')
+        mt = {'svg': 'image/svg+xml', 'jpg': 'image/jpeg', 'jpeg': 'image/jpeg', 'gif': 'image/gif', 'webp': 'image/webp'}.get(im.rsplit('.', 1)[-1].lower(), 'image/png')
+        manifest.append(f'<item id="img{i}" href="images/{im}" media-type="{mt}"/>')
     spine = ''.join(f'<itemref idref="{k}"/>' + ('<itemref idref="nav"/>' if k == 'title' else '') for k, _, _ in items)
     opf = f'''<?xml version="1.0" encoding="UTF-8"?>
 <package xmlns="http://www.idpf.org/2007/opf" version="3.0" prefix="rendition: http://www.idpf.org/vocab/rendition/#" unique-identifier="bookid" xml:lang="en">
