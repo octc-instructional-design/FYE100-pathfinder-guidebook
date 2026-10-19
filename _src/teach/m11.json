@@ -1,0 +1,54 @@
+{
+  "slides": {
+    "file": "FYE100-Module11-Instructor-Slides.pptx",
+    "about": "Title, a Breaking Camp housekeeping slide for your announcements, the Skill Spotlight, community as a system, what you offer and what you're not available for, the Start Your STAR(T) Stories Trail Tip, this week's work, Mile Marker #11, and an in-class discussion. Every slide has a talk track in the speaker notes, so the deck also works as a script for an online mini-lecture. Pair it with the STAR(T) Stories overview deck."
+  },
+  "coaching": [
+    {"head": "\"Civic engagement\" can feel like it's for other people.",
+     "body": "Students who don't vote or volunteer sometimes assume this module isn't for them. Start with communities they're already in: work, family, a team, a class. Small and real is exactly right."},
+    {"head": "Question 2 should use the system.",
+     "body": "The strongest answers name the people, rules, or influence in a community and point to one specific change. Generic \"I help people\" answers usually skipped the Community Snapshot."},
+    {"head": "Question 4 is the capstone checkpoint.",
+     "body": "Part II asks students to name the story for each of their four STAR(T) skills. It's your best early warning: students who leave it blank are at risk of not finishing the capstone. Follow up this week."},
+    {"head": "The journal surfaces boundaries.",
+     "body": "Getting the Call asks students how they'd answer a request on their own terms. Some students write about being overcommitted. Affirm a clearly stated limit as a skill, not a failure."},
+    {"head": "Devices matter for gathering stories.",
+     "body": "Guidebook forms save only in the browser on the device a student used. Students who switched devices will find their submitted Mile Markers in Blackboard."},
+    {"head": "STAR(T) Stories are due Sunday.",
+     "body": "Remind students now that the capstone and Module 12 are due Sunday, not Monday, so instructors can grade before final grades are due."}
+  ],
+  "activities": [
+    {"title": "The shared kitchen",
+     "time": "10 minutes",
+     "materials": "The worked example from Lesson 11.2",
+     "steps": ["Read the scenario: four people share a kitchen, the dishes pile up, nobody says anything.",
+               "Groups name the people, rules, influence, and one leverage point.",
+               "Each student applies the same four parts to one of their own communities."],
+     "why": "Practices the systems lens on something everyone recognizes before students apply it to Mile Marker #11.",
+     "online": "Walk the example through in your recorded mini-lecture."},
+    {"title": "Four skills, four stories",
+     "time": "15 minutes",
+     "materials": "Students' Mile Markers, in Blackboard or saved PDFs",
+     "steps": ["Students skim their Mile Markers for moments that show each of their four skills.",
+               "They write one phrase per skill for Mile Marker #11, Question 4.",
+               "Partners check: is each story real, specific, and theirs?"],
+     "why": "Turns Question 4 into working time and gets every student to a plan for the capstone.",
+     "online": "Point students to the Find Your Stories prompts in the STAR(T) Stories Guide."},
+    {"title": "Say one story",
+     "time": "10 minutes",
+     "materials": "A timer",
+     "steps": ["Each student tells one story to a partner in two minutes.",
+               "The listener names the thinnest step.",
+               "Swap."],
+     "why": "Saying a story out loud once makes recording it much easier.",
+     "online": "Encourage students to say one story out loud to anyone before they record."}
+  ],
+  "discussion": {
+    "title": "Getting the call",
+    "prompt": ["A group connected to something you care about asks for your help. What do you say yes to?",
+               "What's one thing you're not available for, and how would you say so kindly?"],
+    "format": "Talk with a partner for 3 minutes, then share one way to say no well.",
+    "source": "An in-class version of the private online journal: Getting the Call.",
+    "facilitate": "Keep it hypothetical and low-stakes. Listen for limits stated kindly and clearly, and name that as a skill: saying no well is part of showing up well."
+  }
+}

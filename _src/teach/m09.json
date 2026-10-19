@@ -1,0 +1,54 @@
+{
+  "slides": {
+    "file": "FYE100-Module09-Instructor-Slides.pptx",
+    "about": "Title, a Breaking Camp housekeeping slide for after spring break, the Skill Spotlight, thought traps, the 4C Check, STAR(T) drafting traps, this week's work, Mile Marker #9, and an in-class discussion. Every slide has a talk track in the speaker notes, so the deck also works as a script for an online mini-lecture. Pair it with the STAR(T) Stories overview deck."
+  },
+  "coaching": [
+    {"head": "Re-entry after spring break is real.",
+     "body": "Some students don't come back on schedule. A short, warm check-in during the first few days back catches students before Module 9 becomes two missing modules."},
+    {"head": "Question 1 needs a real example.",
+     "body": "Naming a thinking trap is easy; showing when it happened is the point. Look for a specific moment and a better question the student could ask next time."},
+    {"head": "The first STAR(T) draft is supposed to be rough.",
+     "body": "Question 2 is a first draft. Encourage honesty over polish, and point to the most common gaps: \"we\" instead of \"I,\" and a Transfer that says \"this will help me in the future.\""},
+    {"head": "Question 3 should show a change.",
+     "body": "The 4C Check is only useful if it changes something. Look for what the student added, cut, or corrected after rereading."},
+    {"head": "This draft can become a capstone story.",
+     "body": "Tell students to hold onto it. Many will reuse it as one of their four STAR(T) Stories, which makes Modules 11 and 12 lighter."},
+    {"head": "Privacy in stories.",
+     "body": "Stories often involve coworkers, family, or classmates. Students don't need to use other people's names."}
+  ],
+  "activities": [
+    {"title": "4C Check, live",
+     "time": "10 minutes",
+     "materials": "A real, low-stakes decision someone in the room is facing",
+     "steps": ["Ask for a volunteer decision, or offer one of your own.",
+               "Walk it through Clarity, Context, Credibility, and Consequences, writing answers on the board.",
+               "Ask: did the decision change, or just get clearer?"],
+     "why": "Students see the tool work before they use it in the AI Chat and Mile Marker.",
+     "online": "Walk one decision through the four Cs in your recorded mini-lecture."},
+    {"title": "Trap spotting",
+     "time": "10 minutes",
+     "materials": "Five short statements on the screen, one per thought trap",
+     "steps": ["Show statements like \"I failed one quiz, so I'm bad at math.\"",
+               "Groups name the trap and rewrite the thought.",
+               "Students write down the trap that feels most like them, for Mile Marker #9, Question 1."],
+     "why": "Gives students language for Question 1 and makes the traps easy to recognize.",
+     "online": "Post the statements as a quick self-check in an announcement."},
+    {"title": "Say it in two minutes",
+     "time": "10 minutes",
+     "materials": "Students' STAR(T) drafts, and a timer",
+     "steps": ["Partners take turns telling their draft out loud in two minutes.",
+               "The listener names the weakest step.",
+               "Each student makes one fix before submitting."],
+     "why": "Early practice saying a story out loud makes the capstone recordings much easier.",
+     "online": "Encourage students to read their draft out loud once before submitting."}
+  ],
+  "discussion": {
+    "title": "What are you really deciding?",
+    "prompt": ["Think of a decision you're facing right now. What are you really deciding?",
+               "What's one thing you know, and one thing you're assuming?"],
+    "format": "Talk with a partner for 3 minutes, then share what changed.",
+    "source": "Builds toward the AI Chat: Think It Through. (Module 9 has no online discussion.)",
+    "facilitate": "Model it with a low-stakes decision of your own. Ask what changed when pairs separated what they know from what they're assuming; that's Credibility, and it's usually the turning point."
+  }
+}

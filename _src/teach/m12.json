@@ -1,0 +1,54 @@
+{
+  "slides": {
+    "file": "FYE100-Module12-Instructor-Slides.pptx",
+    "about": "Title, a Breaking Camp housekeeping slide for your announcements, the STAR(T) Stories final review, the Look Back Trail Tool, the Finishing Strong Trail Tip, this week's work with a QR code for the end-of-semester Skills Snapshot, Mile Marker #12, and a closing discussion. Every slide has a talk track in the speaker notes, so the deck also works as a script for an online mini-lecture."
+  },
+  "coaching": [
+    {"head": "Sunday, not Monday.",
+     "body": "Module 12 and all four STAR(T) Stories are due Sunday so you can grade before final grades are due. Students on the Monday habit miss it. Say it in class, in an announcement, and on the Trailhead."},
+    {"head": "Check the journals early.",
+     "body": "Each STAR(T) Story has its own labeled journal, so you can see who has started. A quick nudge mid-week to students with nothing submitted saves the capstone for some of them."},
+    {"head": "Question 1 needs Mile Marker #1.",
+     "body": "The growth question works best when students actually reopen their first Mile Marker. Answers that could apply to anyone usually skipped that step."},
+    {"head": "The snapshot comparison is the payoff.",
+     "body": "Students retake My Skills Snapshot at the end of the semester. Encourage them to compare with Module 1; a realistic, honest change is more meaningful than a big jump."},
+    {"head": "Students may still be struggling in other classes.",
+     "body": "FYE 100 often ends before finals elsewhere. The Finishing Strong Trail Tip points students to their Success Coach for decisions like withdrawals. Make that handoff explicit."},
+    {"head": "Words of wisdom are worth keeping.",
+     "body": "Question 3 produces advice for future students. With permission and without names, a few lines make a strong opening for next semester's Module 1."}
+  ],
+  "activities": [
+    {"title": "Then and now",
+     "time": "10 minutes",
+     "materials": "Students' Mile Marker #1, in Blackboard or a saved PDF",
+     "steps": ["Students reread their answer to Mile Marker #1, Question 2: what success would look like.",
+               "They write one sentence on what actually happened.",
+               "Volunteers share one surprise."],
+     "why": "Grounds Mile Marker #12, Question 1 in evidence instead of general statements.",
+     "online": "Ask students to start Question 1 by quoting one line from their Mile Marker #1."},
+    {"title": "Final review swap",
+     "time": "15 minutes",
+     "materials": "Students' STAR(T) Story drafts or recordings, and the final review checklist from Lesson 12.1",
+     "steps": ["Partners swap one story.",
+               "The reviewer checks it against the six final review items.",
+               "Each student makes one fix before submitting."],
+     "why": "A last structured look catches the most common gaps: \"we\" instead of \"I,\" and a vague Transfer.",
+     "online": "Post the checklist in your announcement and suggest students run each story through it."},
+    {"title": "Advice wall",
+     "time": "5 minutes",
+     "materials": "Sticky notes",
+     "steps": ["Each student writes one piece of advice for a future FYE 100 student.",
+               "Post them on the wall and read a few aloud.",
+               "Ask permission to share them, without names, with next semester's class."],
+     "why": "A warm close that turns Mile Marker #12, Question 3 into something students give forward.",
+     "online": "Invite students to post one line of advice in an optional discussion or announcement reply."}
+  ],
+  "discussion": {
+    "title": "Words of wisdom",
+    "prompt": ["What do you know now that you wish you'd known in Week 1?",
+               "What's one thing from this course you'll keep using?"],
+    "format": "Talk with a partner for 3 minutes, then share one piece of advice with the room.",
+    "source": "Built from Mile Marker #12, Question 3. (Module 12 has no online discussion.)",
+    "facilitate": "Invite volunteers, and consider collecting advice anonymously, with permission, for next semester's students. Close by thanking students and reminding them their Success Coach is still there after FYE 100 ends."
+  }
+}

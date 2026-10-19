@@ -1,0 +1,58 @@
+{
+  "slides": {
+    "file": "FYE100-Module10-Instructor-Slides.pptx",
+    "about": "Title, a Breaking Camp housekeeping slide for your announcements, the Skill Spotlight, group roles, 16Personalities with a QR code, collaboration strategies, the AI group-plan Trail Tip, this week's work (including Merit Activity #3), Mile Marker #10, and an in-class discussion. Every slide has a talk track in the speaker notes, so the deck also works as a script for an online mini-lecture."
+  },
+  "coaching": [
+    {"head": "Group work stories come with feelings.",
+     "body": "Many students carry a bad group project story. Let them tell it, but keep it to roles, not names, and steer toward what would have helped."},
+    {"head": "Question 1: own words, not the official description.",
+     "body": "Students sometimes paste the 16Personalities description. The question asks for one short phrase in their own words, plus strengths and challenges that honestly fit."},
+    {"head": "Question 2 is a tendency, not a flaw.",
+     "body": "Students explain why one challenge happens. Some will mention neurodivergence; sharing it is always optional. Respond to the insight, not the label."},
+    {"head": "Question 3 should be one sentence.",
+     "body": "\"I need teammates to tell me early if plans change\" is the target: simple, respectful, and specific."},
+    {"head": "Merit #3 is the last one.",
+     "body": "Students who are behind on Merit run out of time here. Check who still needs an activity early in the week, and point online students to a virtual meet-up."},
+    {"head": "16Personalities isn't a diagnosis.",
+     "body": "Treat the type as a map, not a rulebook. If a student feels boxed in by their result, that's worth naming in feedback."}
+  ],
+  "meetup": {
+    "topic": "What this semester has taught you so far",
+    "why": "It warms students up for the STAR(T) Stories in Modules 11 and 12."
+  },
+  "activities": [
+    {"title": "Role corners",
+     "time": "10 minutes",
+     "materials": "The seven group roles from Lesson 10.2 posted around the room",
+     "steps": ["Students stand by the role that sounds most like them.",
+               "Each group names one thing their role brings and one way it frustrates other roles.",
+               "Students move to their second role and compare."],
+     "why": "Makes group differences visible and normal before students write about their own.",
+     "online": "Ask students to name their top two roles in the discussion."},
+    {"title": "Set the expectations",
+     "time": "10 minutes",
+     "materials": "A sample group assignment",
+     "steps": ["Groups answer the four questions from Lesson 10.5: the task, the deadlines, who's doing what, and what done looks like.",
+               "Each group writes one group norm.",
+               "Debrief: which question would have saved their worst group project?"],
+     "why": "Practices the strategy that prevents most group conflict.",
+     "online": "Share the four questions in your announcement as a template for any group project."},
+    {"title": "AI group plan, checked",
+     "time": "15 minutes",
+     "materials": "A sample group assignment and an AI tool, if the assignment rules allow it",
+     "steps": ["Generate a task list and timeline with AI using the Trail Tip's steps.",
+               "Groups mark what AI got wrong or couldn't know, like who works evenings.",
+               "Adjust the plan together."],
+     "why": "Shows both the usefulness and the limits of AI for planning, and reinforces BE Responsible.",
+     "online": "Demonstrate the Trail Tip in your recorded mini-lecture."}
+  ],
+  "discussion": {
+    "title": "When group work went sideways",
+    "prompt": ["Tell one group work story: good, bad, or somewhere in between. What went sideways?",
+               "What would have helped? Does your 16Personalities type explain any of it?"],
+    "format": "No names. Talk with a partner for 3 minutes, then share what would have helped.",
+    "source": "An in-class version of the online discussion: That One Time Group Work Went Sideways. In-person students bring a story and their type.",
+    "facilitate": "Set the no-names ground rule first. Collect what would have helped; most answers map to Lesson 10.5, especially clear expectations."
+  }
+}

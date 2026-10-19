@@ -69,6 +69,31 @@ await p.evaluate((variant)=>{
       <circle cx="-10.3" cy="-1.4" r="1.2" fill="#ffffff" opacity=".8"/><circle cx="7.7" cy="-1.4" r="1.2" fill="#ffffff" opacity=".8"/>
     </g>`);
   }
+  if(variant==='lantern'){ // owl holding a glowing lantern
+    add(`<circle cx="249" cy="519" r="16" fill="#ffc94a" opacity=".18"/>
+      <path d="M243 506 q6 -8 12 0" fill="none" stroke="#011d41" stroke-width="1.6"/>
+      <rect x="242.5" y="506" width="13" height="3.5" rx="1.2" fill="#011d41"/>
+      <rect x="244" y="509.5" width="10" height="13" rx="2" fill="#fff2b8" stroke="#011d41" stroke-width="1.4"/>
+      <ellipse cx="249" cy="516.5" rx="2.2" ry="3.4" fill="#f2a71b"/>
+      <rect x="242.5" y="522.5" width="13" height="3" rx="1.2" fill="#011d41"/>`);
+  }
+  if(variant==='crew3'){ // three owls on the branch
+    const g=document.querySelector('.hero-tree g[transform]');
+    for (const tr of ['translate(272 546) scale(.15) translate(-250 -442)', 'translate(154 547) scale(.15) translate(-250 -442)']) { const c=g.cloneNode(true); c.setAttribute('transform', tr); g.parentNode.appendChild(c); }
+  }
+  if(variant==='birds'){ // owl with two small birds on the branch
+    const bird=(x,y,c)=>`<g transform="translate(${x} ${y}) scale(1.6)"><ellipse cx="0" cy="0" rx="5.5" ry="4.2" fill="${c}"/><circle cx="4" cy="-4" r="3.2" fill="${c}"/>
+      <path d="M7 -4.4 l3 1 -3 1z" fill="#f2a71b"/><circle cx="4.9" cy="-4.8" r=".7" fill="#011d41"/><path d="M-5 0 l-4 -2 1 3z" fill="${c}"/>
+      <path d="M-1 4 v2.5 M1.5 4 v2.5" stroke="#f2a71b" stroke-width=".8"/></g>`;
+    add(bird(258, 530, "#3bb3e5") + bird(282, 526, "#e7a614"));
+  }
+  if(variant==='gradcap'){ // owl in a graduation cap
+    add(`<rect x="203" y="466" width="18" height="7" rx="1.5" fill="#011d41"/>
+      <polygon points="188,466 212,457 236,466 212,475" fill="#011d41"/>
+      <circle cx="212" cy="466" r="1.4" fill="#f2a71b"/>
+      <path d="M212 466 L229 470 L229 480" fill="none" stroke="#f2a71b" stroke-width="1.3"/>
+      <path d="M227 479 h4 l-1 5 h-2z" fill="#f2a71b"/>`);
+  }
   if(variant==='mic'){ // capstone: the owl waves a checkered start flag (variant name kept for history)
     add(`<defs><pattern id="chk" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-8)">
         <rect width="7" height="7" fill="#ffffff"/><rect width="3.5" height="3.5" fill="#111"/><rect x="3.5" y="3.5" width="3.5" height="3.5" fill="#111"/></pattern></defs>
