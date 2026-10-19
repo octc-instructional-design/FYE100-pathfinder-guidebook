@@ -59,7 +59,7 @@ ESSENTIAL = {1:'Communication',2:'Critical &amp; Creative Thinking',3:'Quantitat
              5:'Adaptability &amp; Leadership',6:'Professionalism',7:'Civic Engagement',8:'Collaboration &amp; Teamwork',
              9:'Knowledge Application',10:'Information Literacy'}
 FOCUS = {6, 9}
-SPECIAL = {'Trail Tip', 'Trail Tool', 'Mile Marker', 'Wrap Up', 'Workspace'}
+SPECIAL = {'Trail Tip', 'Trail Tool', 'Mile Marker', 'Wrap Up', 'Workspace', 'Notes', 'Teaching'}
 
 # HARD RULE: every link that leaves the book opens in a new tab, with a screen-reader cue.
 EXT = re.compile(r'<a\s+([^>]*?)href="(https?://[^"]+)"([^>]*)>(.*?)</a>', re.S)
@@ -938,11 +938,11 @@ GUIDES = [
      [('be','The five behaviors'),('matrix','Behaviors by module'),('ican','I Can statements'),('boxes','AI Literacy boxes'),('chats','AI Chats'),('labels','AI use labels')]),
    ('appreciative-advising.html','5','Appreciative Advising in FYE 100',"The six phases, where each one lives in the course, and your part in it.",10,
      [('mindset','The appreciative mindset'),('phases','The six phases'),('journey','A six-phase journey'),('glance','Module by module'),('meetups','Virtual meet-ups'),('inventory','The Inventory'),('more','Learn more')]),
-   ('results-in-action.html','5.1','Results in Action',"What each Inventory showed, and what changed in the course because of it.",6,
+   ('results-in-action.html','Notes','Results in Action',"What each Inventory showed, and what changed in the course because of it.",6,
      [('fa26','Fall 2026 Inventory')]),
    ('teaching.html','6','Teaching the Modules',"Slides, coaching notes, and in-class ideas for every module.",None,
      [('modules','Modules')]),
-  ] + [(f'teach-{n:02d}.html',f'6.{n}',f'Module {n}: {t}',"Slides, coaching notes, active learning ideas, and an in-class discussion.",None,
+  ] + [(f'teach-{n:02d}.html','Teaching',f'Module {n}: {t}',"Slides, coaching notes, active learning ideas, and an in-class discussion.",None,
         [('glance','At a glance'),('slides','Slides'),('coaching','Coaching notes'),('activities','Active learning ideas'),('discussion','In-class discussion')])
        for n, t in TEACH_MODS]),
 ]
