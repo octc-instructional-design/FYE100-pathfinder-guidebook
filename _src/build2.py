@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 60
+V = 61
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -59,7 +59,7 @@ ESSENTIAL = {1:'Communication',2:'Critical &amp; Creative Thinking',3:'Quantitat
              5:'Adaptability &amp; Leadership',6:'Professionalism',7:'Civic Engagement',8:'Collaboration &amp; Teamwork',
              9:'Knowledge Application',10:'Information Literacy'}
 FOCUS = {6, 9}
-SPECIAL = {'Trail Tip', 'Trail Tool', 'Mile Marker', 'Wrap Up', 'Workspace', 'Notes', 'Teaching'}
+SPECIAL = {'Trail Tip', 'Trail Tool', 'Mile Marker', 'Wrap Up', 'Workspace', 'Notes', 'Teach'}
 
 # HARD RULE: every link that leaves the book opens in a new tab, with a screen-reader cue.
 EXT = re.compile(r'<a\s+([^>]*?)href="(https?://[^"]+)"([^>]*)>(.*?)</a>', re.S)
@@ -613,6 +613,8 @@ def sidebar(ch, current):
     cur = ' aria-current="page"' if current=='index.html' else ''
     items.append(f'          <li><a class="les" href="index.html"{cur}><span class="n" aria-hidden="true">{ICON["flag"]}</span><span>{ch.get("overview","Module overview")}</span></a></li>')
     for f,num,t,sub,mins,secs in ch['lessons']:
+        if f == ch.get('admin_from'):
+            items.append('          <li class="side-divider" aria-hidden="true"><span>Admin</span></li>')
         cur = ' aria-current="page"' if f==current else ''
         ncls = 'n tip-n' if num in SPECIAL else 'n'
         li = f'          <li>\n            <a class="les" href="{f}"{cur}><span class="{ncls}">{num}</span><span>{t}</span></a>'
@@ -925,7 +927,7 @@ GUIDES = [
   desc="For FYE 100 instructors and reviewers: how the book works, the course map, and how the course aligns to the 10 Essential Skills, AI literacy, and Appreciative Advising.",
   tagline="How the book works, and how every piece of the course lines up.",
   intro=["This guide is for FYE 100 instructors, peer reviewers, and anyone reporting on the course. It explains how the book and Blackboard work together and maps every I Can statement to the course learning outcomes, the Kentucky Graduate Profile's 10 Essential Skills, and the BE framework for AI literacy.",
-         "Part 5 introduces Appreciative Advising and shows how the course moves students through its six phases. Part 6, Teaching the Modules, has slides, coaching notes, and in-class ideas for each module.",
+         "Part 5 introduces Appreciative Advising and shows how the course moves students through its six phases. Part 6, Teaching the Modules, has slides, coaching notes, and in-class ideas for each module. The Admin section at the end holds Course Notes and Results in Action.",
          "The maps are built from the same source as the book, so they grow as modules are completed. Like the rest of the book, this guide is public. It contains no answer keys, scoring guidance, or points. Those stay in Blackboard."],
   lessons=[
    ('how-the-book-works.html','1','How the Book Works',"The book, Blackboard, and how a module is put together.",8,
@@ -938,13 +940,16 @@ GUIDES = [
      [('be','The five behaviors'),('matrix','Behaviors by module'),('ican','I Can statements'),('boxes','AI Literacy boxes'),('chats','AI Chats'),('labels','AI use labels')]),
    ('appreciative-advising.html','5','Appreciative Advising in FYE 100',"The six phases, where each one lives in the course, and your part in it.",10,
      [('mindset','The appreciative mindset'),('phases','The six phases'),('journey','A six-phase journey'),('glance','Module by module'),('meetups','Virtual meet-ups'),('inventory','The Inventory'),('more','Learn more')]),
-   ('results-in-action.html','Notes','Results in Action',"What each Inventory showed, and what changed in the course because of it.",6,
-     [('fa26','Fall 2026 Inventory')]),
    ('teaching.html','6','Teaching the Modules',"Slides, coaching notes, and in-class ideas for every module.",None,
      [('modules','Modules'),('capstone','Capstone overview')]),
-  ] + [(f'teach-{n:02d}.html','Teaching',f'Module {n}: {t}',"Slides, coaching notes, active learning ideas, and an in-class discussion.",None,
+  ] + [(f'teach-{n:02d}.html','Teach',f'Module {n}: {t}',"Slides, coaching notes, active learning ideas, and an in-class discussion.",None,
         [('glance','At a glance'),('slides','Slides'),('coaching','Coaching notes'),('activities','Active learning ideas'),('discussion','In-class discussion')])
-       for n, t in TEACH_MODS]),
+       for n, t in TEACH_MODS] + [
+   ('course-notes.html','Notes','Course Notes',"What's open, what's decided, and ideas for next semester.",None,
+     [('open','Open items'),('decisions','Decisions'),('ideas','Ideas for next semester')]),
+   ('results-in-action.html','Notes','Results in Action',"What each Inventory showed, and what changed in the course because of it.",6,
+     [('fa26','Fall 2026 Inventory')]),
+  ], admin_from='course-notes.html'),
 ]
 
 
@@ -1132,12 +1137,14 @@ def build_guide(g):
             body = tokens(raw.replace('[[ondemand]]', ondemand_html())) if bp.exists() else STUB
         label = num if num in SPECIAL else t
         page = head(f'{t} | {g["title"]} | {BOOK}', 2) + bookbar(2, where) + \
-          '\n<div class="shell">\n' + sidebar(g, f) + '\n  <main id="main" class="reading' + (' workspace' if num=='Workspace' or f=='results-in-action.html' else '') + '">\n' + crumbs(g, label) + \
+          '\n<div class="shell">\n' + sidebar(g, f) + '\n  <main id="main" class="reading' + (' workspace' if num in ('Workspace', 'Notes') else '') + '">\n' + crumbs(g, label) + \
           lesson_header(g, i) + '\n' + body + pagenav(g, f) + '  </main>\n</div>\n' + FOOT
         write(d/f, page)
     intro = '\n'.join(f'          <p>{p}</p>' for p in g['intro'])
     cards = []
     for f,num,t,sub,mins,secs in g['lessons']:
+        if f == g.get('admin_from'):
+            cards.append('          <li class="cards-divider"><h2 class="cards-divider-h">Admin</h2></li>')
         cls = 'lesson-card tip' if num in SPECIAL else 'lesson-card'
         meta = f'<span class="lesson-meta"><span>{ICON["clock"]}About {mins} minutes</span></span>' if mins else ''
         cards.append(f"""          <li>

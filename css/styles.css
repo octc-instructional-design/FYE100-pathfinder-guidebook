@@ -1602,3 +1602,8 @@ a.dl-btn:hover { background: var(--soft-gold); }
 @media print { .disc-card { background: none; color: var(--ink); border: 2px solid var(--ink); } .disc-card .disc-title, .disc-card .disc-format { color: var(--ink); } }
 .activity.meetup { background: var(--soft-gold); border-color: #f0dca6; }
 .meetup-tag { margin: 0 0 4px !important; font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #7a5500; }
+
+/* Instructor Guide: Admin divider in the sidebar and on the overview */
+.chapnav .side-divider { margin: 18px 0 6px; padding: 10px 10px 0; border-top: 2px dashed var(--border); font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.cards-divider { grid-column: 1 / -1; list-style: none; margin-top: 18px; padding-top: 14px; border-top: 2px dashed var(--border); }
+.cards-divider-h { margin: 0; font-size: .85rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
