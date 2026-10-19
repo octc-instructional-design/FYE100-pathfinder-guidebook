@@ -152,7 +152,7 @@ async function build(S) {
   if (S.work) sec('This week\'s work');
   if (S.work) {
     const s = content('This week\'s work', 'Assignments', S.work.title);
-    const rows = S.work.items, rh = 1.1, wq = S.work.qr ? 3.4 : 0, rw = W - 2 * M - (wq ? wq + 0.35 : 0); let y = 2.05;
+    const rows = S.work.items, rh = rows.length > 4 ? 0.88 : 1.1, wq = S.work.qr ? 3.4 : 0, rw = W - 2 * M - (wq ? wq + 0.35 : 0); let y = 2.05;
     if (wq) {
       const q = S.work.qr, qx = W - M - wq;
       card(s, qx, 2.05, wq, 4.35, HEX.softGold, 'QR panel');
@@ -172,13 +172,13 @@ async function build(S) {
     const MM = S.mm;
     const s = content('This week\'s work', `Mile Marker #${S.n}`, MM.title);
     let y = 2.05;
-    const compact = MM.qs.length > 3, step = MM.qs.length === 4 ? 1.08 : compact ? 0.92 : 1.45, d = compact ? 0.62 : 0.75;
+    const nq = MM.qs.length, compact = nq > 3, step = nq === 4 ? 1.08 : nq === 5 ? 0.92 : compact ? 0.78 : 1.45, d = nq >= 6 ? 0.55 : compact ? 0.62 : 0.75;
     MM.qs.forEach((q, i) => {
       s.addShape(pres.shapes.OVAL, { x: M, y, w: d, h: d, fill: { color: HEX.gold }, line: { color: HEX.gold }, objectName: 'Decorative: number circle' });
-      txt(s, String(i + 1), { x: M, y, w: d, h: d, fontSize: compact ? 24 : 28, bold: true, color: C.text2, align: 'center', valign: 'middle', objectName: `Question ${i + 1} number` });
+      txt(s, String(i + 1), { x: M, y, w: d, h: d, fontSize: nq >= 6 ? 22 : compact ? 24 : 28, bold: true, color: C.text2, align: 'center', valign: 'middle', objectName: `Question ${i + 1} number` });
       const runs = compact || !q[1] ? [{ text: q[0], options: { bold: true, color: C.text2 } }]
         : [{ text: q[0], options: { bold: true, color: C.text2, breakLine: true } }, { text: q[1], options: { color: C.accent6 } }];
-      txt(s, runs, { x: M + d + 0.3, y: compact ? y : y - 0.05, w: 8.4 - d - 0.3, h: compact ? d : 1.25, fontSize: T.body, valign: compact ? 'middle' : 'top' });
+      txt(s, runs, { x: M + d + 0.3, y: compact ? y : y - 0.05, w: 8.4 - d - 0.3, h: compact ? d : 1.25, fontSize: nq >= 6 ? 22 : T.body, valign: compact ? 'middle' : 'top' });
       y += step;
     });
     card(s, 9.0, 2.05, W - 9.0 - M, 4.15, HEX.softGold, 'mile marker details panel');

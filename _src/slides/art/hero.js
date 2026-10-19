@@ -47,6 +47,28 @@ await p.evaluate((variant)=>{
       <circle cx="9" cy="-9" r="3.6" fill="#f2a71b" stroke="#b98200" stroke-width=".8"/>
     </g>`);
   }
+  if(variant==='compass'){ // owl holding a compass
+    add(`<g transform="translate(212 528)">
+      <circle r="11.5" fill="#f2a71b" stroke="#011d41" stroke-width="1.6"/>
+      <circle r="8.6" fill="#fff8e6"/>
+      <path d="M0 -7.5 L2.2 0 L0 7.5 L-2.2 0 Z" fill="#c0392b"/><path d="M0 0 L2.2 0 L0 7.5 L-2.2 0 Z" fill="#011d41"/>
+      <circle r="1.2" fill="#f2a71b"/>
+      <text y="-3.6" font-size="3.6" text-anchor="middle" fill="#011d41" font-family="Arial" font-weight="700" dy="-1">N</text>
+    </g>`);
+  }
+  if(variant==='star'){ // owl holding up a big gold star
+    add(`<polygon points="236,521 244,500 251,503 243,526" fill="#0a4c86"/>
+      <path transform="translate(253 488) scale(2.6)" d="M0 -5 L1.5 -1.6 5.2 -1.5 2.3 0.8 3.2 4.4 0 2.4 -3.2 4.4 -2.3 0.8 -5.2 -1.5 -1.5 -1.6Z" fill="#ffc94a" stroke="#b98200" stroke-width=".35"/>
+      <ellipse cx="248.5" cy="501" rx="4" ry="3.2" fill="#3d7fb8"/>`);
+  }
+  if(variant==='binoculars'){ // owl looking through binoculars
+    add(`<g transform="translate(212 493)">
+      <rect x="-15" y="-6" width="12" height="12" rx="3" fill="#011d41"/><rect x="3" y="-6" width="12" height="12" rx="3" fill="#011d41"/>
+      <rect x="-4" y="-3" width="8" height="5" fill="#011d41"/>
+      <circle cx="-9" cy="0" r="4.2" fill="#3bb3e5"/><circle cx="9" cy="0" r="4.2" fill="#3bb3e5"/>
+      <circle cx="-10.3" cy="-1.4" r="1.2" fill="#ffffff" opacity=".8"/><circle cx="7.7" cy="-1.4" r="1.2" fill="#ffffff" opacity=".8"/>
+    </g>`);
+  }
   if(variant==='mic'){ // capstone: the owl waves a checkered start flag (variant name kept for history)
     add(`<defs><pattern id="chk" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-8)">
         <rect width="7" height="7" fill="#ffffff"/><rect width="3.5" height="3.5" fill="#111"/><rect x="3.5" y="3.5" width="3.5" height="3.5" fill="#111"/></pattern></defs>

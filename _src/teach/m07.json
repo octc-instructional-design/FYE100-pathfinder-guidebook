@@ -1,0 +1,60 @@
+{
+  "slides": {
+    "file": "FYE100-Module07-Instructor-Slides.pptx",
+    "about": "Title, a Breaking Camp housekeeping slide for your announcements, the Skill Spotlight, a slide each for values and strengths with QR codes for the Values Card Sort and HIGH5, a blind spot slide, this week's work (including Merit Activity #2), Mile Marker #7, and an in-class discussion. Every slide has a talk track in the speaker notes, so the deck also works as a script for an online mini-lecture."
+  },
+  "coaching": [
+    {"head": "Two assessments, then everything else.",
+     "body": "The Values Card Sort and HIGH5 are ungraded tasks, but the journal, Mile Marker #7, and the class discussion all use their results. Students who skip them can't answer the questions. Remind them early in the week, and to save both Top 5 lists."},
+    {"head": "HIGH5's Top 5 is free.",
+     "body": "Students sometimes think they have to pay when HIGH5 offers the full report. They don't. If it asks them to sign up, they use their KCTCS email so they can find their results again."},
+    {"head": "Question 1 means exactly as reported.",
+     "body": "The question asks for the Top 5 strengths with the assessment's spelling and capitalization. Students who paraphrase (\"I'm a good listener\") haven't answered it."},
+    {"head": "Question 3: \"study more\" isn't using a strength.",
+     "body": "Look for how a particular strength changes how the student studies, participates, or works in a group. Lesson 4.2's study strategies are fair game to connect here."},
+    {"head": "Blind spots can feel like criticism.",
+     "body": "Question 5 asks students to name an overuse pattern. Frame it as self-knowledge, not a flaw, and respond to honesty generously. Lesson 7.3 has examples students can borrow language from."},
+    {"head": "Values surface personal things.",
+     "body": "Values like family, faith, or security sometimes come with personal stories in the private journal. Respond to the reflection, and keep in-class sharing optional."},
+    {"head": "Merit #2 is due now, too.",
+     "body": "Students juggling two assessments and a six-question Mile Marker forget Merit. Mention the Activity #2 link early in the week."}
+  ],
+  "meetup": {
+    "topic": "Taking stock of what you've already finished",
+    "why": "The middle of the semester is when students feel least sure they're making progress, and it fits this module's strengths and values work."
+  },
+  "activities": [
+    {"title": "Values line-up",
+     "time": "10 minutes",
+     "materials": "Students' Values Card Sort results",
+     "steps": ["Read a value aloud. Students who have it in their Top 5 stand.",
+               "Ask one standing student where that value showed up in a recent choice.",
+               "Repeat with four or five values, then ask which value surprised people most."],
+     "why": "Shows how differently people rank the same values, and makes the Top 5 concrete.",
+     "online": "Ask students to name one value from their Top 5 and a recent choice it explains, in the journal."},
+    {"title": "Baseline versus results",
+     "time": "10 minutes",
+     "materials": "My HIGH5 Results Trail Tool, with the baseline filled in before the assessment",
+     "steps": ["Students compare their baseline guess with their Top 5.",
+               "Pairs share one match and one surprise.",
+               "Debrief: what do other people see in you that you don't?"],
+     "why": "Comparing the guess to the result is often the most interesting part of the assessment, and it feeds Mile Marker #7, Question 2.",
+     "online": "Suggest students fill in the baseline before taking HIGH5, then write about the comparison in Question 2."},
+    {"title": "Blind spot scenarios",
+     "time": "10 minutes",
+     "materials": "Three short group-project scenarios on the screen",
+     "steps": ["Show a scenario where a strength goes too far, like a Deliverer who takes over the whole project.",
+               "Groups name the strength, the blind spot, and one thing the person could do differently.",
+               "Students connect it to one of their own strengths."],
+     "why": "Makes blind spots easier to talk about when they belong to someone else first.",
+     "online": "Describe one scenario in your recorded mini-lecture and invite students to name their own blind spot in Question 5."}
+  ],
+  "discussion": {
+    "title": "What matters most to you?",
+    "prompt": ["Which value in your Top 5 surprised you, or didn't?",
+               "Where did one of your values show up in a choice you made this week?"],
+    "format": "Talk with a partner for 3 minutes, then share one example with the room.",
+    "source": "An in-class version of the private online journal: My Top 5 Values. In-person students bring their Values Card Sort results.",
+    "facilitate": "Keep sharing optional. Ask for two or three examples of a value showing up in a real choice. Students often find a surprise in their Top 5; ask what it explains."
+  }
+}

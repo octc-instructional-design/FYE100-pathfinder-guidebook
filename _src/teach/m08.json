@@ -1,0 +1,56 @@
+{
+  "slides": {
+    "file": "FYE100-Module08-Instructor-Slides.pptx",
+    "about": "Title, a Breaking Camp housekeeping slide for your announcements, the Skill Spotlight, two slides on career fit and research tools, the Handshake Trail Tip with a QR code, the early registration Trail Tip, this week's work (including extra credit), Mile Marker #8, and an in-class discussion. Every slide has a talk track in the speaker notes, so the deck also works as a script for an online mini-lecture."
+  },
+  "coaching": [
+    {"head": "A submission without the guide is incomplete.",
+     "body": "Mile Marker #8 has two parts: the Career Research Guide and three questions. Students who answer the questions without uploading the guide haven't finished. Say it early, and point to the handout in Blackboard that holds both parts in one file."},
+    {"head": "Facts come from sources, not AI.",
+     "body": "Salary and outlook numbers from an AI tool are often wrong or not regional. Question 1 should match what's in the guide from Career Coach and O*NET. If a number looks off, ask where it came from."},
+    {"head": "Question 3 rewards honest friction.",
+     "body": "Students sometimes think naming a concern means they chose the wrong career. It doesn't. A strong answer names one clear alignment, one real friction or uncertainty, and the one question still open."},
+    {"head": "Question 2 should reach back to Modules 6 and 7.",
+     "body": "The fit question works best when students name their actual interest types, HIGH5 strengths, and values. Generic answers (\"I like helping people\") usually mean they didn't look back."},
+    {"head": "Handshake sign-in is the KCTCS login.",
+     "body": "There's no separate Handshake account. Students who create one with a personal email end up in the wrong place. Send them back to the OCTC Handshake link."},
+    {"head": "Extra credit lives here.",
+     "body": "The course's only extra credit is submitting a next-semester schedule after meeting with a Success Coach. Mention it alongside the registration Trail Tip; it's the nudge many students need to actually book the appointment."},
+    {"head": "Spring break comes next.",
+     "body": "Module 8 is the last module before spring break. Remind students to finish before they leave, and that Module 9 picks up after."}
+  ],
+  "activities": [
+    {"title": "A day in the life",
+     "time": "10 minutes",
+     "materials": "Paper",
+     "steps": ["Students write a regular Tuesday, five years from now, hour by hour.",
+               "Partners read each other's days and name what the career would need to provide.",
+               "Students compare that list with the career they're researching."],
+     "why": "Grounds career fit in the life students want before they get lost in job titles.",
+     "online": "Pose the exercise in your mini-lecture as a warm-up for the AI Chat."},
+    {"title": "Fact or AI?",
+     "time": "10 minutes",
+     "materials": "One career's salary and outlook from Career Coach, and an AI answer to the same question",
+     "steps": ["Show both answers side by side.",
+               "Students spot the differences, such as national versus regional pay, or missing sources.",
+               "Discuss: which one belongs in the Career Research Guide, and why?"],
+     "why": "Shows why the module says to get facts from sources and use AI to question thinking.",
+     "online": "Post the comparison in an announcement before students start the Career Research Guide."},
+    {"title": "Handshake, live",
+     "time": "10 minutes",
+     "materials": "Phones or laptops",
+     "steps": ["Students scan the code on the Handshake slide and sign in with their KCTCS login.",
+               "They fill in the essentials and add three interests.",
+               "Each student finds one job, internship, or event that connects to the career they're researching."],
+     "why": "Finishes the Handshake task in class and connects it to real local opportunities.",
+     "online": "Ask students to name one opportunity they found in Handshake when they submit their profile link."}
+  ],
+  "discussion": {
+    "title": "What do you want your career to make possible?",
+    "prompt": ["Picture a regular Tuesday five years from now. What does it look like?",
+               "What would your career need to give you to make that day possible?"],
+    "format": "Talk with a partner for 3 minutes, then share one need with the room.",
+    "source": "Mirrors the AI Chat: What Future Do You Want Your Career to Make Possible? (Module 8 has no online discussion.)",
+    "facilitate": "Encourage specifics: when they wake up, who's around, where they live. Collect what careers need to provide, such as steady hours or time with family. Close with the book's line: the career is the tool; the life is the point."
+  }
+}

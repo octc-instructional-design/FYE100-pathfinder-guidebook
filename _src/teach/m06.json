@@ -1,0 +1,56 @@
+{
+  "slides": {
+    "file": "FYE100-Module06-Instructor-Slides.pptx",
+    "about": "Title, a Breaking Camp housekeeping slide for your announcements, one slide per lesson (Lesson 6.2 has a QR code for Career Coach), the grades Trail Tip, this week's work, Mile Marker #6, and an in-class discussion. Every slide has a talk track in the speaker notes, so the deck also works as a script for an online mini-lecture."
+  },
+  "coaching": [
+    {"head": "Career Coach comes first.",
+     "body": "The whole module, including the online journal and Mile Marker #6, Question 1, uses the Career Coach results. Students who skip ahead to the Mile Marker get stuck. Point them to the assessment on day one, and remind them to use their KCTCS email so the results are saved for Module 8."},
+    {"head": "Results are a mirror, not a map.",
+     "body": "Some students are thrown when their results don't match the program they're already in. That's useful information, not a problem. Ask what does and doesn't fit, and look at the mix of interest types instead of the top one."},
+    {"head": "Question 3: questions any student could ask don't count.",
+     "body": "\"What classes should I take?\" is the common weak question. Push for questions tied to the student's own program, schedule, and timeline, in priority order."},
+    {"head": "Question 4 is a sketch, not a registration.",
+     "body": "Students sometimes freeze because they don't know the exact courses. A realistic load and a rough list are enough; the point is to bring something concrete to advising."},
+    {"head": "AI and programs: check everything.",
+     "body": "AI tools can sound confident about program requirements and get them wrong. Reinforce the module's rule: use AI to think, use the Success Coach and the catalog to decide, and keep student ID and birth date out of prompts."},
+    {"head": "Credentials are confusing to everyone at first.",
+     "body": "Certificate, diploma, AAS, AA, and AS are new words for most students. If a student is unsure what their own program leads to, that's a perfect Success Coach question."},
+    {"head": "The journal is private.",
+     "body": "Online sections reflect on their Career Coach results in a private journal. Some students share personal reasons for their choices there. Respond to the reflection, not just completion."}
+  ],
+  "activities": [
+    {"title": "Results gallery",
+     "time": "15 minutes",
+     "materials": "Career Coach results open on devices, and six signs around the room for the six interest types",
+     "steps": ["Students stand by the sign for their top interest type.",
+               "Each group lists two careers or OCTC programs they noticed in their results.",
+               "Students move to their second type and compare: what changed?"],
+     "why": "Makes the six types visible and shows that a mix of types matters more than one label.",
+     "online": "Ask students to name their top two types in the journal and say which one surprised them."},
+    {"title": "Five good questions",
+     "time": "10 minutes",
+     "materials": "Mile Marker #6, Question 3 on the screen",
+     "steps": ["Students draft their five Success Coach questions.",
+               "Partners swap and mark any question that any student could ask.",
+               "Each student rewrites one marked question to be about their own program and timeline."],
+     "why": "Turns generic questions into specific ones before the Mile Marker is due.",
+     "online": "Post one generic question and one specific rewrite as a model in your announcement."},
+    {"title": "Grade math, live",
+     "time": "10 minutes",
+     "materials": "One practice problem from the grades Trail Tip",
+     "steps": ["Work one points-based problem together.",
+               "Then a weighted one, and ask: why are the answers different?",
+               "Close with GPA: why does a four-credit class move it more?"],
+     "why": "Many students have never been shown how their grade is calculated. It changes how they read every syllabus.",
+     "online": "Walk through one problem in your recorded mini-lecture and point to the Trail Tip's practice set."}
+  ],
+  "discussion": {
+    "title": "Did your results sound like you?",
+    "prompt": ["What were your top interest types? Did they feel accurate?",
+               "Name one OCTC program you want to know more about, and one question about it."],
+    "format": "Talk with a partner for 3 minutes, then share one question with the room.",
+    "source": "An in-class version of the private online journal: My Career Coach Interest Snapshot.",
+    "facilitate": "Keep sharing optional. Collect the questions on the board; many make good Success Coach questions for Mile Marker #6, Question 3."
+  }
+}

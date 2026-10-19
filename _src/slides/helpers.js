@@ -53,13 +53,22 @@ async function cards(s, k, items, y, h, opts = {}) {
 }
 
 // icon list rows: [icon, bold lead, rest]
-async function rows(s, k, items, top = 1.95, step = 0.75) {
+async function rows(s, k, items, top = 1.95, step = 0.75, width) {
   const { M, HEX, txt, ico, C } = k;
   for (const [i, [ic, head, body]] of items.entries()) {
     const y = top + i * step;
     await ico(s, ic, M, y, 0.6, HEX.white, HEX.blue);
-    txt(s, [{ text: head, options: { bold: true, color: C.text2 } }, { text: body ? ': ' + body : '' }], { x: M + 0.85, y, w: 11.2, h: 0.6, valign: 'middle' });
+    txt(s, [{ text: head, options: { bold: true, color: C.text2 } }, { text: body ? ': ' + body : '' }], { x: M + 0.85, y, w: (width || 12.05) - 0.85, h: 0.6, valign: 'middle', fit: 'shrink' });
   }
 }
 
-module.exports = { pair, bar, spotlight, grid4, cards, rows };
+// QR panel on the right side of a lesson slide (3.4in wide); returns the width left for content
+function qrPanel(s, k, url, label, display) {
+  const { M, W, HEX, txt, card, C } = k, wq = 3.4, qx = W - M - wq;
+  card(s, qx, 2.0, wq, 4.4, HEX.softGold, 'QR panel');
+  txt(s, label, { x: qx + 0.25, y: 2.15, w: wq - 0.5, h: 0.75, fontSize: 20, bold: true, color: C.text2, align: 'center', valign: 'middle' });
+  k.qr(s, url, label, qx + (wq - 2.2) / 2, 3.0, 2.2, display);
+  return W - 2 * M - wq - 0.35;
+}
+
+module.exports = { pair, bar, spotlight, grid4, cards, rows, qrPanel };
