@@ -171,6 +171,34 @@ def course_map(C):
 
     <span class="rest" aria-hidden="true"></span>
 ''')
+    # time on task
+    rows = []; tr = tm = 0
+    for m in C.mods:
+        if not m['built']: continue
+        mm = sum(l[4] or 0 for l in m['lessons'] if l[1] == 'Mile Marker')
+        rd = sum(l[4] or 0 for l in m['lessons'] if l[1] != 'Mile Marker')
+        tr += rd; tm += mm
+        rows.append(f'<tr><th scope="row">{C.mod_link(m, str(m["n"]))}</th><td>{m["title"]}</td><td class="num">{rd}</td><td class="num">{mm}</td><td class="num"><strong>{rd + mm}</strong></td></tr>')
+    rows.append(f'<tr class="total"><th scope="row">All</th><td><strong>Semester total</strong></td><td class="num"><strong>{tr}</strong></td><td class="num"><strong>{tm}</strong></td><td class="num"><strong>{tr + tm}</strong> (about {round((tr + tm) / 60)} hours)</td></tr>')
+    out.append(f'''    <section id="time" aria-labelledby="time-h">
+      <div class="row"><div class="main">
+        <div class="h2wrap"><h2 id="time-h">Time on task</h2></div>
+        <p>Approximate minutes for each module's pages in the book, taken from the "About X minutes" estimates students see on every lesson, Trail Tip, Trail Tool, and Mile Marker. Mile Marker times are for writing the responses, not just reading the page.</p>
+        <p>The course is designed for about <strong>2 hours a week</strong> in all. Students don't need to read every page closely; the lessons support the Mile Marker, and the Mile Marker is the piece that counts. The book times don't include work done in Blackboard or on outside sites: AI Chats, discussions and journals (or class meetings for in-person sections), Merit activities, outside assessments such as Career Coach, HIGH5, and the Values Card Sort, and the four STAR(T) Stories in Module 12.</p>
+      </div></div>
+      <div class="row wide gap-sm"><div class="main">
+        <div class="table-scroll" role="region" aria-label="Time on task" tabindex="0">
+        <table class="map-table">
+          <caption class="sr-only">Approximate minutes per module in the book</caption>
+          <thead><tr><th scope="col">Module</th><th scope="col">Title</th><th scope="col" class="num">Lessons, tips, and tools</th><th scope="col" class="num">Mile Marker</th><th scope="col" class="num">Book total</th></tr></thead>
+          <tbody>{"".join(rows)}</tbody>
+        </table>
+        </div>
+      </div></div>
+    </section>
+
+    <span class="rest" aria-hidden="true"></span>
+''')
     # module by module
     blocks = []
     for m in C.mods:
