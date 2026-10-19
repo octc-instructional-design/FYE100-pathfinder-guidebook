@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 58
+V = 59
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -1269,6 +1269,15 @@ def build_home():
     <ol class="toc">
 {chr(10).join(toc)}
     </ol>
+    <div class="offline" role="group" aria-labelledby="offline-h">
+      <h3 id="offline-h">Take the book with you</h3>
+      <p>Prefer to read offline or on paper? Download the whole book: How to Use This Book, all 12 modules, and the Merit and STAR(T) Stories guides. The website always has the newest version and the fill-in forms.</p>
+      <div class="dl-row">
+        <span class="dl-btn">{TOK['download']}<span><b>PDF</b><small>To print or read on a computer</small></span></span>
+        <span class="dl-btn">{TOK['download']}<span><b>EPUB</b><small>For e-readers, phones, and tablets</small></span></span>
+      </div>
+      <p><span class="draft-flag">Coming soon. Downloads aren't available yet.</span></p>
+    </div>
   </section>
 
   <section aria-labelledby="guides" class="gap-md">

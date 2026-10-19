@@ -10,16 +10,26 @@ ROOT = B.ROOT
 OUT = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else HERE / 'export'); OUT.mkdir(parents=True, exist_ok=True)
 SITE = 'https://octc-instructional-design.github.io/FYE100-pathfinder-guidebook/'
 TITLE = 'Pathfinder Guidebook: FYE 100 Strategies for College Success'
-MODS = [c for c in B.CHAPTERS]
+# Units, in reading order: How to Use This Book, the 12 modules, then the two student guides.
+# The Instructor Guide stays online only.
+STUDENT_GUIDES = ('merit', 'start')
+UNITS = [dict(dir='chapters/help', key='help', head='How to Use This Book', kicker=None, src=None)]
+for ch in B.CHAPTERS:
+    UNITS.append(dict(dir=f"chapters/ch{ch['n']:02d}", key=f"ch{ch['n']:02d}", head=f"Module {ch['n']}: {ch['title']}",
+                      kicker=f"Module {ch['n']}", src=ch, es=ch['es'], es_label='10 Essential Skills in this module', module=True))
+for g in B.GUIDES:
+    if g['slug'] in STUDENT_GUIDES:
+        UNITS.append(dict(dir=f"chapters/{g['slug']}", key=g['slug'], head=g['title'], kicker='Guide', src=g, es=[], module=False))
 
 # ---------------------------------------------------------------- page list
-pages = []   # (key, module n, relpath, title)
-for ch in MODS:
-    n = ch['n']; d = f'chapters/ch{n:02d}'
-    pages.append((f'ch{n:02d}-index', n, f'{d}/index.html', f"Module {n}: {ch['title']}"))
-    for l in ch['lessons']:
+pages = []   # (key, unit index, relpath, title)
+for u_i, u in enumerate(UNITS):
+    d, k = u['dir'], u['key']
+    pages.append((f'{k}-index', u_i, f'{d}/index.html', u['head']))
+    for l in (u['src']['lessons'] if u['src'] else []):
         f, num, t = l[0], l[1], l[2]
-        pages.append((f'ch{n:02d}-{f[:-5]}', n, f'{d}/{f}', t if num in B.SPECIAL else f'{num} {t}'))
+        title = f'{num} {t}' if u.get('module') and num not in B.SPECIAL else t
+        pages.append((f'{k}-{f[:-5]}', u_i, f'{d}/{f}', title))
 KEY = {p[2]: p[0] for p in pages}
 
 def clean_text(s):
@@ -112,24 +122,23 @@ def extract(relpath, mode):
         img.attrs.pop('width', None); img.attrs.pop('height', None)
     return main
 
-def opener_head(ch):
-    n = ch['n']
-    return (f'<header class="mod-head"><p class="mod-num">Module {n}</p><h1>{ch["title"]}</h1>'
-            f'<p class="tagline">{ch["tagline"]}</p>'
-            '<p class="es-h">10 Essential Skills in this module</p><ul class="es-list">'
-            + ''.join(f'<li><img src="images/10es-{k:02d}.png" alt="" class="coin-img"/> #{k} {B.ESSENTIAL[k]}</li>' for k in ch['es'])
-            + '</ul></header>')
+def opener_head(u):
+    src = u['src']
+    out = (f'<header class="mod-head"><p class="mod-num">{u["kicker"]}</p><h1>{src["title"]}</h1>'
+           f'<p class="tagline">{src["tagline"]}</p>')
+    if u['es']:
+        out += (f'<p class="es-h">{u["es_label"]}</p><ul class="es-list">'
+                + ''.join(f'<li><img src="images/10es-{k:02d}.png" alt="" class="coin-img"/> #{k} {B.ESSENTIAL[k]}</li>' for k in u['es'])
+                + '</ul>')
+    return out + '</header>'
 
 def page_body(p, mode):
-    key, n, rel, title = p
-    ch = MODS[n - 1]
+    key, u_i, rel, title = p
+    u = UNITS[u_i]
     main = extract(rel, mode)
-    if rel.endswith('index.html'):
-        # the opener's hero sits outside <main>; rebuild a plain heading
-        head = BeautifulSoup(opener_head(ch), 'html.parser')
-        main.insert(0, head)
-        for h in main.select('h2'):
-            if 'Lessons in this module' in h.get_text(): pass
+    if rel.endswith('index.html') and u['src']:
+        # the opener's hero sits outside <main>; rebuild a plain heading (the help page has its own h1)
+        main.insert(0, BeautifulSoup(opener_head(u), 'html.parser'))
     return main
 
 CSS = pathlib.Path(HERE / 'export.css').read_text()
@@ -164,7 +173,7 @@ def build_epub():
 <p class="small">Offline edition. The online guidebook, with fill-in forms, is at <a href="{SITE}">{SITE}</a>. Due dates and points are in Blackboard.</p>
 </section>'''
     items.append(('title', 'Title page', cover)); imgs.add('owensboro-logo-horizontal-gold.png')
-    cur = None
+    cur = None; has_kids = False
     for p in pages:
         key, n, rel, title = p
         m = page_body(p, 'epub')
@@ -174,11 +183,12 @@ def build_epub():
             body = body.replace('<section>', '<section>', 1)
         items.append((key, clean_text(title), body))
         if n != cur:
-            if cur is not None: navli.append('</ol></li>')
-            navli.append(f'<li><a href="{key}.xhtml">Module {n}: {MODS[n-1]["title"]}</a><ol>'); cur = n
+            if cur is not None: navli.append('</ol></li>' if has_kids else '</li>')
+            navli.append(f'<li><a href="{key}.xhtml">{UNITS[n]["head"]}</a>'); cur = n; has_kids = False
         else:
+            if not has_kids: navli.append('<ol>'); has_kids = True
             navli.append(f'<li><a href="{key}.xhtml">{title}</a></li>')
-    navli.append('</ol></li>')
+    navli.append('</ol></li>' if has_kids else '</li>')
     nav = f'''<nav epub:type="toc" id="toc" role="doc-toc"><h1>Contents</h1><ol>
 <li><a href="title.xhtml">Title page</a></li>
 {''.join(navli)}
@@ -187,7 +197,7 @@ def build_epub():
 <li><a epub:type="toc" href="nav.xhtml">Contents</a></li>
 <li><a epub:type="bodymatter" href="{pages[0][0]}.xhtml">Start of content</a></li>
 </ol></nav>'''
-    now = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+    now = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     manifest = ['<item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>',
                 '<item id="css" href="book.css" media-type="text/css"/>']
     for k, t, _ in items:
@@ -245,15 +255,16 @@ def build_print_html():
 <h1>Pathfinder Guidebook</h1><p class="tagline">FYE 100: Strategies for College Success</p>
 <p class="small">Offline edition. The online guidebook, with fill-in forms, is at <a href="{SITE}">{SITE}</a>. Due dates and points are in Blackboard.</p></section>''']
     toc = ['<nav class="toc-print" aria-labelledby="toc-h"><h1 id="toc-h">Contents</h1><ol>']
-    cur = None
+    cur = None; has_kids = False
     for p in pages:
         key, n, rel, title = p
         if n != cur:
-            if cur is not None: toc.append('</ol></li>')
-            toc.append(f'<li><a href="#{key}">Module {n}: {MODS[n-1]["title"]}</a><ol>'); cur = n
+            if cur is not None: toc.append('</ol></li>' if has_kids else '</li>')
+            toc.append(f'<li><a href="#{key}">{UNITS[n]["head"]}</a>'); cur = n; has_kids = False
         else:
+            if not has_kids: toc.append('<ol>'); has_kids = True
             toc.append(f'<li><a href="#{key}">{title}</a></li>')
-    toc.append('</ol></li></ol></nav>')
+    toc.append(('</ol></li>' if has_kids else '</li>') + '</ol></nav>')
     parts.append(''.join(toc))
     for p in pages:
         key, n, rel, title = p
