@@ -47,17 +47,14 @@ await p.evaluate((variant)=>{
       <circle cx="9" cy="-9" r="3.6" fill="#f2a71b" stroke="#b98200" stroke-width=".8"/>
     </g>`);
   }
-  if(variant==='mic'){ // owl telling its story: a microphone and a few stars
-    add(`<g transform="translate(225 523) scale(1.5)">
-      <rect x="-1.6" y="0" width="3.2" height="16" rx="1.4" fill="#011d41"/>
-      <circle cx="0" cy="-3" r="6" fill="#f2a71b" stroke="#011d41" stroke-width="1.4"/>
-      <path d="M-3.5 -5 h7 M-4.5 -2 h9 M-3.5 1 h7" stroke="#b98200" stroke-width="1"/>
-    </g>
-    <g fill="#ffc94a">
-      <path d="M248 498 l2.2 4.6 5 .7 -3.6 3.5 .9 5 -4.5 -2.4 -4.5 2.4 .9 -5 -3.6 -3.5 5 -.7z"/>
-      <path d="M262 515 l1.5 3 3.3 .5 -2.4 2.3 .6 3.3 -3 -1.6 -3 1.6 .6 -3.3 -2.4 -2.3 3.3 -.5z"/>
-      <path d="M176 504 l1.3 2.7 3 .4 -2.2 2.1 .5 3 -2.6 -1.4 -2.6 1.4 .5 -3 -2.2 -2.1 3 -.4z"/>
-    </g>`);
+  if(variant==='mic'){ // capstone: the owl waves a checkered start flag (variant name kept for history)
+    add(`<defs><pattern id="chk" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-8)">
+        <rect width="7" height="7" fill="#ffffff"/><rect width="3.5" height="3.5" fill="#111"/><rect x="3.5" y="3.5" width="3.5" height="3.5" fill="#111"/></pattern></defs>
+      <line x1="243" y1="522" x2="256" y2="460" stroke="#e8eef5" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="256.2" cy="459" r="1.8" fill="#e8eef5"/>
+      <path d="M255.5 462 C 264 456, 272 466, 288 458 L 292 481 C 278 489, 268 478, 259.5 484 Z" fill="url(#chk)" stroke="#e8eef5" stroke-width="1"/>
+      <polygon points="236,521 244,500 251,503 243,526" fill="#0a4c86"/>
+      <ellipse cx="248.5" cy="501" rx="4" ry="3.2" fill="#3d7fb8"/>`);
     // a starry sky, kept out of the band where the slide text sits
     const sky=document.createElement('div');
     sky.style.cssText='position:absolute;inset:0;pointer-events:none;z-index:0';

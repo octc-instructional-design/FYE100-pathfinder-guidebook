@@ -223,7 +223,7 @@ build({
     title: `
       Welcome to the capstone: STAR(T) Stories.
       Anyone can claim a skill. Your stories show it. This deck walks through the framework, how to pick your stories, how to tell them, and how to make them strong.
-      The owl has a microphone this time. It's ready to tell its story, and by the end of the semester, so are you.`,
+      The owl is waving the start flag this time. Your stories are the finish line of the course, and the starting line for every interview after it.`,
     week: `
       The big picture: four short, true stories, one for each of four Essential Skills.
       Find a real moment for each skill. Draft it with a practice guide; there's one for each story in the STAR(T) Stories Guide. Tell it out loud in 2 to 4 minutes, or type it. Then submit each one in its own labeled journal in Blackboard.
