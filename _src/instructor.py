@@ -637,6 +637,16 @@ def teach_module(C, m, t):
           <p><strong>Why it works:</strong> {a["why"]}</p>
           <p class="act-online"><strong>Online sections:</strong> {a["online"]}</p>
         </article>''')
+    mu = t.get('meetup')
+    if mu:
+        acts.insert(0, f'''        <article class="activity meetup">
+          <p class="meetup-tag">Online sections · Merit #{m["merit"]} is due</p>
+          <h3>Host a virtual meet-up</h3>
+          <p class="act-meta"><span><strong>Time:</strong> 30 minutes</span><span><strong>You need:</strong> A Teams meeting created inside your course</span></p>
+          <ol><li>Welcome and introductions, about 5 minutes.</li><li>One topic, about 15 minutes. This module: <strong>{mu["topic"]}</strong></li><li>Open questions, about 10 minutes.</li></ol>
+          <p><strong>Why it works:</strong> {mu["why"]} A meet-up you host counts as a Merit activity, and it's the one option that works from anywhere and still puts online students with other people.</p>
+          <p class="act-online">Remind students to screenshot the meeting window for their Merit proof. Full guidance: <a href="appreciative-advising.html#meetups">Virtual meet-ups</a>.</p>
+        </article>''')
     out.append(f'''
     <span class="rest" aria-hidden="true"></span>
 

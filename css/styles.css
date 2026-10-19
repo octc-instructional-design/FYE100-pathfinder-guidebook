@@ -1600,3 +1600,5 @@ a.dl-btn:hover { background: var(--soft-gold); }
 .disc-card .disc-format { margin: 10px 0 0; font-style: italic; color: #d6eefa; }
 .muted.small, p.small { font-size: .9rem; }
 @media print { .disc-card { background: none; color: var(--ink); border: 2px solid var(--ink); } .disc-card .disc-title, .disc-card .disc-format { color: var(--ink); } }
+.activity.meetup { background: var(--soft-gold); border-color: #f0dca6; }
+.meetup-tag { margin: 0 0 4px !important; font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #7a5500; }
