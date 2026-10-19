@@ -76,8 +76,18 @@ def externalize(html):
 
 def write(path, html):
     # margin notes are supporting content, not page landmarks (keeps screen-reader landmark lists clean)
-    html = html.replace('<aside class="note-col" aria-label="Margin notes">', '<div class="note-col">').replace('</aside>', '</div>')
-    path.write_text(externalize(html))
+    # Only the note-col asides become divs; other asides (the Lookout callouts) keep their own closing tags.
+    out, stack, pos = [], [], 0
+    for m in re.finditer(r'<aside\b[^>]*>|</aside>', html):
+        out.append(html[pos:m.start()]); tag = m.group(0); pos = m.end()
+        if tag == '</aside>':
+            out.append('</div>' if stack.pop() else tag)
+        elif tag == '<aside class="note-col" aria-label="Margin notes">':
+            stack.append(True); out.append('<div class="note-col">')
+        else:
+            stack.append(False); out.append(tag)
+    out.append(html[pos:]); assert not stack, path
+    path.write_text(externalize(''.join(out)))
 
 def tokens(t):
     t = t.replace('[[rubric]]', RUBRIC)
