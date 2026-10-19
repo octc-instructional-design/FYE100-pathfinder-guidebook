@@ -1,0 +1,84 @@
+{
+  "slides": {
+    "file": "FYE100-Module02-Instructor-Slides.pptx",
+    "about": "Title, a Breaking Camp housekeeping slide for your announcements, one slide per lesson and Trail Tip, this week's work, Mile Marker #2, and an in-class discussion. Every slide has a talk track in the speaker notes, so the deck also works as a script for an online mini-lecture."
+  },
+  "coaching": [
+    {
+      "head": "Merit invitations arrive after add/drop.",
+      "body": "Student Affairs adds students to Merit once the add/drop period ends, so some students can't claim a page during Module 2. Don't let it stall Task #1: ask students to tell you, then follow up with Student Affairs. Late adds may wait longest."
+    },
+    {
+      "head": "Finding the Success Coach is the most common snag.",
+      "body": "In Student Self-Service, the User ID has to be in all capital letters, and the coach appears under Academic Advisor(s), not under a \"coach\" heading. If Self-Service doesn't work, Starfish (My Success Network) usually does."
+    },
+    {
+      "head": "Mile Marker #2, Question 1: people, not offices.",
+      "body": "The most common weak answer lists offices (\"the Library,\" \"TRIO\") or only family. The question asks for three people at OCTC, at least two who work here, starting with the Success Coach by name. A role and a place (\"the tutor at the TLC on Tuesdays\") is fine when a student doesn't know a name yet."
+    },
+    {
+      "head": "Question 2: \"I'll reach out when I need help\" isn't a plan.",
+      "body": "Push for when, how, and for what. \"I'll email my math instructor the day I get stuck on homework, not the night before the test\" is the level of detail to look for."
+    },
+    {
+      "head": "The AI Chat asks questions on purpose.",
+      "body": "Students who expect answers sometimes think Coach Pathfinder is broken. The Trail Tip on AI Chats explains why it keeps asking questions. If a student has a concern about using AI, release the hidden backup journal to that student only (see <a href=\"ai-literacy-map.html#chats\">Blackboard AI Chats</a>)."
+    },
+    {
+      "head": "Watch for students who are struggling.",
+      "body": "Help-seeking reflections sometimes surface stress, money trouble, or something more serious. Respond as a person first, then connect the student with their Success Coach or the Counseling Center. If you're worried about a student's safety, follow OCTC's procedures rather than handling it alone."
+    },
+    {
+      "head": "Use the first emails you get.",
+      "body": "Students often email you for the first time this week. A short, warm reply that models a clear subject line and greeting teaches Lesson 2.4 better than a correction."
+    }
+  ],
+  "activities": [
+    {
+      "title": "Find your coach, live",
+      "time": "10 minutes",
+      "materials": "Phones or laptops",
+      "steps": [
+        "Students look up their Success Coach in Student Self-Service or Starfish (Lesson 2.2).",
+        "They save the coach's name and email in their phone.",
+        "They draft a three-sentence introduction email using the four parts from Lesson 2.4, and send it before they leave or save it as a draft."
+      ],
+      "why": "Finishes Task #2 in class and turns \"I'll do it later\" into a sent email.",
+      "online": "Point students to the intro email in your weekly announcement, and reply to each one you get. A quick, warm reply is the model."
+    },
+    {
+      "title": "Fix this email",
+      "time": "10 to 15 minutes",
+      "materials": "The \"Not this\" email from Lesson 2.4, on the screen or printed",
+      "steps": [
+        "In pairs, students rewrite the email using the four parts: greeting, who you are, your question, closing.",
+        "Pairs swap with another pair and check the rewrite against the Quick check list at the end of Lesson 2.4.",
+        "Share one strong subject line with the room."
+      ],
+      "why": "Students practice the skill instead of hearing about it, and the subject line sticks.",
+      "online": "Post the bad email in an announcement and invite students to send you their rewrite as their introduction email."
+    },
+    {
+      "title": "Where would you go?",
+      "time": "15 minutes",
+      "materials": "Four to six scenario cards, one per group",
+      "steps": [
+        "Give each group a scenario, such as: you can't log in to Blackboard; you bombed the first math quiz; you're overwhelmed and not sleeping; you need a credible source for a paper; you think you might need an accommodation.",
+        "Groups pick the OCTC resource from Lesson 2.3 that fits and write the first sentence of how they'd ask for help.",
+        "Debrief: which resource surprised you? Which one would you actually use?"
+      ],
+      "why": "Builds the resource map students need for Mile Marker #2, Question 3, and rehearses asking specifically.",
+      "online": "Use the scenarios as a self-check in an announcement, with the resource links from Lesson 2.3."
+    }
+  ],
+  "discussion": {
+    "title": "Push through alone, or reach out?",
+    "prompt": [
+      "When things get hard, what's your first instinct?",
+      "Tell about a time asking for help made things better. What made it easy to ask?"
+    ],
+    "format": "Talk with a partner for 3 minutes, then share one idea with the room.",
+    "source": "Mirrors the opening question of the AI Chat: Who Has Your Back?",
+    "facilitate": "Listen for pride, not wanting to be a bother, and not knowing who to ask. Name those as normal, then connect them back to Lesson 2.3: ask early, be specific."
+  }
+}

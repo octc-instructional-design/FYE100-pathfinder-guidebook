@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 59
+V = 60
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -59,7 +59,7 @@ ESSENTIAL = {1:'Communication',2:'Critical &amp; Creative Thinking',3:'Quantitat
              5:'Adaptability &amp; Leadership',6:'Professionalism',7:'Civic Engagement',8:'Collaboration &amp; Teamwork',
              9:'Knowledge Application',10:'Information Literacy'}
 FOCUS = {6, 9}
-SPECIAL = {'Trail Tip', 'Trail Tool', 'Mile Marker', 'Wrap Up', 'Workspace'}
+SPECIAL = {'Trail Tip', 'Trail Tool', 'Mile Marker', 'Wrap Up', 'Workspace', 'Teaching'}
 
 # HARD RULE: every link that leaves the book opens in a new tab, with a screen-reader cue.
 EXT = re.compile(r'<a\s+([^>]*?)href="(https?://[^"]+)"([^>]*)>(.*?)</a>', re.S)
@@ -88,6 +88,8 @@ def write(path, html):
             stack.append(False); out.append(tag)
     out.append(html[pos:]); assert not stack, path
     path.write_text(externalize(''.join(out)))
+
+TEACH_MODS = []  # (n, title) for modules with _src/teach/mNN.json; filled after CHAPTERS
 
 def tokens(t):
     t = t.replace('[[rubric]]', RUBRIC)
@@ -856,6 +858,8 @@ def build_chapter(ch):
 # ------------------------------------------------------------------ guides (appendix)
 from merit_options import OPTIONS as MERIT_OPTIONS
 
+TEACH_MODS = [(c['n'], c['title']) for c in CHAPTERS if (HERE/f"teach/m{c['n']:02d}.json").exists()]
+
 GUIDES = [
  dict(n='M', slug='merit', label='Merit Guide', navlabel='Guide', unit='guide', overview='Guide overview', kicker='Part',
   title='Merit Guide', icon='images/shared/merit-badge.png',
@@ -921,7 +925,7 @@ GUIDES = [
   desc="For FYE 100 instructors and reviewers: how the book works, the course map, and how the course aligns to the 10 Essential Skills, AI literacy, and Appreciative Advising.",
   tagline="How the book works, and how every piece of the course lines up.",
   intro=["This guide is for FYE 100 instructors, peer reviewers, and anyone reporting on the course. It explains how the book and Blackboard work together and maps every I Can statement to the course learning outcomes, the Kentucky Graduate Profile's 10 Essential Skills, and the BE framework for AI literacy.",
-         "The last part introduces Appreciative Advising and shows how the course moves students through its six phases.",
+         "Part 5 introduces Appreciative Advising and shows how the course moves students through its six phases. Part 6, Teaching the Modules, has slides, coaching notes, and in-class ideas for each module.",
          "The maps are built from the same source as the book, so they grow as modules are completed. Like the rest of the book, this guide is public. It contains no answer keys, scoring guidance, or points. Those stay in Blackboard."],
   lessons=[
    ('how-the-book-works.html','1','How the Book Works',"The book, Blackboard, and how a module is put together.",8,
@@ -936,7 +940,11 @@ GUIDES = [
      [('mindset','The appreciative mindset'),('phases','The six phases'),('journey','A six-phase journey'),('glance','Module by module'),('meetups','Virtual meet-ups'),('inventory','The Inventory'),('more','Learn more')]),
    ('results-in-action.html','Workspace','Results in Action',"What each Inventory showed, and what changed in the course because of it.",6,
      [('fa26','Fall 2026 Inventory')]),
-  ]),
+   ('teaching.html','6','Teaching the Modules',"Slides, coaching notes, and in-class ideas for every module.",None,
+     [('modules','Modules')]),
+  ] + [(f'teach-{n:02d}.html','Teaching',f'Module {n}: {t}',"Slides, coaching notes, active learning ideas, and an in-class discussion.",None,
+        [('glance','At a glance'),('slides','Slides'),('coaching','Coaching notes'),('activities','Active learning ideas'),('discussion','In-class discussion')])
+       for n, t in TEACH_MODS]),
 ]
 
 

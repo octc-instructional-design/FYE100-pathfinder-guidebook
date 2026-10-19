@@ -1,0 +1,84 @@
+{
+  "slides": {
+    "file": "FYE100-Module01-Instructor-Slides.pptx",
+    "about": "Title, a Base Camp welcome slide for your announcements, one or two slides per lesson, the Office 365 Trail Tip, this week's work, Mile Marker #1, and an in-class discussion. Every slide has a talk track in the speaker notes, so the deck also works as a script for an online mini-lecture."
+  },
+  "coaching": [
+    {
+      "head": "Two very different starting points share the room.",
+      "body": "Recent high school graduates (including dual-credit students as young as 16) and adults returning after years away often sit side by side. Lesson 1.1 speaks to both on purpose. Naming both out loud on day one tells returning adults their work experience counts, and tells younger students the support is there if they go looking."
+    },
+    {
+      "head": "\"I didn't know\" usually means \"I didn't read the syllabus.\"",
+      "body": "Expect questions this week that the syllabus already answers. Point students back to it kindly and specifically (\"It's under Late Work on page 3\"). That's the habit Lesson 1.1 is building."
+    },
+    {
+      "head": "Mile Marker #1, Question 4: goals that are too vague.",
+      "body": "\"Do better\" and \"pass\" are the common weak goals. Use the book's test: could someone else tell whether you reached it, and could you put each step on a calendar? Students reuse this goal later in the course, so it's worth a quick nudge now."
+    },
+    {
+      "head": "Question 5: every stance on AI is a fair answer.",
+      "body": "Some students are excited about AI, some are skeptical, and some would rather not use it at all. The question asks for a clear position, not a positive one. Make that explicit, especially for students who expect the course to push AI."
+    },
+    {
+      "head": "The BE Check is practice for the vocabulary.",
+      "body": "Students match the five BE behaviors from Lesson 1.3 to real situations. If several students miss the same item, clear up that behavior in your next announcement or class. The same five behaviors come back all semester."
+    },
+    {
+      "head": "Blackboard basics trip up more students than the content.",
+      "body": "Finding the module, submitting a file, and reading feedback are new to many students. The optional Syllabus and Blackboard Scavenger Hunt is low-stakes practice; encourage anyone who seems lost to try it before Mile Marker #1 is due."
+    },
+    {
+      "head": "Ask for profile photos early.",
+      "body": "A photo in Blackboard (Lesson 1.5) makes discussions and feedback feel personal for everyone, you included. A short reminder in week 1 gets most students to do it."
+    }
+  ],
+  "activities": [
+    {
+      "title": "Before and now",
+      "time": "10 minutes",
+      "materials": "The four Before / Now shifts from Lesson 1.1, on the screen",
+      "steps": [
+        "Students silently pick the shift that will take the most adjustment for them.",
+        "They move to a corner of the room assigned to that shift (or raise a hand for each one).",
+        "Each group names one thing they'll do this week to get ahead of it, and shares it with the room."
+      ],
+      "why": "Turns Lesson 1.1's reflection question into a visible, low-risk conversation, and students see they aren't the only ones.",
+      "online": "Post the four shifts as a poll or quick survey, and share the results in your next announcement."
+    },
+    {
+      "title": "Syllabus speed hunt",
+      "time": "10 minutes",
+      "materials": "The FYE 100 syllabus (or another course's syllabus) open on devices",
+      "steps": [
+        "In pairs, students race to find five things: a due date, the late work policy, how to contact you, the AI Course Policy, and one thing that surprised them.",
+        "First pair with all five shares where they found each one.",
+        "Close by asking which item they'd have missed if they'd only skimmed."
+      ],
+      "why": "Practices the \"syllabus is a contract\" habit with the real document, not a description of it.",
+      "online": "Point students to the optional Syllabus and Blackboard Scavenger Hunt in Blackboard, which does the same job."
+    },
+    {
+      "title": "Name that tune",
+      "time": "5 minutes",
+      "materials": "Your voice",
+      "steps": [
+        "Hum the bassline from Lesson 1.3 and ask the room what song it is.",
+        "Let both answers come out, then ask: was anyone wrong?",
+        "Connect it to AI: it completes the most likely pattern, which isn't always the right answer. Introduce the word hallucination."
+      ],
+      "why": "A memorable, low-tech way into pattern completion. Students remember the song long after they forget a definition.",
+      "online": "Tell the story in your recorded mini-lecture; it works just as well on video."
+    }
+  ],
+  "discussion": {
+    "title": "Who's on the trail with you?",
+    "prompt": [
+      "Your name, and what you're here for: a program, a goal, or a fresh start.",
+      "One thing you're bringing with you: a skill, a habit, or a story."
+    ],
+    "format": "Pair up for 3 minutes, then introduce your partner to the room.",
+    "source": "An in-class version of the online Trailhead Introductions discussion. Introducing a partner, instead of yourself, lowers the stakes on day one.",
+    "facilitate": "Model it first with your own answer. Listen for strengths students name in passing (work ethic, caring for family, a trade skill) and point them out: those are the answers to Mile Marker #1, Question 3."
+  }
+}

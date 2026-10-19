@@ -512,4 +512,179 @@ def ai_map(C):
 
 def pages(CHAPTERS, LATER, ESSENTIAL, HERE):
     C = Course(CHAPTERS, LATER, ESSENTIAL, HERE)
-    return {'course-map.html': course_map(C), 'essential-skills-map.html': es_map(C), 'ai-literacy-map.html': ai_map(C)}
+    d = {'course-map.html': course_map(C), 'essential-skills-map.html': es_map(C), 'ai-literacy-map.html': ai_map(C)}
+    d.update(teach_pages(CHAPTERS, LATER, ESSENTIAL, HERE))
+    return d
+
+
+# ---------------------------------------------------------------- Teaching the Modules
+SITE = 'https://octc-instructional-design.github.io/FYE100-pathfinder-guidebook/'
+
+
+def load_teach(HERE):
+    import json
+    out = {}
+    for p in sorted((HERE / 'teach').glob('m*.json')):
+        out[int(p.stem[1:])] = json.loads(p.read_text())
+    return out
+
+
+def teach_file(n):
+    return f'teach-{n:02d}.html'
+
+
+def teach_overview(C, TK):
+    rows = []
+    for m in C.mods:
+        t = TK.get(m['n'])
+        page = f'<a href="{teach_file(m["n"])}">Teaching notes</a>' if t else '<span class="muted">Coming soon</span>'
+        sl = f'<a href="../../downloads/slides/{t["slides"]["file"]}" download>Slides (.pptx)</a>' if t and t.get('slides') else '<span class="muted">Coming soon</span>'
+        rows.append(f'<tr><th scope="row">{m["n"]}</th><td>{m["title"]}</td><td>{page}</td><td>{sl}</td></tr>')
+    return f'''    <div class="row gap-md">
+      <div class="main">
+        <p class="lede">Everything you need to teach each module, in one place: slides, coaching notes, active learning ideas, and an in-class discussion.</p>
+        <p>Each module has its own page. The slides are PowerPoint files built from the same source as the book, with a talk track in the speaker notes, so they work for an in-person class or a recorded mini-lecture for online sections. Edit your copy however you like.</p>
+      </div>
+      <div class="note-col">
+        <div class="note note-tip">
+          <div class="label">[[tip]] Public pages</div>
+          <p>Like the rest of the book, these pages are public. They hold no answer keys, scoring guidance, or points. Instructor keys stay in Blackboard.</p>
+        </div>
+      </div>
+    </div>
+
+    <span class="rest" aria-hidden="true"></span>
+
+    <section id="modules" aria-labelledby="tm-h">
+      <div class="row"><div class="main">
+        <div class="h2wrap"><h2 id="tm-h">Modules</h2></div>
+        <p>Pages are added as each module's materials are finished.</p>
+      </div></div>
+      <div class="row wide gap-sm"><div class="main">
+        <div class="table-scroll" role="region" aria-label="Teaching materials by module" tabindex="0">
+        <table class="map-table">
+          <caption class="sr-only">Teaching materials by module</caption>
+          <thead><tr><th scope="col">Module</th><th scope="col">Title</th><th scope="col">Teaching notes</th><th scope="col">Slides</th></tr></thead>
+          <tbody>{"".join(rows)}</tbody>
+        </table>
+        </div>
+      </div></div>
+    </section>
+'''
+
+
+def teach_module(C, m, t):
+    n = m['n']; ch = f'../ch{n:02d}/'
+    icans = ''.join(f'<li><strong>I can</strong> {o["text"]}</li>' for o in m['objs'])
+    skills = ' '.join(C.es_tag(k) for k in m['es'])
+    mm = f'<a href="{ch}{m["mm"][0]}">{m["mm"][1]}</a>' if m['mm'] else ''
+    out = [f'''    <div class="row gap-md">
+      <div class="main">
+        <p class="lede">Slides, coaching notes, and in-class ideas for <a href="{ch}index.html">Module {n}: {m["title"]}</a>.</p>
+      </div>
+    </div>
+
+    <span class="rest" aria-hidden="true"></span>
+
+    <section id="glance" aria-labelledby="gl-h">
+      <div class="row"><div class="main">
+        <div class="h2wrap"><h2 id="gl-h">At a glance</h2></div>
+        <ul class="dots">{icans}</ul>
+        <p class="teach-meta"><span class="tm-label">10 Essential Skills</span> {skills}</p>
+        <p class="teach-meta"><span class="tm-label">AI Literacy</span> {C.be_cell(m["be"])}</p>
+        <p class="teach-meta"><span class="tm-label">Main assignment</span> {mm}</p>
+      </div></div>
+    </section>
+''']
+    s = t.get('slides')
+    if s:
+        url = f'{SITE}downloads/slides/{s["file"]}'
+        view = 'https://view.officeapps.live.com/op/view.aspx?src=' + url.replace(':', '%3A').replace('/', '%2F')
+        out.append(f'''
+    <span class="rest" aria-hidden="true"></span>
+
+    <section id="slides" aria-labelledby="sl-h">
+      <div class="row"><div class="main">
+        <div class="h2wrap"><h2 id="sl-h">Slides</h2></div>
+        <p>{s["about"]}</p>
+        <div class="dl-row">
+          <a class="dl-btn" href="../../downloads/slides/{s["file"]}" download>[[download]]<span><b>Download the slides</b><small>PowerPoint, {s["count"]} slides with speaker notes</small></span></a>
+          <a class="dl-btn" href="{view}">[[see]]<span><b>View online</b><small>Opens in Microsoft's web viewer</small></span></a>
+        </div>
+        <p class="muted small" style="margin-top:12px">Slide 2 is the housekeeping slide for your announcements. Hide it (right-click the slide, then Hide Slide) before recording for an online section.</p>
+      </div></div>
+    </section>
+''')
+    co = ''.join(f'<li><strong>{c["head"]}</strong> {c["body"]}</li>' for c in t.get('coaching', []))
+    out.append(f'''
+    <span class="rest" aria-hidden="true"></span>
+
+    <section id="coaching" aria-labelledby="co-h">
+      <div class="row"><div class="main">
+        <div class="h2wrap"><h2 id="co-h">Coaching notes</h2></div>
+        <p>Where students tend to get stuck this module, and what helps.</p>
+        <ul class="dots coaching">{co}</ul>
+      </div></div>
+    </section>
+''')
+    acts = []
+    for a in t.get('activities', []):
+        steps = ''.join(f'<li>{x}</li>' for x in a['steps'])
+        acts.append(f'''        <article class="activity">
+          <h3>{a["title"]}</h3>
+          <p class="act-meta"><span><strong>Time:</strong> {a["time"]}</span><span><strong>You need:</strong> {a["materials"]}</span></p>
+          <ol>{steps}</ol>
+          <p><strong>Why it works:</strong> {a["why"]}</p>
+          <p class="act-online"><strong>Online sections:</strong> {a["online"]}</p>
+        </article>''')
+    out.append(f'''
+    <span class="rest" aria-hidden="true"></span>
+
+    <section id="activities" aria-labelledby="ac-h">
+      <div class="row"><div class="main">
+        <div class="h2wrap"><h2 id="ac-h">Active learning ideas</h2></div>
+        <p>Pick one or two. Each fits in a 50-minute class alongside the slides.</p>
+      </div></div>
+      <div class="row wide gap-sm"><div class="main">
+        <div class="activities">
+{chr(10).join(acts)}
+        </div>
+      </div></div>
+    </section>
+''')
+    d = t.get('discussion')
+    if d:
+        qs = ''.join(f'<li>{q}</li>' for q in d['prompt'])
+        out.append(f'''
+    <span class="rest" aria-hidden="true"></span>
+
+    <section id="discussion" aria-labelledby="di-h">
+      <div class="row"><div class="main">
+        <div class="h2wrap"><h2 id="di-h">In-class discussion</h2></div>
+        <div class="disc-card">
+          <p class="disc-title">{d["title"]}</p>
+          <ol>{qs}</ol>
+          <p class="disc-format">{d["format"]}</p>
+        </div>
+        <p><strong>Where it comes from:</strong> {d["source"]}</p>
+        <p><strong>Facilitating:</strong> {d["facilitate"]}</p>
+      </div></div>
+    </section>
+''')
+    return ''.join(out)
+
+
+def teach_pages(CHAPTERS, LATER, ESSENTIAL, HERE):
+    C = Course(CHAPTERS, LATER, ESSENTIAL, HERE); TK = load_teach(HERE)
+    pages = {'teaching.html': teach_overview(C, TK)}
+    import zipfile, re as _re
+    for m in C.mods:
+        if m['n'] in TK and m['built']:
+            t = TK[m['n']]; sl = t.get('slides')
+            if sl:  # slide count comes from the built deck itself
+                deck = HERE.parent / 'downloads/slides' / sl['file']
+                assert deck.exists(), f'missing deck {deck}'
+                with zipfile.ZipFile(deck) as z:
+                    sl['count'] = sum(1 for n in z.namelist() if _re.match(r'ppt/slides/slide\d+\.xml$', n))
+            pages[teach_file(m['n'])] = teach_module(C, m, t)
+    return pages
