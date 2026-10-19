@@ -438,7 +438,7 @@ CHAPTERS = [
    ('trail-tip-finish.html','Trail Tip','Finishing Strong',"FYE 100 may end before your other classes do. Here's how to finish the semester.",3,
      [('finals','Heading into finals')]),
    ('mile-marker.html','Mile Marker','Mile Marker #12: My Story to Share',"Your final reflection, with support, and a form you can fill in and save.",20,
-     [('before','A quick look back'),('questions','The questions'),('scoring',"How it's scored"),('form','Fill in and save')]),
+     [('before','A quick look back'),('questions','The questions'),('ai-partner','AI thinking partner'),('scoring',"How it's scored"),('form','Fill in and save')]),
    ('wrap-up.html','Wrap Up','Module 12 Wrap Up',"You've walked the whole trail.",2,
      [('takeaways',"What you're taking with you")]),
   ],
