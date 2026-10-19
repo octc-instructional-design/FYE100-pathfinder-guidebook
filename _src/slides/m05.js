@@ -1,4 +1,5 @@
 const { build } = require('./deck.js');
+const TERM = require('./term.json');
 const { pair, bar, spotlight, cards, rows } = require('./helpers.js');
 
 build({
@@ -90,7 +91,9 @@ build({
   work: { title: 'Due Monday by 11:59 PM Central',
     items: [['LuClipboardCheck', 'Task: Appreciative Advising Inventory', 'A short inventory. Completion only.'],
             ['LuFlag', 'Mile Marker #5: Understanding My Money', 'Five questions. No dollar amounts needed.'],
-            ['LuMessagesSquare', 'Online sections: Money Tip discussion', 'First post Friday, replies Monday']] },
+            ['LuMessagesSquare', 'Online sections: Money Tip discussion', 'First post Friday, replies Monday']],
+    // semester-specific form link lives in term.json
+    qr: Object.assign({ label: 'Scan for the Inventory' }, TERM.aai) },
 
   mm: { title: 'Understanding My Money',
     qs: [['What you noticed from your Dollar Tracker'], ['Your financial reality, described honestly'],
@@ -115,7 +118,7 @@ build({
       Two skills: Quantitative Reasoning, this week's Skill Spotlight, and Professionalism.`,
     work: `
       Everything is due Monday by 11:59 PM Central.
-      The Appreciative Advising Inventory is a short inventory, completion only. What students say in it shapes the course; the Instructor Guide's Results in Action page shows what changed because of it.
+      The Appreciative Advising Inventory is a short inventory, completion only. Scan the code on this slide to open it; it's this semester's shared form for all FYE 100 sections. What students say in it shapes the course; the Instructor Guide's Results in Action page shows what changed because of it.
       Mile Marker #5 is the main assignment, with no dollar amounts required.
       Online sections: the money tip discussion. First post by Friday, replies by Monday. In-person sections: today's attendance counts.`,
     mm: `

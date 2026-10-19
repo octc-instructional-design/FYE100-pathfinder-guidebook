@@ -155,7 +155,8 @@ build({
     items: [['LuAward', 'Task #1: Set Up Your Merit Page', 'Claim your page and share the link'],
             ['LuCompass', 'Task #2: Identify Your Success Coach', 'Name and contact information'],
             ['LuBot', 'AI Chat: Who Has Your Back?', 'A conversation with Coach Pathfinder'],
-            ['LuFlag', 'Mile Marker #2: My Support Team', 'Three questions about your support network']] },
+            ['LuFlag', 'Mile Marker #2: My Support Team', 'Three questions about your support network']],
+    qr: { url: 'https://owensboro-kctcs.meritpages.com/', label: 'Scan to set up Merit', display: 'owensboro-kctcs.meritpages.com' } },
 
   mm: { title: 'My Support Team',
     qs: [['Who are three people at OCTC who can help you?', 'Start with your Success Coach, by name.'],
@@ -182,7 +183,7 @@ build({
       The three skills on the right are the 10 Essential Skills this module builds. The Skill Spotlight is #4, Interpersonal Relations. That's next.`,
     work: `
       Everything is due Monday by 11:59 PM Central.
-      Tasks #1 and #2 are quick: claim your Merit page and share the link, and find your Success Coach's name and contact information.
+      Tasks #1 and #2 are quick: claim your Merit page and share the link, and find your Success Coach's name and contact information. Scan the code on this slide to open Merit.
       The AI Chat, Who Has Your Back?, is a conversation with Coach Pathfinder about your support network. Plan for 10 to 15 minutes. It's in the ENGAGE area.
       The Mile Marker is the big one, and it's next.
       In-person sections: today's attendance point counts too.`,
