@@ -58,6 +58,18 @@ await p.evaluate((variant)=>{
       <path d="M262 515 l1.5 3 3.3 .5 -2.4 2.3 .6 3.3 -3 -1.6 -3 1.6 .6 -3.3 -2.4 -2.3 3.3 -.5z"/>
       <path d="M176 504 l1.3 2.7 3 .4 -2.2 2.1 .5 3 -2.6 -1.4 -2.6 1.4 .5 -3 -2.2 -2.1 3 -.4z"/>
     </g>`);
+    // a starry sky, kept out of the band where the slide text sits
+    const sky=document.createElement('div');
+    sky.style.cssText='position:absolute;inset:0;pointer-events:none;z-index:0';
+    const pts=[[330,40,7],[520,38,4],[700,30,5],[880,42,3.5],[1010,28,6],[1190,48,4],[1350,38,5],[1500,44,3.5],[1570,30,4.5],
+               [1555,190,5],[1530,300,3.5],[1575,410,4],[1545,520,3],[1440,640,3.5],[1270,700,3],
+               [230,170,4],[360,250,3],[300,360,5],[440,140,3.5],[420,450,3],[190,560,3.5],[860,720,3],[620,730,3.5]];
+    const star=(x,y,r)=>`<path transform="translate(${x} ${y}) scale(${r/3})" d="M0 -5 L1.2 -1.2 5 0 1.2 1.2 0 5 -1.2 1.2 -5 0 -1.2 -1.2Z"/>`;
+    const dots=[[600,18],[770,28],[960,30],[1110,16],[1290,22],[1420,18],[1470,250],[1585,600],[270,90],[350,520],[480,300],[1150,690],[760,690]];
+    sky.innerHTML=`<svg viewBox="0 0 1600 900" width="100%" height="100%" preserveAspectRatio="none" aria-hidden="true">
+      <g fill="#ffe08a" opacity=".9">${pts.map(p=>star(...p)).join('')}</g>
+      <g fill="#ffffff" opacity=".7">${dots.map(([x,y])=>`<circle cx="${x}" cy="${y}" r="2.4"/>`).join('')}</g></svg>`;
+    const ban=document.querySelector('.banner'); ban.style.position='relative'; ban.insertBefore(sky, ban.firstChild);
     const t=document.querySelector('.banner-art g[transform] text'); if(t){t.textContent='STAR(T)'; const r=t.parentNode.querySelector('rect[rx]'); r.setAttribute('width','92'); r.setAttribute('x','-46');}
   }
   if(variant==='crew'){ // a second, smaller owl beside the first on the branch
