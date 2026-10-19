@@ -78,10 +78,10 @@ async function build(S) {
     { x, y, w, h, rectRadius: 0.12, fill: { color: fill }, line: { color: fill }, shadow: shadow(), objectName: 'Decorative: ' + name });
   const txt = (s, t, o) => s.addText(t, Object.assign({ isTextBox: true, margin: 0, fontSize: T.body, color: C.text1, valign: 'top' }, o));
   // scannable code plus the short address under it; the image carries alt text, so it is not decorative
-  const qr = (s, url, label, x, y, d = 1.6) => {
+  const qr = (s, url, label, x, y, d = 1.6, display) => {
     s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: x - 0.12, y: y - 0.12, w: d + 0.24, h: d + 0.24, rectRadius: 0.1, fill: { color: HEX.white }, line: { color: HEX.line, width: 1 }, objectName: 'Decorative: QR frame' });
     s.addImage({ data: qrData(url), x, y, w: d, h: d, altText: `QR code for ${label}: ${url}`, objectName: `QR code: ${label}` });
-    txt(s, url.replace(/^https?:\/\//, '').replace(/\/$/, ''), { x: x - 0.6, y: y + d + 0.18, w: d + 1.2, h: 0.4, fontSize: 20, align: 'center', color: C.accent6, objectName: `Address: ${label}` });
+    txt(s, display || url.replace(/^https?:\/\//, '').replace(/\/$/, ''), { x: x - 0.6, y: y + d + 0.15, w: d + 1.2, h: 0.8, fontSize: 20, valign: 'top', align: 'center', color: C.accent6, objectName: `Address: ${label}` });
   };
   const ico = async (s, name, x, y, d, fg, bg) => {
     s.addShape(pres.shapes.OVAL, { x, y, w: d, h: d, fill: { color: bg }, line: { color: bg }, objectName: 'Decorative: icon circle' });
@@ -150,12 +150,18 @@ async function build(S) {
   sec('This week\'s work');
   {
     const s = content('This week\'s work', 'Assignments', S.work.title);
-    const rows = S.work.items, rh = 1.1; let y = 2.05;
+    const rows = S.work.items, rh = 1.1, wq = S.work.qr ? 3.4 : 0, rw = W - 2 * M - (wq ? wq + 0.35 : 0); let y = 2.05;
+    if (wq) {
+      const q = S.work.qr, qx = W - M - wq;
+      card(s, qx, 2.05, wq, 4.35, HEX.softGold, 'QR panel');
+      txt(s, q.label, { x: qx + 0.25, y: 2.2, w: wq - 0.5, h: 0.75, fontSize: 20, bold: true, color: C.text2, align: 'center', valign: 'middle' });
+      qr(s, q.url, q.label, qx + (wq - 2.2) / 2, 3.05, 2.2, q.display);
+    }
     for (const [ic, name, sub] of rows) {
-      card(s, M, y, W - 2 * M, rh - 0.18, HEX.softBlue, 'assignment row');
+      card(s, M, y, rw, rh - 0.18, HEX.softBlue, 'assignment row');
       await ico(s, ic, M + 0.2, y + 0.1, 0.6, HEX.white, HEX.blue);
       txt(s, [{ text: name, options: { bold: true, color: C.text2, breakLine: !!sub } }].concat(sub ? [{ text: sub, options: { fontSize: 20, color: C.accent6 } }] : []),
-        { x: M + 1.05, y: y + 0.06, w: W - 2 * M - 1.4, h: rh - 0.3, fontSize: T.body, valign: 'middle' });
+        { x: M + 1.05, y: y + 0.06, w: rw - 1.4, h: rh - 0.3, fontSize: T.body, valign: 'middle' });
       y += rh;
     }
     notes(s, S.notes.work);

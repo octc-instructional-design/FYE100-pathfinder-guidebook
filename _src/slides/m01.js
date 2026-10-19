@@ -182,7 +182,9 @@ build({
     items: [['LuClipboardCheck', 'Task: My Skills Snapshot, Start of Semester', 'Rate yourself honestly on the 10 skills and AI'],
             ['LuCircleCheck', 'BE Check', 'Match the five BE behaviors to real situations'],
             ['LuFlag', 'Mile Marker #1: My Starting Point', 'Five questions about where you are right now'],
-            ['LuMessagesSquare', 'Online sections: Trailhead Introductions', 'First post Friday, replies Monday']] },
+            ['LuMessagesSquare', 'Online sections: Trailhead Introductions', 'First post Friday, replies Monday']],
+    // Spring 2027 form for My Skills Snapshot, Start of Semester. Replace each semester.
+    qr: { url: 'https://forms.cloud.microsoft/r/q1qNGUcQEH?origin=QRCode', label: 'Scan for My Skills Snapshot', display: 'forms.cloud.microsoft/r/q1qNGUcQEH' } },
 
   mm: { title: 'My Starting Point',
     qs: [['Why college, and why OCTC?'], ['What does success look like for you this semester?'],
@@ -208,7 +210,8 @@ build({
       The coins on the right are the four Essential Skills this module builds: Communication, Adaptability & Leadership, Professionalism, and Information Literacy.`,
     work: `
       Everything is due Monday by 11:59 PM Central.
-      The My Skills Snapshot is your starting point on the 10 skills and on AI. It's completion only, so be honest, not generous. You'll retake it at the end and compare.
+      The My Skills Snapshot is your starting point on the 10 skills and on AI. Scan the code on this slide to open it. It's completion only, so be honest, not generous. You'll retake it at the end and compare.
+        INSTRUCTOR NOTE: the QR code is the Spring 2027 Snapshot form. It changes each semester; replace it if your section uses a different form.
       The BE Check is a short matching quiz on the five BE behaviors from Lesson 1.3.
       Mile Marker #1 is the main assignment, next slide.
       Online sections also have the Trailhead Introductions discussion: first post by Friday, replies by Monday. In-person sections: today's attendance counts.
