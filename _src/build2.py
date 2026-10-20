@@ -102,7 +102,7 @@ CHAPTERS = [
  dict(n=1, title='Your Pathfinder Journey Begins',
   desc="Get oriented, set up your tools, and start thinking about why you're here and where you want to go.",
   tagline='Every journey starts with a single step, and this one is yours.',
-  why=["You bring more to college than you might think. What's new is how college works: what's expected, how to ask for help, and what it means to own your learning.",
+  why=["You already know how to do school. College is still school, but the stakes are higher and the rules shift: what's expected of you, how to ask for help, and what it means to own your learning.",
        "This module puts those things on the table early, while there's still time to build the right habits. What you set up here, including your goal, your sense of what college expects, and your first look at the skills and tools you'll use all semester, becomes the foundation for everything that follows. New to this book? Take a few minutes with <a href=\"../help/index.html\">How to Use This Book</a> first."],
   objectives=[("describe my personal reasons for attending college and define what success means to me right now.", 'Mile Marker #1'),
               ("navigate Blackboard and locate key course information, assignments, and instructor contact details.", 'the Syllabus &amp; Blackboard Scavenger Hunt (optional practice)'),
