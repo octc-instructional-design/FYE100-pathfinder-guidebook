@@ -10,6 +10,8 @@ await p.evaluate((variant)=>{
   const NS='http://www.w3.org/2000/svg';
   const tree=document.querySelector('.hero-tree');
   const add=(markup)=>{const g=document.createElementNS(NS,'g');g.innerHTML=markup;tree.appendChild(g);};
+  // module banners now carry their prop in the page itself (build2.py OWL_PROPS); don't add it twice
+  if(variant!=='mic' && tree.querySelector('.owl-prop')) return;
   if(variant==='map'){ // owl holding a folded trail map
     add(`<g transform="translate(193 521)">
       <polygon points="0,4 13,0 26,4 39,0 39,22 26,26 13,22 0,26" fill="#f6e7c1"/>

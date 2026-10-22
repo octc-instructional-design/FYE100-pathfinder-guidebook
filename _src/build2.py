@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 61
+V = 62
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -587,6 +587,63 @@ def perspective_trail(d='M110 170 C 200 164, 260 152, 330 152 S 430 124, 480 124
         s += dash + gap
     return '<g stroke="#3bb3e5" stroke-linecap="round">' + ''.join(out) + '</g>'
 
+# Module-specific owl props, matching the instructor slide title art (_src/slides/art/hero.js).
+# Coordinates are in HERO_TREE space; the phone branch owl reuses them through a transform.
+_OWL_I = HERO_TREE.index('<g transform="translate(212 541)')
+_OWL = HERO_TREE[HERO_TREE.index('>', _OWL_I) + 1:HERO_TREE.index('\n</g>', _OWL_I)]
+def _owl_clone(x, y):
+    return f'<g transform="translate({x} {y}) scale(.15) translate(-250 -442)">{_OWL}\n</g>'
+def _bird(x, y, c):
+    return (f'<g transform="translate({x} {y}) scale(1.6)"><ellipse cx="0" cy="0" rx="5.5" ry="4.2" fill="{c}"/><circle cx="4" cy="-4" r="3.2" fill="{c}"/>'
+            f'<path d="M7 -4.4 l3 1 -3 1z" fill="#f2a71b"/><circle cx="4.9" cy="-4.8" r=".7" fill="#011d41"/><path d="M-5 0 l-4 -2 1 3z" fill="{c}"/>'
+            f'<path d="M-1 4 v2.5 M1.5 4 v2.5" stroke="#f2a71b" stroke-width=".8"/></g>')
+OWL_PROPS = {
+ 1: '''<g transform="translate(193 521)"><polygon points="0,4 13,0 26,4 39,0 39,22 26,26 13,22 0,26" fill="#f6e7c1"/>
+    <polygon points="13,0 26,4 26,26 13,22" fill="#e6cf98"/>
+    <path d="M4 20 C 10 12, 16 18, 21 11 S 31 8, 34 6" fill="none" stroke="#c0392b" stroke-width="1.6" stroke-dasharray="2.5 2" stroke-linecap="round"/>
+    <path d="M31.5 3.5 l5 5 M36.5 3.5 l-5 5" stroke="#011d41" stroke-width="1.6" stroke-linecap="round"/></g>''',
+ 2: _owl_clone(272, 546),
+ 3: '''<g transform="translate(212 530)"><path d="M-14 -16 C -10 -6, -4 -10, 0 -12" fill="none" stroke="#f2a71b" stroke-width="1.4" stroke-dasharray="1.6 1.4"/>
+    <rect x="-2" y="-15" width="4" height="4" rx="1" fill="#f2a71b"/><circle cx="0" cy="0" r="12" fill="#f2a71b" stroke="#011d41" stroke-width="1.6"/>
+    <circle cx="0" cy="0" r="8.6" fill="#fff8e6"/><path d="M0 0 V-6 M0 0 L4.5 2.5" stroke="#011d41" stroke-width="1.6" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="1.2" fill="#011d41"/></g>''',
+ 4: '''<g transform="translate(193 524)"><path d="M0 4 Q 10 0 19 4 L19 22 Q 10 18 0 22 Z" fill="#fff8e6"/>
+    <path d="M19 4 Q 28 0 38 4 L38 22 Q 28 18 19 22 Z" fill="#f1e3c0"/>
+    <path d="M4 9 h11 M4 13 h11 M23 9 h11 M23 13 h8" stroke="#3d7fb8" stroke-width="1.2" stroke-linecap="round"/>
+    <circle cx="35" cy="-2" r="7" fill="rgba(191,227,247,.55)" stroke="#f2a71b" stroke-width="2.2"/>
+    <path d="M40 3 l6 6" stroke="#f2a71b" stroke-width="3" stroke-linecap="round"/></g>''',
+ 5: '''<g transform="translate(238 518)"><rect x="-1" y="-3" width="20" height="4" rx="1.5" fill="#0a4c86"/>
+    <path d="M0 1 h18 v18 q0 3 -3 3 h-12 q-3 0 -3 -3 Z" fill="rgba(191,227,247,.45)" stroke="#bfe3f7" stroke-width="1.2"/>
+    <circle cx="6" cy="17" r="3.4" fill="#f2a71b" stroke="#b98200" stroke-width=".8"/><circle cx="12.5" cy="17.5" r="3.4" fill="#f2a71b" stroke="#b98200" stroke-width=".8"/>
+    <circle cx="9" cy="12" r="3.4" fill="#f2a71b" stroke="#b98200" stroke-width=".8"/><circle cx="9" cy="-9" r="3.6" fill="#f2a71b" stroke="#b98200" stroke-width=".8"/></g>''',
+ 6: '''<g transform="translate(212 528)"><circle r="11.5" fill="#f2a71b" stroke="#011d41" stroke-width="1.6"/><circle r="8.6" fill="#fff8e6"/>
+    <path d="M0 -7.5 L2.2 0 L0 7.5 L-2.2 0 Z" fill="#c0392b"/><path d="M0 0 L2.2 0 L0 7.5 L-2.2 0 Z" fill="#011d41"/><circle r="1.2" fill="#f2a71b"/>
+    <text y="-3.6" font-size="3.6" text-anchor="middle" fill="#011d41" font-family="Arial" font-weight="700" dy="-1">N</text></g>''',
+ 7: '''<polygon points="236,521 244,500 251,503 243,526" fill="#0a4c86"/>
+    <path transform="translate(253 488) scale(2.6)" d="M0 -5 L1.5 -1.6 5.2 -1.5 2.3 0.8 3.2 4.4 0 2.4 -3.2 4.4 -2.3 0.8 -5.2 -1.5 -1.5 -1.6Z" fill="#ffc94a" stroke="#b98200" stroke-width=".35"/>
+    <ellipse cx="248.5" cy="501" rx="4" ry="3.2" fill="#3d7fb8"/>''',
+ 8: '''<g transform="translate(212 493)"><rect x="-15" y="-6" width="12" height="12" rx="3" fill="#011d41"/><rect x="3" y="-6" width="12" height="12" rx="3" fill="#011d41"/>
+    <rect x="-4" y="-3" width="8" height="5" fill="#011d41"/><circle cx="-9" cy="0" r="4.2" fill="#3bb3e5"/><circle cx="9" cy="0" r="4.2" fill="#3bb3e5"/>
+    <circle cx="-10.3" cy="-1.4" r="1.2" fill="#ffffff" opacity=".8"/><circle cx="7.7" cy="-1.4" r="1.2" fill="#ffffff" opacity=".8"/></g>''',
+ 9: '''<circle cx="249" cy="519" r="16" fill="#ffc94a" opacity=".18"/><path d="M243 506 q6 -8 12 0" fill="none" stroke="#011d41" stroke-width="1.6"/>
+    <rect x="242.5" y="506" width="13" height="3.5" rx="1.2" fill="#011d41"/><rect x="244" y="509.5" width="10" height="13" rx="2" fill="#fff2b8" stroke="#011d41" stroke-width="1.4"/>
+    <ellipse cx="249" cy="516.5" rx="2.2" ry="3.4" fill="#f2a71b"/><rect x="242.5" y="522.5" width="13" height="3" rx="1.2" fill="#011d41"/>''',
+ 10: _owl_clone(272, 546) + _owl_clone(154, 547),
+ 11: _bird(258, 530, "#3bb3e5") + _bird(282, 526, "#e7a614"),
+ 12: '''<rect x="203" y="466" width="18" height="7" rx="1.5" fill="#011d41"/><polygon points="188,466 212,457 236,466 212,475" fill="#011d41"/>
+    <circle cx="212" cy="466" r="1.4" fill="#f2a71b"/><path d="M212 466 L229 470 L229 480" fill="none" stroke="#f2a71b" stroke-width="1.3"/>
+    <path d="M227 479 h4 l-1 5 h-2z" fill="#f2a71b"/>''',
+}
+def hero_art(n):
+    """Desktop tree owl and phone branch owl, with module n's prop added to each."""
+    p = OWL_PROPS.get(int(n))
+    if not p:
+        return HERO_TREE + '\n  ' + HERO_BRANCH
+    end = '\n  </svg>'
+    tree = HERO_TREE[:HERO_TREE.rindex(end)] + f'\n    <g class="owl-prop">{p}</g>' + end
+    branch = HERO_BRANCH[:HERO_BRANCH.rindex(end)] + f'\n    <g class="owl-prop" transform="translate(128 87) scale(.85) translate(-212 -541)">{p}</g>' + end
+    return tree + '\n  ' + branch
+
 def banner_svg(label='', home=False):
     sx, sy, fill = (800, 63, '#ffffff') if home else (930, 72, '#3bb3e5')
     trail_el = perspective_trail() if home else '<path d="M120 170 C 300 150, 420 150, 560 140 S 820 120, 930 110" fill="none" stroke="#3bb3e5" stroke-width="4" stroke-dasharray="10 10" stroke-linecap="round"/>'
@@ -805,8 +862,7 @@ def build_chapter(ch):
     <p class="tagline">{ch['tagline']}</p>
   </div>
   {banner_svg(str(n), home=True)}
-  {HERO_TREE}
-  {HERO_BRANCH}
+  {hero_art(n)}
 </div>
 {toolbar(ch)}
 
