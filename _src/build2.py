@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 62
+V = 63
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -634,14 +634,33 @@ OWL_PROPS = {
     <circle cx="212" cy="466" r="1.4" fill="#f2a71b"/><path d="M212 466 L229 470 L229 480" fill="none" stroke="#f2a71b" stroke-width="1.3"/>
     <path d="M227 479 h4 l-1 5 h-2z" fill="#f2a71b"/>''',
 }
+# Guide banners
+OWL_PROPS['start'] = (  # capstone: checkered start flag (same as the STAR(T) overview deck, without the starry sky)
+    '<defs><pattern id="chk" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-8)">'
+    '<rect width="7" height="7" fill="#ffffff"/><rect width="3.5" height="3.5" fill="#111"/><rect x="3.5" y="3.5" width="3.5" height="3.5" fill="#111"/></pattern></defs>'
+    '<line x1="243" y1="522" x2="256" y2="460" stroke="#e8eef5" stroke-width="2.4" stroke-linecap="round"/>'
+    '<circle cx="256.2" cy="459" r="1.8" fill="#e8eef5"/>'
+    '<path d="M255.5 462 C 264 456, 272 466, 288 458 L 292 481 C 278 489, 268 478, 259.5 484 Z" fill="url(#chk)" stroke="#e8eef5" stroke-width="1"/>'
+    '<polygon points="236,521 244,500 251,503 243,526" fill="#0a4c86"/>'
+    '<ellipse cx="248.5" cy="501" rx="4" ry="3.2" fill="#3d7fb8"/>')
+OWL_PROPS['instructor'] = (  # teacher: big round glasses and a pointer
+    '<line x1="243" y1="508" x2="290" y2="466" stroke="#c99a5b" stroke-width="2.2" stroke-linecap="round"/>'
+    '<line x1="286" y1="469.6" x2="290.5" y2="465.6" stroke="#c0392b" stroke-width="2.6" stroke-linecap="round"/>'
+    '<polygon points="236,521 241,503 249,505 243,526" fill="#0a4c86"/>'
+    '<ellipse cx="245" cy="506" rx="4" ry="3.2" fill="#3d7fb8"/>'
+    '<g fill="none" stroke="#f2a71b" stroke-width="2.3">'
+    '<circle cx="202.6" cy="490.6" r="10.4"/><circle cx="221.4" cy="490.6" r="10.4"/>'
+    '<path d="M208.6 487.6 q3.4 -3 6.8 0"/><path d="M192.3 489 l-5 -3.2 M231.7 489 l5 -3.2" stroke-linecap="round"/></g>'
+    '<path d="M196 485 a8 8 0 0 1 5 -3.4 M214.8 485 a8 8 0 0 1 5 -3.4" stroke="#ffffff" stroke-width="1.2" fill="none" opacity=".75" stroke-linecap="round"/>')
+
 def hero_art(n):
     """Desktop tree owl and phone branch owl, with module n's prop added to each."""
-    p = OWL_PROPS.get(int(n))
+    p = OWL_PROPS.get(int(n) if str(n).isdigit() else n)
     if not p:
         return HERO_TREE + '\n  ' + HERO_BRANCH
     end = '\n  </svg>'
     tree = HERO_TREE[:HERO_TREE.rindex(end)] + f'\n    <g class="owl-prop">{p}</g>' + end
-    branch = HERO_BRANCH[:HERO_BRANCH.rindex(end)] + f'\n    <g class="owl-prop" transform="translate(128 87) scale(.85) translate(-212 -541)">{p}</g>' + end
+    branch = HERO_BRANCH[:HERO_BRANCH.rindex(end)] + f'\n    <g class="owl-prop" transform="translate(128 87) scale(.85) translate(-212 -541)">{p.replace("chk", "chk-b")}</g>' + end
     return tree + '\n  ' + branch
 
 def banner_svg(label='', home=False):
@@ -1222,8 +1241,7 @@ def build_guide(g):
     <p class="tagline">{g['tagline']}</p>
   </div>
   {banner_svg({'merit':'MERIT','start':'STAR(T)','instructor':'FOR INSTRUCTORS'}.get(g['slug'], g['n']), home=True)}
-  {HERO_TREE}
-  {HERO_BRANCH}
+  {hero_art(g['slug'])}
 </div>
 
 <div class="shell">
