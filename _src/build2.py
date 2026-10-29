@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 64
+V = 65
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -666,6 +666,11 @@ def hero_art(n):
     tree = HERO_TREE[:HERO_TREE.rindex(end)] + f'\n    <g class="owl-prop">{p}</g>' + end
     branch = HERO_BRANCH[:HERO_BRANCH.rindex(end)] + f'\n    <g class="owl-prop" transform="translate(128 87) scale(.85) translate(-212 -541)">{p.replace("chk", "chk-b")}</g>' + end
     return tree + '\n  ' + branch
+
+LOCK_SVG_SHUT = '<svg class="lock-shut" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><path d="M12 14.5v2"/></svg>'
+LOCK_SVG_OPEN = '<svg class="lock-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 7.6 -1.8"/><path d="M12 14.5v2"/></svg>'
+# js/book.js flips this to the unlocked state on devices that already entered the code
+LOCK_TAG = f' <span class="gc-lock">{LOCK_SVG_SHUT}{LOCK_SVG_OPEN}<span class="gc-lock-text">Access code</span></span>'
 
 def banner_svg(label='', home=False):
     sx, sy, fill = (800, 63, '#ffffff') if home else (930, 72, '#3bb3e5')
@@ -1339,7 +1344,7 @@ def build_home():
         </li>''')
     gl = []
     for g in GUIDES:
-        gl.append(f'''      <li><a class="guide-card" href="chapters/{g['slug']}/index.html"><img src="{g['icon']}" alt="" width="56" height="56"><span><span class="gc-title">{g['title']}</span><span class="gc-desc">{g['desc']}</span></span></a></li>''')
+        gl.append(f'''      <li><a class="guide-card" href="chapters/{g['slug']}/index.html"><img src="{g['icon']}" alt="" width="56" height="56"><span><span class="gc-title">{g['title']}{LOCK_TAG if g['slug']=='instructor' else ''}</span><span class="gc-desc">{g['desc']}</span></span></a></li>''')
     home = head(f'{BOOK} | FYE 100: Strategies for College Success', 0) + bookbar(0, '') + f'''
 <div class="hero">
   <div class="inner">

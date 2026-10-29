@@ -201,3 +201,10 @@
   document.querySelectorAll('.mm-clear').forEach(function (b) { b.addEventListener('click', function () { setTimeout(calc, 50); }); });
   calc();
 })();
+
+// Instructor Guide card on the home page: show the open lock on devices that already entered the access code (see js/gate.js)
+(function () {
+  var tag = document.querySelector('.gc-lock'); if (!tag) return;
+  var open = false; try { open = localStorage.getItem('fye100-instructor') === '1'; } catch (e) {}
+  if (open) { tag.classList.add('is-open'); tag.querySelector('.gc-lock-text').textContent = 'Unlocked on this device'; }
+})();
