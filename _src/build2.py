@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 63
+V = 64
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -87,6 +87,10 @@ def write(path, html):
         else:
             stack.append(False); out.append(tag)
     out.append(html[pos:]); assert not stack, path
+    if path.parent.name == 'instructor':  # courtesy access gate + keep out of search results
+        up = '../../'  # chapters/instructor/
+        joined = ''.join(out).replace('</head>', f'<meta name="robots" content="noindex, nofollow">\n<script src="{up}js/gate.js?v={V}"></script>\n</head>', 1)
+        out = [joined]
     path.write_text(externalize(''.join(out)))
 
 TEACH_MODS = []  # (n, title) for modules with _src/teach/mNN.json; filled after CHAPTERS
