@@ -99,12 +99,36 @@ const STEPS = [
       These slides follow the STAR(T) Story planning form one step at a time. Use them while you plan, practice, or record your own story.`);
   }
 
-  // ---- 2. Setup: choose your skill
+  // ---- 2a. Setup: the three required skills (hide 2b when telling one of these stories)
   {
     const s = pres.addSlide({ masterName: 'Story Step' });
     s.background = { color: HEX.blue };
-    s.addText('Choose your skill', { placeholder: 'title', y: 2.95 });
-    txt(s, 'SETUP · STEP 0', { x: 1.5, y: 0.75, w: W - 3, h: 0.5, fontSize: 22, bold: true, color: HEX.gold, charSpacing: 4, align: 'center' });
+    s.addText('Three required skills', { placeholder: 'title' });
+    txt(s, 'SETUP · REQUIRED STORIES', { x: 1.5, y: 0.45, w: W - 3, h: 0.5, fontSize: 22, bold: true, color: HEX.gold, charSpacing: 4, align: 'center' });
+    const req = [5, 6, 9], d = 1.3, colW = 3.7, x0 = (W - req.length * colW) / 2;
+    req.forEach((n, i) => {
+      const cx = x0 + i * colW;
+      s.addImage({ path: coin(n), x: cx + (colW - d) / 2, y: 0.95, w: d, h: d, altText: `Essential Skill ${n}: ${SKILLS[n]}`, objectName: `Skill ${n} coin` });
+      txt(s, SKILLS[n], { x: cx, y: 2.3, w: colW, h: 0.5, fontSize: 24, bold: true, color: 'FFFFFF', align: 'center', valign: 'middle' });
+    });
+    txt(s, 'Each one gets its own story.', { x: 1.5, y: 4.05, w: W - 3, h: 0.55, fontSize: 28, color: 'D6EEFA', align: 'center' });
+    s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: 2.4, y: 5.0, w: W - 4.8, h: 1.45, rectRadius: 0.15, fill: { color: 'FFFFFF' }, line: { color: HEX.gold, width: 2.5 },
+      objectName: 'Decorative: prompt card' });
+    txt(s, [{ text: 'THIS STORY SHOWS…', options: { fontSize: 22, bold: true, color: HEX.accentInk, charSpacing: 2, breakLine: true } },
+            { text: 'name the skill, then one real moment that proves it', options: { fontSize: 24, italic: true, color: HEX.muted } }],
+      { x: 2.8, y: 5.2, w: W - 5.6, h: 1.1, align: 'center', valign: 'middle', paraSpaceBefore: 4 });
+    notes(s, `SETUP: Your three required skills.
+      Three of your four stories are assigned: Adaptability & Leadership, Professionalism, and Knowledge Application. Each one gets its own story.
+      Name the skill this story is about. Then pick one real moment that shows it, one you can tell in 2 to 4 minutes.
+      Telling one of these stories? Hide the next slide (Choose your skill). Telling your choice story? Hide this one.`);
+  }
+
+  // ---- 2b. Setup: choose your skill (hide 2a when telling the choice story)
+  {
+    const s = pres.addSlide({ masterName: 'Story Step' });
+    s.background = { color: HEX.blue };
+    s.addText('Choose your skill', { placeholder: 'title' });
+    txt(s, 'SETUP · YOUR CHOICE', { x: 1.5, y: 0.75, w: W - 3, h: 0.5, fontSize: 22, bold: true, color: HEX.gold, charSpacing: 4, align: 'center' });
     // the seven skills students choose from (#5, #6, and #9 are the assigned stories)
     const pick = [1, 2, 3, 4, 7, 8, 10], d = 1.05, gap = 0.3, row = pick.length * d + (pick.length - 1) * gap, x0 = (W - row) / 2;
     pick.forEach((n, i) => {
@@ -118,8 +142,9 @@ const STEPS = [
             { text: 'one sentence, in your own words', options: { fontSize: 24, italic: true, color: HEX.muted } }],
       { x: 2.8, y: 5.2, w: W - 5.6, h: 1.1, align: 'center', valign: 'middle', paraSpaceBefore: 4 });
     notes(s, `SETUP: Choose your skill.
-      Three of your four stories are assigned: Adaptability & Leadership, Professionalism, and Knowledge Application. The fourth is your choice from the other seven skills shown here.
-      Pick the skill that connects most honestly to a real experience. Then say in one sentence why you chose it.`);
+      Your fourth story is your choice, from the seven skills shown here.
+      Pick the skill that connects most honestly to a real experience. Then say in one sentence why you chose it.
+      Telling your choice story? Hide the previous slide (Three required skills).`);
   }
 
   // ---- 3-7. The five steps
