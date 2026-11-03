@@ -73,7 +73,7 @@ build({
       notes: `
         Most people believe they're good at multitasking. What we call multitasking is really rapid task-switching, and every switch has a cost.
         Research on interruptions has found it can take more than 20 minutes to get back to a task after being pulled away. Every "real quick" check of a notification can cost far more than a few seconds.
-        That cost has a name: switching cost. There's also transition friction, the drag of leaving one thing and starting another. For some brains, including those with ADHD, that friction can feel like a wall. Lesson 3.6 picks that up.
+        That cost has a name: switching cost. There's also transition friction, the drag of leaving one thing and starting another. For some brains, including those with ADHD, that friction can feel like a wall. The Divergent Minds bonus read picks that up.
         Try the demo from the teaching page if you have time: write "Time is the pilot" and the numbers 1 to 14 straight through, then alternate letter, number, letter, number. Compare times.` },
 
     { kicker: 'Lesson 3.5', title: 'Your five batteries',
@@ -89,7 +89,7 @@ build({
         Mile Marker #3, Question 2 asks which battery is most depleted and one small, realistic way to recharge it.
         If a student's batteries are all empty, that's a conversation to have privately, and the Counseling Center is a good next step.` },
 
-    { kicker: 'Lesson 3.6', title: 'Your brain, your way',
+    { kicker: 'Bonus Read', title: 'Divergent Minds: Your brain, your way',
       async draw(s, k) {
         await grid4(s, k, [['LuRocket', 'Starting is hard', 'Task initiation takes real effort for some brains.'],
                            ['LuHourglass', 'Time feels different', 'Time blindness: ten minutes can feel like three hours.'],

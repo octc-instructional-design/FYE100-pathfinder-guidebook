@@ -59,7 +59,7 @@ ESSENTIAL = {1:'Communication',2:'Critical &amp; Creative Thinking',3:'Quantitat
              5:'Adaptability &amp; Leadership',6:'Professionalism',7:'Civic Engagement',8:'Collaboration &amp; Teamwork',
              9:'Knowledge Application',10:'Information Literacy'}
 FOCUS = {6, 9}
-SPECIAL = {'Trail Tip', 'Trail Tool', 'Mile Marker', 'Wrap Up', 'Workspace', 'Notes', 'Teach'}
+SPECIAL = {'Trail Tip', 'Trail Tool', 'Bonus Read', 'Mile Marker', 'Wrap Up', 'Workspace', 'Notes', 'Teach'}
 
 # HARD RULE: every link that leaves the book opens in a new tab, with a screen-reader cue.
 EXT = re.compile(r'<a\s+([^>]*?)href="(https?://[^"]+)"([^>]*)>(.*?)</a>', re.S)
@@ -189,7 +189,7 @@ CHAPTERS = [
      [('cost','The switching cost'),('familiar','Sound familiar?'),('friction','Transition friction')]),
    ('3-5.html','3.5','The Five Batteries: Running Low vs. Running Out',"Understanding your energy before it's gone, and what burnout actually is.",7,
      [('batteries','The five batteries'),('burnout','What burnout is'),('together',"They don't work alone"),('check-in','Check in with yourself')]),
-   ('3-6.html','3.6','Your Brain, Your Way',"Some brains work differently. That's not a flaw, but it does matter.",9,
+   ('3-6.html','Bonus Read','Divergent Minds: Your Brain, Your Way',"Some brains work differently. That's not a flaw, but it does matter.",9,
      [('means','What neurodivergence means'),('challenges','Executive function'),('strategies','Strategies'),('support','Support at OCTC')]),
    ('mile-marker.html','Mile Marker','Mile Marker #3: Managing My Time &amp; Energy',"The assignment, with support, and a form you can fill in and save.",25,
      [('steps',"What you'll do"),('form','Your Mile Marker'),('submit','Submit it')]),
