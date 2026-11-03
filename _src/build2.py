@@ -158,7 +158,7 @@ CHAPTERS = [
      [('why-merit','What Merit does for you'),('setup','Set up your page'),('links','Helpful links')]),
    ('trail-tip-ai-chat.html','Trail Tip',"What's Actually Happening in That AI Chat?","Pull back the curtain on how the course AI Chats work.",6,
      [('llm','What is a large language model?'),('setup','The setup'),('same','Same AI, different behavior'),('types','Two kinds of AI Chats'),('you','What this means for you')]),
-   ('mile-marker.html','Mile Marker','Mile Marker #2: My Support Team',"The assignment, with support, and a form you can fill in and save.",25,
+   ('mile-marker.html','Mile Marker','Mile Marker #2: My Support Team',"The assignment, with support, and a form you can fill in and save.",20,
      [('steps',"What you'll do"),('form','Your Mile Marker'),('submit','Submit it')]),
    ('wrap-up.html','Wrap Up','Module 2 Wrap Up',"Pull it together before you head back to your course.",2,
      [('takeaways','Key takeaways')]),
