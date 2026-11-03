@@ -1650,3 +1650,4 @@ html.gated body { background: var(--navy); }
 .mm-think ul { margin: 4px 0 0; padding-left: 1.2em; }
 .mm-look { margin: 10px 0 0; font-size: .92rem; color: var(--muted); }
 @media print { body.mm-printing .mm-guide { display: none !important; } body.mm-printing .mm-qblock { border-left: 0; padding-left: 0; } }
+.rubric.scale thead th:first-child, .rubric.scale tbody th { width: 84px; }

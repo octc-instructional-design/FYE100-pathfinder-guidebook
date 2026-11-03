@@ -1015,7 +1015,7 @@ GUIDES = [
          "The maps are built from the same source as the book, so they grow as modules are completed. Like the rest of the book, this guide is public. It contains no answer keys, scoring guidance, or points. Those stay in Blackboard."],
   lessons=[
    ('how-the-book-works.html','1','How the Book Works',"The book, Blackboard, and how a module is put together.",8,
-     [('split','The book and Blackboard'),('anatomy','How a module is built'),('design','Design commitments'),('teaching','Teaching with the book'),('current','Keeping the book current'),('assessment','Course-level assessment'),('reporting','Using the maps')]),
+     [('split','The book and Blackboard'),('anatomy','How a module is built'),('design','Design commitments'),('teaching','Teaching with the book'),('grading','Grading Mile Markers'),('current','Keeping the book current'),('assessment','Course-level assessment'),('reporting','Using the maps')]),
    ('course-map.html','2','Course Map',"Every I Can statement, the outcome it serves, and where students show it.",10,
      [('outcomes','Learning outcomes'),('glance','At a glance'),('time','Time on task'),('modules','Module by module')]),
    ('essential-skills-map.html','3','10 Essential Skills Map',"Kentucky Graduate Profile coverage, by module and by skill.",8,
@@ -1285,7 +1285,7 @@ def build_guide(g):
 
 
 # ------------------------------------------------------------------ help page
-HELP_SECS=[('split','The book and Blackboard'),('module','How each module is laid out'),('save','Keep your work safe'),('ai','AI use labels'),('around','Getting around'),('guides','The guides'),('access','Reading your way')]
+HELP_SECS=[('split','The book and Blackboard'),('module','How each module is laid out'),('save','Keep your work safe'),('scoring','How Mile Markers are scored'),('ai','AI use labels'),('around','Getting around'),('guides','The guides'),('access','Reading your way')]
 def build_help():
     d = ROOT/'chapters/help'; d.mkdir(parents=True, exist_ok=True)
     body = tokens((HERE/'bodies/help/how-to-use.html').read_text())
