@@ -1012,7 +1012,7 @@ GUIDES = [
   tagline="How the book works, and how every piece of the course lines up.",
   intro=["This guide is for FYE 100 instructors, peer reviewers, and anyone reporting on the course. It explains how the book and Blackboard work together and maps every I Can statement to the course learning outcomes, the Kentucky Graduate Profile's 10 Essential Skills, and the BE framework for AI literacy.",
          "Part 5 introduces Appreciative Advising and shows how the course moves students through its six phases. Part 6, Teaching the Modules, has slides, coaching notes, and in-class ideas for each module. The Admin section at the end holds Course Notes and Results in Action.",
-         "The maps are built from the same source as the book, so they grow as modules are completed. Like the rest of the book, this guide is public. It contains no answer keys, scoring guidance, or points. Those stay in Blackboard."],
+         "The maps are built from the same source as the book, so they grow as modules are completed. Like the rest of the book, this guide is public. It contains no answer keys or points, and rubrics live in Blackboard with each assignment. The guide coaches how to use them consistently."],
   lessons=[
    ('how-the-book-works.html','1','How the Book Works',"The book, Blackboard, and how a module is put together.",8,
      [('split','The book and Blackboard'),('anatomy','How a module is built'),('design','Design commitments'),('teaching','Teaching with the book'),('grading','Grading Mile Markers'),('current','Keeping the book current'),('assessment','Course-level assessment'),('reporting','Using the maps')]),
