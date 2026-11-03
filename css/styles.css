@@ -1651,3 +1651,9 @@ html.gated body { background: var(--navy); }
 .mm-look { margin: 10px 0 0; font-size: .92rem; color: var(--muted); }
 @media print { body.mm-printing .mm-guide { display: none !important; } body.mm-printing .mm-qblock { border-left: 0; padding-left: 0; } }
 .rubric.scale thead th:first-child, .rubric.scale tbody th { width: 84px; }
+.lib { width: 100%; border-collapse: collapse; }
+.lib th, .lib td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+.lib thead th { background: var(--navy); color: #fff; font-size: .85rem; }
+.lib tbody th { width: 40%; font-weight: 700; color: var(--navy); }
+.plain-list { list-style: none; margin: 0; padding: 0; }
+.plain-list li { margin: 2px 0 6px; }
