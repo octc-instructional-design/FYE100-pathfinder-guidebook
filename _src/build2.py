@@ -251,7 +251,7 @@ CHAPTERS = [
    ('trail-tip-financial-aid.html','Trail Tip','Financial Aid at OCTC',"The presentation, the steps to get and keep your aid, and who to ask.",8,
      [('presentation','The presentation'),('steps','Getting and keeping your aid'),('sap','Two numbers to watch'),('ask-first','Ask before you change'),('links','Where to find more')]),
    ('mile-marker.html','Mile Marker','Mile Marker #5: Understanding My Money',"The assignment, with support, and a form you can fill in and save.",20,
-     [('questions','The questions'),('ai-partner','AI thinking partner'),('scoring',"How it's scored"),('form','Fill in and save')]),
+     [('steps',"What you'll do"),('form','Your Mile Marker'),('submit','Submit it')]),
    ('wrap-up.html','Wrap Up','Module 5 Wrap Up',"Pull it together before you head back to your course.",2,
      [('takeaways','Key takeaways')]),
   ],
