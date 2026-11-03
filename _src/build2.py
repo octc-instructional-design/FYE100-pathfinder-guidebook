@@ -1029,6 +1029,8 @@ GUIDES = [
   ] + [(f'teach-{n:02d}.html','Teach',f'Module {n}: {t}',"Slides, coaching notes, active learning ideas, and an in-class discussion.",None,
         [('glance','At a glance'),('slides','Slides'),('coaching','Coaching notes'),('activities','Active learning ideas'),('discussion','In-class discussion')])
        for n, t in TEACH_MODS] + [
+   ('printables.html','7','Printables Library',"Every printable for in-person classes, by module.",None,
+     [('modules','By module'),('capstone','STAR(T) practice guides'),('using','Using the printables')]),
    ('course-notes.html','Notes','Course Notes',"What's open, what's decided, and ideas for next semester.",None,
      [('open','Open items'),('decisions','Decisions'),('ideas','Ideas for next semester')]),
    ('results-in-action.html','Notes','Results in Action',"What each Inventory showed, and what changed in the course because of it.",6,

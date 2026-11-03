@@ -1632,3 +1632,9 @@ html.gated body { background: var(--navy); }
 .gc-lock.is-open { background: var(--accent-soft); color: var(--accent-ink); border-color: #9fd6ee; }
 .gc-lock.is-open .lock-shut { display: none; }
 .gc-lock.is-open .lock-open { display: block; }
+.lib { width: 100%; border-collapse: collapse; }
+.lib th, .lib td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+.lib thead th { background: var(--navy); color: #fff; font-size: .85rem; }
+.lib tbody th { width: 40%; font-weight: 700; color: var(--navy); }
+.plain-list { list-style: none; margin: 0; padding: 0; }
+.plain-list li { margin: 2px 0 6px; }
