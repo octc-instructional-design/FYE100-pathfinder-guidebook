@@ -1632,3 +1632,21 @@ html.gated body { background: var(--navy); }
 .gc-lock.is-open { background: var(--accent-soft); color: var(--accent-ink); border-color: #9fd6ee; }
 .gc-lock.is-open .lock-shut { display: none; }
 .gc-lock.is-open .lock-open { display: block; }
+
+/* ---------- Mile Marker template (preview) ---------- */
+.mm-steps { border: 2px solid var(--navy); border-radius: var(--radius); padding: 18px 22px; background: #fff; }
+.mm-steplist { margin: 6px 0 0; padding-left: 1.4em; }
+.mm-steplist > li { margin: 0 0 .5em; }
+.mm-checks { list-style: none; margin: 6px 0 2px; padding: 0; }
+.mm-checks li { position: relative; padding-left: 28px; margin: 4px 0; }
+.mm-checks li::before { content: ""; position: absolute; left: 0; top: .2em; width: 16px; height: 16px; border: 2px solid var(--navy); border-radius: 4px; }
+.mm-qblock { border-left: 6px solid var(--gold); padding: 4px 0 4px 18px; margin-bottom: 34px; }
+.mm-qblock > legend { font-size: 1.15rem; }
+.mm-qblock .mm-prompt { margin: 2px 0 4px; }
+.mm-qblock .mm-strong { margin: 8px 0 6px; }
+.mm-think { margin: 10px 0 4px; padding: 10px 14px; border: 1px dashed #9aa9b7; border-radius: 10px; color: #34414d; }
+.mm-think-label { display: block; font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #5a6672; }
+.mm-think-note { text-transform: none; letter-spacing: 0; font-weight: 600; }
+.mm-think ul { margin: 4px 0 0; padding-left: 1.2em; }
+.mm-look { margin: 10px 0 0; font-size: .92rem; color: var(--muted); }
+@media print { body.mm-printing .mm-guide { display: none !important; } body.mm-printing .mm-qblock { border-left: 0; padding-left: 0; } }

@@ -192,7 +192,7 @@ CHAPTERS = [
    ('3-6.html','3.6','Your Brain, Your Way',"Some brains work differently. That's not a flaw, but it does matter.",9,
      [('means','What neurodivergence means'),('challenges','Executive function'),('strategies','Strategies'),('support','Support at OCTC')]),
    ('mile-marker.html','Mile Marker','Mile Marker #3: Managing My Time &amp; Energy',"The assignment, with support, and a form you can fill in and save.",25,
-     [('questions','The questions'),('ai-partner','AI thinking partner'),('scoring',"How it's scored"),('form','Fill in and save')]),
+     [('steps',"What you'll do"),('form','Your Mile Marker'),('submit','Submit it')]),
    ('wrap-up.html','Wrap Up','Module 3 Wrap Up',"Pull it together before you head back to your course.",2,
      [('takeaways','Key takeaways')]),
   ],
