@@ -91,7 +91,7 @@ build({
   work: { title: 'Due Monday by 11:59 PM Central',
     items: [['LuClipboardCheck', 'Task: Appreciative Advising Inventory', 'A short inventory. Completion only.'],
             ['LuFlag', 'Mile Marker #5: Understanding My Money', 'Five questions. No dollar amounts needed.'],
-            ['LuMessagesSquare', 'Online sections: Money Tip discussion', 'First post Friday, replies Monday']],
+            ['LuMessagesSquare', 'Online sections: Money Tip discussion', 'Post by Monday. Replies optional.']],
     // semester-specific form link lives in term.json
     qr: Object.assign({ label: 'Scan for the Inventory' }, TERM.aai) },
 
@@ -120,7 +120,7 @@ build({
       Everything is due Monday by 11:59 PM Central.
       The Appreciative Advising Inventory is a short inventory, completion only. Scan the code on this slide to open it; it's this semester's shared form for all FYE 100 sections. What students say in it shapes the course; the Instructor Guide's Results in Action page shows what changed because of it.
       Mile Marker #5 is the main assignment, with no dollar amounts required.
-      Online sections: the money tip discussion. First post by Friday, replies by Monday. In-person sections: today's attendance counts.`,
+      Online sections: the money tip discussion. Post your tip by Monday. Replies are optional, but encouraged. In-person sections: today's attendance counts.`,
     mm: `
       Mile Marker #5 has five questions, and none of them needs a dollar amount.
       One: what you noticed from the Dollar Tracker, what surprised you or confirmed a hunch. Two: your financial situation, described honestly for clarity, not judgment. Three: one small, realistic thing you'll do differently, or keep doing. Four: your zero-based budget from the Budget Builder, described without amounts. Five: if you used AI, what you left out to protect your privacy. If you didn't use AI, say so.
