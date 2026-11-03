@@ -127,7 +127,7 @@ CHAPTERS = [
    ('trail-tip.html','Trail Tip','Your Free Office 365 Access',"As a KCTCS student, you already have the full Microsoft Office suite. Here's how to get it.",2,
      [('computer','PC or Mac'),('phone','Phone or tablet'),('included',"What's included")]),
    ('mile-marker.html','Mile Marker','Mile Marker #1: My Starting Point',"The assignment, with support, and a form you can fill in and save.",20,
-     [('questions','The questions'),('ai-partner','AI thinking partner'),('scoring',"How it's scored"),('form','Fill in and save')]),
+     [('steps',"What you'll do"),('form','Your Mile Marker'),('submit','Submit it')]),
    ('wrap-up.html','Wrap Up','Module 1 Wrap Up',"Pull it together before you head back to your course.",2,
      [('takeaways','Key takeaways')]),
   ],
