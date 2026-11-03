@@ -222,7 +222,7 @@ CHAPTERS = [
    ('trail-tip-recording.html','Trail Tip','Recording in the Classroom',"Technology made recording easy. That doesn't make it automatic.",6,
      [('principles','Three principles'),('ai-notetakers','AI note-takers')]),
    ('mile-marker.html','Mile Marker','Mile Marker #4: My Academic Toolkit',"The assignment, with support, and a form you can fill in and save.",20,
-     [('questions','The questions'),('ai-partner','AI thinking partner'),('scoring',"How it's scored"),('form','Fill in and save')]),
+     [('steps',"What you'll do"),('form','Your Mile Marker'),('submit','Submit it')]),
    ('wrap-up.html','Wrap Up','Module 4 Wrap Up',"Pull it together before you head back to your course.",2,
      [('takeaways','Key takeaways')]),
   ],
