@@ -165,8 +165,8 @@ build({
     side: [{ text: 'AI use: AI-supported', options: { bold: true, color: '7A5500', breakLine: true } },
            { text: 'Use AI to think it through. Write it in your own words.', options: { breakLine: true } },
            { text: ' ', options: { breakLine: true, fontSize: 10 } },
-           { text: 'Prefer paper?', options: { bold: true, color: '7A5500', breakLine: true } },
-           { text: 'A printable handout is with the assignment in Blackboard.' }] },
+           { text: 'Start with your coach.', options: { bold: true, color: '7A5500', breakLine: true } },
+           { text: 'Question 1 needs your Success Coach by name, so finish Task #2 first.' }] },
 
 
   notes: {
@@ -193,7 +193,7 @@ build({
       Two: two specific ways you'll use that network. Not "I'll reach out when I need help." When, how, and for what.
       Three: one campus resource you haven't used yet, why it matters for you, and one next step.
       AI use is AI-supported: you can use AI to think it through, but the writing is yours. There's an optional AI thinking partner prompt on the Mile Marker page in the guidebook.
-      The guidebook has a fill-in form that saves a PDF, and there's a printable handout in Blackboard if you'd rather write by hand.`,
+      The guidebook has a fill-in form that saves a PDF. In-person sections: I may give you a printed copy to fill in by hand, then upload a photo or scan.`,
     disc: `
       In-person discussion. This mirrors the AI Chat question, so it's a good warm-up for it.
       Pairs for about three minutes, then ask two or three people to share one idea with the room.
