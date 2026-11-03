@@ -1285,7 +1285,7 @@ def build_guide(g):
 
 
 # ------------------------------------------------------------------ help page
-HELP_SECS=[('split','The book and Blackboard'),('module','How each module is laid out'),('save','Keep your work safe'),('scoring','How Mile Markers are scored'),('ai','AI use labels'),('around','Getting around'),('guides','The guides'),('access','Reading your way')]
+HELP_SECS=[('split','The book and Blackboard'),('module','How each module is laid out'),('reading',"You don't have to read every word"),('save','Keep your work safe'),('scoring','How Mile Markers are scored'),('ai','AI use labels'),('around','Getting around'),('guides','The guides'),('access','Reading your way')]
 def build_help():
     d = ROOT/'chapters/help'; d.mkdir(parents=True, exist_ok=True)
     body = tokens((HERE/'bodies/help/how-to-use.html').read_text())
