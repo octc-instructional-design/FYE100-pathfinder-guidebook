@@ -954,8 +954,8 @@ GUIDES = [
   intro=["Merit activities run through the whole course, from setting up your Merit page early on to your third activity near the end. This guide keeps everything about them in one place, so you can come back to it whenever you need it.",
          "Whether you take classes on campus or online, you'll find a path that works for you."],
   lessons=[
-   ('how-it-works.html','1','How Merit Works in FYE 100',"Three activities, paced across the course.",4,
-     [('three','Three activities'),('steps','Start to finish'),('counts','What counts'),('why','Why it matters')]),
+   ('how-it-works.html','1','How Merit Works in FYE 100',"The requirement, what it's worth, and three activities paced across the course.",5,
+     [('required','The requirement'),('three','Three activities'),('steps','Start to finish'),('counts','What counts'),('why','Why it matters')]),
    ('setup.html','2','Setting Up Your Merit Page',"Your Merit page is your official record of involvement and achievement at OCTC.",5,
      [('why-merit','What Merit does for you'),('setup','Set up your page'),('links','Helpful links')]),
    ('find-activity.html','3','Find Your Activity',"On campus, online, or in your community.",5,

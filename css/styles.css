@@ -504,6 +504,11 @@ footer .inner { max-width: 1320px; margin: 0 auto; padding: 0 16px; display: fle
 
 /* Optional badge, warnings, done line, URL example, link list */
 .opt-badge { display: inline-block; margin-bottom: 14px; background: var(--navy); color: var(--gold); font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; border-radius: 999px; padding: 4px 12px; }
+.stakes { margin-top: 18px; border: 2px solid #b0306f; border-left-width: 8px; background: #fdeef5; border-radius: 12px; padding: 16px 20px; }
+.stakes-label { font-size: .82rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #8a1d56; margin: 0 0 6px !important; }
+.stakes p { margin: 0 0 .6em; }
+.stakes p:last-child { margin: 0; }
+@media print { .stakes { break-inside: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
 .warn { border: 2px solid #b3261e; border-left-width: 8px; background: #fdf1ef; border-radius: 12px; padding: 16px 20px; }
 .warn .label { display: flex; align-items: center; gap: 8px; font-size: .82rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #8b1a14; margin-bottom: 6px; }
 .warn p { margin: 0 0 .6em; }
