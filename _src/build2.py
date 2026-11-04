@@ -505,11 +505,11 @@ FOOT = f'''
 <footer>
   <div class="inner">
     <span>FYE 100: Strategies for College Success</span>
-    <span class="edition">{EDITION} · Updated {UPDATED}</span>
     <span>Owensboro Community &amp; Technical College</span>
   </div>
-  <div class="inner">
+  <div class="inner foot-low">
     <p class="eeo">The Kentucky Community and Technical College System is an equal educational and employment opportunity institution and does not discriminate on the basis of race, religion, color, sex, gender identity, gender presentation, national origin, age, disability, family medical history, or genetic information. Further, we vigilantly prevent discrimination based on sexual orientation, parental status, marital status, political affiliation, military service, or any other non-merit based factor.</p>
+    <span class="edition">{EDITION} · Updated {UPDATED}</span>
   </div>
 </footer>
 </body>

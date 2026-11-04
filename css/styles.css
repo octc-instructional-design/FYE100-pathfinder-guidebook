@@ -1681,3 +1681,7 @@ html.gated body { background: var(--navy); }
 .print-tile svg { width: 28px; height: 28px; flex: none; }
 .print-tile .pt-icon svg { width: 30px; height: 30px; }
 @media (max-width: 560px) { .print-tile { grid-template-columns: 44px 1fr; } .print-tile .pt-icon { width: 44px; height: 44px; } .print-tile .pt-go { display: none; } }
+
+footer .foot-low { align-items: flex-end; }
+footer .edition { margin-left: auto; font-size: .8rem; white-space: nowrap; opacity: .9; }
+@media (max-width: 700px) { footer .edition { margin-left: 0; white-space: normal; } }
