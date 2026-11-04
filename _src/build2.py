@@ -495,10 +495,15 @@ def bookbar(depth, where):
 </header>
 '''
 
-FOOT = '''
+EDITION = 'Spring 2027 edition'   # change once a term
+import datetime as _dt, zoneinfo as _zi
+_today = _dt.datetime.now(_zi.ZoneInfo('America/Chicago')).date()
+UPDATED = f"{_today:%B} {_today.day}, {_today.year}"
+FOOT = f'''
 <footer>
   <div class="inner">
     <span>FYE 100: Strategies for College Success</span>
+    <span class="edition">{EDITION} · Updated {UPDATED}</span>
     <span>Owensboro Community &amp; Technical College</span>
   </div>
   <div class="inner">
