@@ -308,7 +308,7 @@ CHAPTERS = [
    ('7-3.html','7.3','What Are Strengths, and Why Do They Matter?',"Not just what you're good at. What feels like you at your best.",9,
      [('real-life','In real life'),('baseline','A quick baseline'),('take','Take HIGH5'),('mean','What results mean'),('blind','Blind spots'),('ai-strengths','AI and your results')]),
    ('mile-marker.html','Mile Marker','Mile Marker #7: My Strengths Snapshot',"The assignment, with support, and a form you can fill in and save.",20,
-     [('questions','The questions'),('ai-partner','AI thinking partner'),('scoring',"How it's scored"),('form','Fill in and save')]),
+     [('steps',"What you'll do"),('form','Your Mile Marker'),('submit','Submit it')]),
    ('wrap-up.html','Wrap Up','Module 7 Wrap Up',"Pull it together before you head back to your course.",2,
      [('takeaways','Key takeaways')]),
   ],
