@@ -1124,6 +1124,7 @@ def star_practice(s):
 {head_coin}        <p class="lede">{s['sub']}</p>
         <p>{s['what']}</p>
         <p>This is practice, and it isn't graded. Draft your story here, see how long it runs out loud, then record it or copy it into the matching STAR(T) Stories portal in Blackboard.</p>
+        <a class="start-btn jump-btn" href="#form">Jump to the fillable form [[down]]</a>
       </div>
       <div class="note-col">
         <div class="note note-see">
