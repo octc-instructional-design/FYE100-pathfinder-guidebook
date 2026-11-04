@@ -1669,3 +1669,13 @@ html.gated body { background: var(--navy); }
 .lib tbody th { width: 40%; font-weight: 700; color: var(--navy); }
 .plain-list { list-style: none; margin: 0; padding: 0; }
 .plain-list li { margin: 2px 0 6px; }
+
+/* Printable Library tile on the home Contents */
+.print-tile { display: grid; grid-template-columns: 56px 1fr auto; gap: 16px; align-items: center; margin-top: 24px; padding: 18px 22px; background: #fff8e6; border: 2px solid #e7a614; border-left: 8px solid #e7a614; border-radius: 12px; text-decoration: none; color: var(--ink); }
+.print-tile:hover { background: #fff1cc; }
+.print-tile:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.print-tile .pt-icon { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: #00467f; color: #fff; }
+.print-tile .pt-title { display: block; font-size: 1.15rem; font-weight: 800; color: #00467f; }
+.print-tile .pt-desc { display: block; font-size: .95rem; color: var(--muted); }
+.print-tile .pt-go { color: #00467f; }
+@media (max-width: 560px) { .print-tile { grid-template-columns: 44px 1fr; } .print-tile .pt-icon { width: 44px; height: 44px; } .print-tile .pt-go { display: none; } }

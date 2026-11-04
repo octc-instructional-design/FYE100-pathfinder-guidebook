@@ -97,6 +97,8 @@ TEACH_MODS = []  # (n, title) for modules with _src/teach/mNN.json; filled after
 
 def tokens(t):
     t = t.replace('[[rubric]]', RUBRIC)
+    for aud in ('student', 'instructor'):
+        if f'[[printlib-{aud}]]' in t: t = t.replace(f'[[printlib-{aud}]]', printlib_html(aud))
     for k, v in TOK.items(): t = t.replace(f'[[{k}]]', v)
     assert '[[' not in t, t[t.index('[['):t.index('[[')+30]
     return t
@@ -1031,7 +1033,7 @@ GUIDES = [
   ] + [(f'teach-{n:02d}.html','Teach',f'Module {n}: {t}',"Slides, coaching notes, active learning ideas, and an in-class discussion.",None,
         [('glance','At a glance'),('slides','Slides'),('coaching','Coaching notes'),('activities','Active learning ideas'),('discussion','In-class discussion')])
        for n, t in TEACH_MODS] + [
-   ('printables.html','7','Printables Library',"Every printable for in-person classes, by module.",None,
+   ('printables.html','7','Printables Library',"Every printable for class, by module, plus other course documents.",None,
      [('modules','By module'),('capstone','STAR(T) practice guides'),('other','Other course documents'),('using','Using the printables')]),
    ('course-notes.html','Notes','Course Notes',"What's open, what's decided, and ideas for next semester.",None,
      [('open','Open items'),('decisions','Decisions'),('ideas','Ideas for next semester')]),
@@ -1295,6 +1297,92 @@ def build_guide(g):
     write(d/'index.html', opener)
 
 
+
+# ------------------------------------------------------------------ printable library (shared list)
+import printables as PL
+def printlib_html(aud):
+    up = '../../downloads/printables/'
+    def a(f, label):
+        return f'<a href="{up}{f}.pdf" target="_blank" rel="noopener">{label} (PDF)<span class="sr-only">, opens in a new tab</span></a>'
+    titles = {c['n']: c['title'] for c in CHAPTERS}
+    rows = '\n'.join(f'              <tr><th scope="row">Module {n}: {titles.get(n, "")}</th><td><ul class="plain-list">' + ''.join(f'<li>{a(f,l)}</li>' for f,l in items) + '</ul></td></tr>' for n, items in PL.BY_MODULE.items())
+    mod_intro = ('Each module\'s Trail Tools come first, in the order you use them, then the Mile Marker.' if aud == 'student'
+                 else 'Each module\'s Trail Tools come first, in the order students use them, then the Mile Marker.')
+    star_intro = ('One for each capstone story. Fill one in to cover all five steps, then record your story or upload the guide as your written version.' if aud == 'student'
+                  else 'One per capstone story. Students can practice on paper in class, then draft or record their stories from there.')
+    docs_intro = ('Course documents you\'ll also find in Blackboard.' if aud == 'student'
+                  else 'Documents that also live in the Blackboard shell, kept here so you can print or share them from one place.')
+    docs = ''.join(f'<li>{a(f,l)}: {sn if aud=="student" else inn}</li>' for f,l,sn,inn,stu in PL.DOCS if stu or aud != 'student')
+    star = ''.join(f'<li>{a(f,l)}</li>' for f,l in PL.STAR)
+    return f"""    <section id="modules" aria-labelledby="mods-h">
+      <div class="row">
+        <div class="main">
+          <div class="h2wrap"><h2 id="mods-h">By module</h2></div>
+          <p>{mod_intro}</p>
+        </div>
+      </div>
+      <div class="row gap-sm">
+        <div class="main">
+          <table class="lib">
+            <caption class="sr-only">Printables by module</caption>
+            <thead><tr><th scope="col">Module</th><th scope="col">Printables</th></tr></thead>
+            <tbody>
+{rows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <span class="rest" aria-hidden="true"></span>
+
+    <section id="capstone" aria-labelledby="cap-h">
+      <div class="row">
+        <div class="main">
+          <div class="h2wrap"><h2 id="cap-h">STAR(T) Stories practice guides</h2></div>
+          <p>{star_intro}</p>
+          <ul class="plain-list">{star}</ul>
+        </div>
+      </div>
+    </section>
+
+    <span class="rest" aria-hidden="true"></span>
+
+    <section id="other" aria-labelledby="other-h">
+      <div class="row">
+        <div class="main">
+          <div class="h2wrap"><h2 id="other-h">Other course documents</h2></div>
+          <p>{docs_intro}</p>
+          <ul class="plain-list">{docs}</ul>
+        </div>
+      </div>
+    </section>"""
+
+PRINT_SECS=[('modules','By module'),('capstone','STAR(T) practice guides'),('other','Other course documents'),('using','Using a printable')]
+def build_printables():
+    d = ROOT/'chapters/printables'; d.mkdir(parents=True, exist_ok=True)
+    body = tokens((HERE/'bodies/printables/library.html').read_text())
+    toc = ''.join(f'<li><a href="#{i}">{t}</a></li>' for i,t in PRINT_SECS)
+    page = head(f'Printable Library | {BOOK}', 2) + bookbar(2, 'Printable Library') + f"""
+<div class="shell solo">
+  <main id="main" class="reading">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../index.html">Home</a></li>
+        <li><span aria-current="page">Printable Library</span></li>
+      </ol>
+    </nav>
+    <div class="row">
+      <div class="main">
+        <span class="lesson-kicker">Prefer paper?</span>
+        <h1>Printable Library</h1>
+        <p class="lesson-sub">Every Mile Marker, Trail Tool, and STAR(T) practice guide as a fillable PDF.</p>
+      </div>
+    </div>
+    <div class="row gap-sm"><div class="main"><nav class="page-toc" aria-label="On this page"><span class="pt-label">On this page</span><ul>{toc}</ul></nav></div></div>
+""" + body + '  </main>\n</div>\n' + FOOT
+    write(d/'index.html', page)
+
 # ------------------------------------------------------------------ help page
 HELP_SECS=[('split','The book and Blackboard'),('module','How each module is laid out'),('reading',"You don't have to read every word"),('save','Keep your work safe'),('scoring','How Mile Markers are scored'),('ai','AI use labels'),('around','Getting around'),('guides','The guides'),('access','Reading your way')]
 def build_help():
@@ -1322,6 +1410,7 @@ def build_help():
     write(d/'index.html', page)
 
 # ------------------------------------------------------------------ home
+ICON_PRINTER = '<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></svg>'
 def build_home():
     toc = []
     for ch in CHAPTERS:
@@ -1378,6 +1467,11 @@ def build_home():
     <ol class="toc">
 {chr(10).join(toc)}
     </ol>
+    <a class="print-tile" href="chapters/printables/index.html">
+      <span class="pt-icon" aria-hidden="true">{ICON_PRINTER}</span>
+      <span><span class="pt-title">Printable Library</span><span class="pt-desc">Every Mile Marker, Trail Tool, and STAR(T) practice guide as a fillable PDF. Print it, or type into it and save.</span></span>
+      <span class="pt-go" aria-hidden="true">{TOK['next']}</span>
+    </a>
     <div class="offline" role="group" aria-labelledby="offline-h">
       <h3 id="offline-h">Take the book with you</h3>
       <p>Prefer to read offline or on paper? Download the whole book: How to Use This Book, all 12 modules, and the Merit and STAR(T) Stories guides. The website always has the newest version and the fill-in forms.</p>
@@ -1405,5 +1499,6 @@ INSTR = instructor.pages(CHAPTERS, LATER, ESSENTIAL, HERE)
 for ch in CHAPTERS: build_chapter(ch)
 for g in GUIDES: build_guide(g)
 build_help()
+build_printables()
 build_home()
 print('built', [c['n'] for c in CHAPTERS])
