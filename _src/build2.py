@@ -3,7 +3,9 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 65
+import hashlib
+# cache-buster: changes whenever styles.css or book.js changes, so browsers never keep stale styles
+V = hashlib.sha1((ROOT/'css/styles.css').read_bytes() + (ROOT/'js/book.js').read_bytes()).hexdigest()[:8]
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
