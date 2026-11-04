@@ -989,8 +989,8 @@ GUIDES = [
     <span class="rest wide" aria-hidden="true"></span>
 ''',
   lessons=[
-   ('the-assignment.html','1','Your Capstone Assignment',"What you'll turn in, how to submit it, and how it's scored.",4,
-     [('what',"What you'll turn in"),('how','How to turn it in'),('when',"How you'll build it"),('scored',"How it's scored"),('start','Where to start')]),
+   ('the-assignment.html','1','Your Capstone Assignment',"Why it matters, what you'll turn in, and how it's scored.",5,
+     [('why','Why it matters'),('what',"What you'll turn in"),('how','How to turn it in'),('when',"How you'll build it"),('scored',"How it's scored"),('start','Where to start')]),
    ('the-framework.html','2','The STAR(T) Framework',"Five steps for telling the story of a skill you've actually built.",6,
      [('steps','The five steps'),('example','What it looks like')]),
    ('find-your-stories.html','3','Find Your Stories',"Four skills, four true stories. Here's how to pick them.",10,
