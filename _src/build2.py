@@ -973,7 +973,7 @@ GUIDES = [
   desc="Your capstone: four true stories that show four Essential Skills. The framework, how to find your stories, how to record them, and a practice guide for each.",
   tagline="Anyone can claim a skill. Your stories show it.",
   intro=["Your capstone for FYE 100 is four STAR(T) Stories: short, true stories about times you showed four of the 10 Essential Skills. Each one follows the same five steps: Situation, Task, Action, Result, and Transfer.",
-         "You can record your stories or type them. Recording is strongly encouraged, because \"Tell me about a time when...\" is exactly what you'll hear in job interviews, and telling your story out loud now is the best practice you can get. Recordings are never scored on delivery, only on the story and its structure."],
+         "You can record your stories, video or audio only, or write them. Recording is strongly encouraged, because \"Tell me about a time when...\" is exactly what you'll hear in job interviews, and telling your story out loud now is the best practice you can get. Recordings are never scored on delivery, only on the story and its structure."],
   extra='''    <section aria-labelledby="four-h" class="row wide">
       <div class="main">
         <div class="h2wrap"><h2 id="four-h">Your four stories</h2></div>
@@ -1123,7 +1123,7 @@ def star_practice(s):
       <div class="main">
 {head_coin}        <p class="lede">{s['sub']}</p>
         <p>{s['what']}</p>
-        <p>This is practice, and it isn't graded. Draft your story here, see how long it runs out loud, then record it, or save it as a PDF and upload it to the matching STAR(T) Stories portal in Blackboard.</p>
+        <p>This is practice, and it isn't graded. Draft your story here, see how long it runs out loud, then record it (strongly encouraged). Writing yours instead? Use this form so you cover all five steps, save it as a PDF, and upload it to the matching STAR(T) Stories portal in Blackboard.</p>
         <a class="start-btn jump-btn" href="#form">Jump to the fillable form [[down]]</a>
       </div>
       <div class="note-col">
@@ -1200,7 +1200,7 @@ def star_practice(s):
               <button type="button" class="start-btn mm-save">Save as PDF [[download]]</button>
               <button type="button" class="mm-clear">Clear my answers</button>
             </div>
-            <p class="mm-how">In the print window, choose <strong>Save as PDF</strong> (or <strong>Microsoft Print to PDF</strong>) as the printer. Submitting in writing? Upload the PDF to the matching STAR(T) Stories portal.</p>
+            <p class="mm-how">In the print window, choose <strong>Save as PDF</strong> (or <strong>Microsoft Print to PDF</strong>) as the printer. Submitting a written story? Upload this PDF to the matching STAR(T) Stories portal.</p>
           </form>
         </div>
       </div>
