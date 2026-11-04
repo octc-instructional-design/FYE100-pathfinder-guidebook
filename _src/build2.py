@@ -1123,7 +1123,7 @@ def star_practice(s):
       <div class="main">
 {head_coin}        <p class="lede">{s['sub']}</p>
         <p>{s['what']}</p>
-        <p>This is practice, and it isn't graded. Draft your story here, see how long it runs out loud, then record it or copy it into the matching STAR(T) Stories portal in Blackboard.</p>
+        <p>This is practice, and it isn't graded. Draft your story here, see how long it runs out loud, then record it, or save it as a PDF and upload it to the matching STAR(T) Stories portal in Blackboard.</p>
         <a class="start-btn jump-btn" href="#form">Jump to the fillable form [[down]]</a>
       </div>
       <div class="note-col">
@@ -1197,11 +1197,10 @@ def star_practice(s):
               <textarea id="{pre}-generic" data-save rows="2"></textarea>
             </fieldset>
             <div class="mm-actions">
-              <button type="button" class="start-btn" data-copy="{k}" data-copy-labels{copypre} aria-describedby="{pre}-copy-status">Copy my story</button>
-              <button type="button" class="mm-save">Save as PDF [[download]]</button>
+              <button type="button" class="start-btn mm-save">Save as PDF [[download]]</button>
               <button type="button" class="mm-clear">Clear my answers</button>
             </div>
-            <p class="mm-how" id="{pre}-copy-status" aria-live="polite">"Copy my story" copies your five steps, labeled, ready to paste into the STAR(T) Stories portal if you're submitting in writing.</p>
+            <p class="mm-how">In the print window, choose <strong>Save as PDF</strong> (or <strong>Microsoft Print to PDF</strong>) as the printer. Submitting in writing? Upload the PDF to the matching STAR(T) Stories portal.</p>
           </form>
         </div>
       </div>
