@@ -65,7 +65,7 @@ build({
 
   mm: { title: 'My Story to Share',
     qs: [['Growth: two or three ways you\'ve grown'], ['Lessons learned, and one habit you\'ll keep'],
-         ['Words of wisdom for Week 1 you'], ['Still growing: one area, and a next step']],
+         ['Words of wisdom for who you were in the first week'], ['Still growing: one area, and a next step']],
     side: [{ text: 'AI use: AI-supported', options: { bold: true, color: '7A5500', breakLine: true } },
            { text: 'AI wasn\'t there for your semester. You were.', options: { breakLine: true } },
            { text: ' ', options: { breakLine: true, fontSize: 10 } },
@@ -93,7 +93,7 @@ build({
       Mile Marker #12 is the final reflection, four questions.
       One, growth: open Mile Marker #1 and compare. Two or three specific ways you've grown, academically, personally, or professionally. If your thinking about AI changed, you can include that.
       Two, lessons learned: what you wish you'd known at the start, and one habit, strategy, or tool you'll keep using.
-      Three, words of wisdom: a short message to your Week 1 self, or to a future FYE 100 student.
+      Three, words of wisdom: a short message to who you were in the first week, or to a future FYE 100 student.
       Four, still growing: one area where you still want to grow, and one concrete next step.
       It's AI-supported: AI can ask questions that help you remember, but it wasn't there for your semester. The guidebook has an optional AI thinking partner interview prompt.`,
     disc: `
