@@ -1137,11 +1137,17 @@ img.merit-badge { width: 44px; height: 44px; border-radius: 0; background: none;
 .merit-paths .card-head { background: #16687a; }
 .path-for { font-size: .92rem; color: var(--muted); font-style: italic; }
 .path-proof { margin-top: 10px !important; padding-top: 10px; border-top: 1px solid var(--border); font-size: .95rem; }
-.od-list { display: grid; gap: 14px; }
-.od-card { border: 1px solid var(--border); border-left: 6px solid #16687a; border-radius: 12px; padding: 16px 20px; background: #fff; }
-.od-card h3 { font-size: 1.1rem; margin-bottom: 0; }
-.od-who { font-size: .9rem; color: var(--muted); margin: 0 0 8px; }
-.od-card p:last-child { margin-bottom: 0; }
+.od-list { display: grid; gap: 10px; }
+.od-topic { font-size: .8rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #16687a; margin: 18px 0 0; }
+.od-topic:first-child { margin-top: 0; }
+.od-card { border: 1px solid var(--border); border-left: 6px solid #16687a; border-radius: 10px; padding: 12px 18px; background: #fff; }
+.od-card h4 { font-size: 1.05rem; margin: 0; }
+.od-who { font-size: .85rem; color: var(--muted); margin: 0 0 4px; }
+.od-card > p { margin: 0 0 6px; line-height: 1.55; }
+.od-more summary { cursor: pointer; font-size: .9rem; font-weight: 700; color: var(--blue); }
+.od-more summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
+.od-more p { margin: 6px 0 0; font-size: .95rem; }
+@media print { .od-more > p { display: block; } }
 .wc-box { margin-top: 14px; border: 2px solid var(--border); border-radius: 10px; padding: 10px 14px; background: #f7fafc; }
 .wc-box p { margin: 0; }
 .wc-line { font-weight: 700; color: var(--navy); }

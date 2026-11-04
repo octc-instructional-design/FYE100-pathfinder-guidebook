@@ -1042,15 +1042,22 @@ GUIDES = [
 
 
 def ondemand_html():
+    groups={}
+    for o in MERIT_OPTIONS: groups.setdefault(o.get('topic','More options'),[]).append(o)
     out=['          <div class="od-list">']
-    for o in MERIT_OPTIONS:
-        link = f'\n              <p><a href="{o["link"]}">{o.get("linktext", "Learn more")}</a></p>' if o.get('link') else ''
-        out.append(f"""            <article class="od-card">
-              <h3>{o['title']}</h3>
-              <p class="od-who">{o['who']}</p>
+    for topic,items in groups.items():
+        out.append(f'            <h3 class="od-topic">{topic}</h3>')
+        for o in items:
+            title = f'<a href="{o["link"]}">{o["title"]}</a>' if o.get('link') else o['title']
+            meta = ' · '.join(x for x in (o['who'], o.get('time','')) if x)
+            out.append(f"""            <article class="od-card">
+              <h4>{title}</h4>
+              <p class="od-who">{meta}</p>
               <p>{o['what']}</p>
-              <p><strong>How to find it:</strong> {o['how']}</p>
-              <p><strong>Proof:</strong> {o['proof']}</p>{link}
+              <details class="od-more"><summary>How to start and what to submit</summary>
+                <p><strong>How to start:</strong> {o['how']}</p>
+                <p><strong>Proof:</strong> {o['proof']}</p>
+              </details>
             </article>""")
     out.append('          </div>')
     return '\n'.join(out)
