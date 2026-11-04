@@ -281,7 +281,7 @@ CHAPTERS = [
    ('trail-tip-grades.html','Trail Tip','Wait... How Is My Grade Actually Calculated?',"Most students don't know. Now you will.",8,
      [('in-class','In a class'),('gpa','Your GPA'),('practice','Try it')]),
    ('mile-marker.html','Mile Marker','Mile Marker #6: My Academic Plan',"The assignment, with support, and a form you can fill in and save.",20,
-     [('questions','The questions'),('ai-partner','AI thinking partner'),('scoring',"How it's scored"),('form','Fill in and save')]),
+     [('steps',"What you'll do"),('form','Your Mile Marker'),('submit','Submit it')]),
    ('wrap-up.html','Wrap Up','Module 6 Wrap Up',"Pull it together before you head back to your course.",2,
      [('takeaways','Key takeaways')]),
   ],
