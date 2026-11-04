@@ -24,4 +24,11 @@ OPTIONS = [
          proof='A screenshot of the last screen of the orientation.',
          link='https://alt-5beddfe10b70f.blackboard.com/bbcswebdav/institution/KOOL_Training/Student%20Orientation/content/index.html?one_hash=ACD7EA11670AA61E8BE57DCCCDFC0042&amp;f_hash=13455CECB6D1CBCDC3FF1CAE187CD407#/',
          linktext='Start the KOOL Online Orientation'),
+    dict(title='GenAI Literacy 101 for Students',
+         who='AI for Education',
+         what='A free, self-paced course in five short interactive lessons: how generative AI works, how to prompt it well, how to spot its mistakes and stay safe, and how to write your own personal code for using it. Plan on about 2 hours.',
+         how='Open the course page from the link below and select Enroll Now. It is free.',
+         proof='A screenshot of your completed course, or your certificate if one is offered.',
+         link='https://www.aiforeducation.io/genai-literacy-101-for-students-course',
+         linktext='Go to GenAI Literacy 101 for Students'),
 ]
