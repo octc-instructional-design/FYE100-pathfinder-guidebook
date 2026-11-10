@@ -55,8 +55,12 @@ def extract(relpath, mode):
     main = soup.find('main')
     main.name = 'section'; main.attrs = {}
     for sel in ['.skillbar.slim', 'nav.crumbs', 'nav.pagenav', '.jump-btn', '.start-row', '.rest', '.banner-art',
-                '.mm-actions', '.mm-how', '.mm-err', '.mm-print-title', 'script', '.draft-flag', '.in-course']:
+                '.mm-actions', '.mm-how', '.mm-err', '.mm-print-title', 'script', '.draft-flag', '.in-course', '.end-links']:
         for el in main.select(sel): el.decompose()
+    # wrappers left empty once web-only pieces are gone (their margins can push a blank page into the PDF)
+    for div in reversed(main.find_all('div')):
+        if not div.get_text(strip=True) and not div.find(['img', 'table', 'input', 'textarea', 'select', 'hr']):
+            div.decompose()
     for el in main.select('.sr-only'):
         if 'opens in a new tab' in el.get_text(): el.decompose()
     for svg in main.find_all('svg'): svg.decompose()   # all icons are decorative (aria-hidden)

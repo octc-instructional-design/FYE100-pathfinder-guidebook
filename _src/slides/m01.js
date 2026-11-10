@@ -164,7 +164,7 @@ build({
         First thing to do: add a profile photo. Lesson 1.5 has the steps.
         Option: demo the course live, or point to the optional Syllabus and Blackboard Scavenger Hunt.` },
 
-    { kicker: 'Trail Tip', title: 'Your free Office 365',
+    { kicker: 'Trail Tip', title: 'Your free Microsoft Office 365',
       async draw(s, k) {
         await cards(s, k, [['LuFileText', 'Word', 'Papers and reports.'],
                            ['LuCloud', 'OneDrive', 'Your files, everywhere.'],
@@ -173,8 +173,8 @@ build({
         bar(s, k, 'Free on up to five devices while you\'re enrolled at KCTCS.', 5.45);
       },
       notes: `
-        Every KCTCS student in at least one class gets the full Office 365 suite free, on up to five devices: PC, Mac, phones, and tablets.
-        On a computer: sign in to your KCTCS Office 365 account and select Install Office. On a phone or tablet: install the Microsoft Office app and sign in with your student email.
+        Every KCTCS student in at least one class gets the full Microsoft Office 365 suite free, on up to five devices: PC, Mac, phones, and tablets.
+        On a computer: sign in to your KCTCS Microsoft Office 365 account and select Install Office. On a phone or tablet: install the Microsoft Office app and sign in with your student email.
         Four tools to know this semester: Word for papers, OneDrive so your files follow you, OneNote for notes and your AI trail, and Copilot, the AI assistant that comes with your student account.
         Trouble installing or signing in? OCTC Information Technology Services can help.` },
   ],

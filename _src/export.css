@@ -77,3 +77,5 @@ table.rubric { border-collapse: collapse; width: 100%; font-size: .92em; }
 }
 @page { size: letter; margin: 0.75in 0.8in; }
 .lesson-list { list-style: none; padding-left: 0; } .lesson-list li { margin: .45em 0; padding-left: .7em; border-left: 3px solid #3bb3e5; }
+h2.h-card { color: #00467f; font-size: 1.1em; margin: 1.1em 0 .3em; }
+.card-head h2.h-card { color: #fff; margin: 0; }

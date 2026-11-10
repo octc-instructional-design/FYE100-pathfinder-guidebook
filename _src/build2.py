@@ -128,7 +128,7 @@ CHAPTERS = [
      [('find','Where to find the rules'),('unclear',"When rules aren't clear"),('three-qs','The 3 Qs'),('trail','Keep a trail'),('resource','Take it with you')]),
    ('1-5.html','1.5','Getting Around Blackboard Ultra',"The basics you need to navigate your courses with confidence.",5,
      [('profile','Set up your profile'),('around','Find your way around'),('submit','Submit your work'),('discuss','Take part in discussions'),('feedback','Read feedback'),('loop','Stay in the loop')]),
-   ('trail-tip.html','Trail Tip','Your Free Office 365 Access',"As a KCTCS student, you already have the full Microsoft Office suite. Here's how to get it.",2,
+   ('trail-tip.html','Trail Tip','Your Free Microsoft Office 365 Access',"As a KCTCS student, you already have the full Microsoft Office suite. Here's how to get it.",2,
      [('computer','PC or Mac'),('phone','Phone or tablet'),('included',"What's included")]),
    ('mile-marker.html','Mile Marker','Mile Marker #1: My Starting Point',"The assignment, with support, and a form you can fill in and save.",20,
      [('steps',"What you'll do"),('form','Your Mile Marker'),('submit','Submit it')]),
@@ -202,7 +202,7 @@ CHAPTERS = [
   ],
   builds={'where-my-time-goes.html':'A','3-2.html':'B','my-week-at-a-glance.html':'B','3-3.html':'A, D','3-4.html':'A, D','3-5.html':'C','3-6.html':'D','mile-marker.html':'A, B, C, D'}),
  dict(n=4, title='Your Academic Toolkit',
-  desc="Study strategies grounded in how memory actually works, the SIFT method for evaluating information, and the tools you already have through Office 365.",
+  desc="Study strategies grounded in how memory actually works, the SIFT method for evaluating information, and the tools you already have through Microsoft Office 365.",
   tagline="The right tools make all the difference, but only if you know how to use them.",
   why=["You're surrounded by more information than any generation before you, and more of it is wrong, misleading, or designed to grab your attention rather than inform you.",
        "This module helps you build your academic toolkit: study strategies that actually work, a framework for evaluating what you read, and a direct look at where AI helps, and where it doesn't."],
@@ -213,7 +213,7 @@ CHAPTERS = [
               ("write one SMART goal for continuing a study strategy or academic habit this semester.", 'Mile Marker #4')],
   es=[6,10], be=['Honest','Critical','Responsible'], be_note='', merit=1,
   lessons=[
-   ('trail-tip.html','Trail Tip','Your Office 365 Academic Toolkit',"You already have powerful tools. Here's how to use them for school.",5,
+   ('trail-tip.html','Trail Tip','Your Microsoft Office 365 Academic Toolkit',"You already have powerful tools. Here's how to use them for school.",5,
      [('onenote','OneNote'),('onedrive','OneDrive'),('teams','Teams'),('copilot','Copilot')]),
    ('4-1.html','4.1','Skill Spotlight: Information Literacy',"Finding, evaluating, and responsibly using information to make good decisions.",5,
      [('what','What this skill is'),('headed',"Where you're headed"),('module','Where it shows up'),('life','In your own life'),('later','How it shows up later')]),
@@ -824,7 +824,7 @@ def merit_note(ch):
           <img class="merit-badge" src="../../images/shared/merit-badge.png" alt="" width="44" height="44">
           <div>
             <p class="merit-h">Merit reminder: Merit Activity #{m} is due with this module</p>
-            <p>Find an activity, then submit your reflection to the Merit Activity #{m} link in Blackboard. Check Blackboard for the due date. The <a href="../merit/index.html">Merit Guide</a> has your options, what proof to include, and how to write your reflection.</p>
+            <p>Find an activity, then submit your reflection to the Merit Activity #{m} submission portal in Blackboard. Check Blackboard for the due date. The <a href="../merit/index.html">Merit Guide</a> has your options, what proof to include, and how to write your reflection.</p>
           </div>
         </div>
       </div>
@@ -1141,7 +1141,7 @@ def star_practice(s):
       <div class="main">
 {head_coin}        <p class="lede">{s['sub']}</p>
         <p>{s['what']}</p>
-        <p>This is practice, and it isn't graded. Draft your story here, see how long it runs out loud, then record it (strongly encouraged). Writing yours instead? Use this form so you cover all five steps, save it as a PDF, and upload it to the matching STAR(T) Stories portal in Blackboard.</p>
+        <p>This is practice, and it isn't graded. Draft your story here, see how long it runs out loud, then record it (strongly encouraged). Writing yours instead? Use this form so you cover all five steps, save it as a PDF, and upload it to the matching My STAR(T) Story submission portal in Blackboard.</p>
         <a class="start-btn jump-btn" href="#form">Jump to the fillable form [[down]]</a>
       </div>
       <div class="note-col">
@@ -1218,7 +1218,7 @@ def star_practice(s):
               <button type="button" class="start-btn mm-save">Save as PDF [[download]]</button>
               <button type="button" class="mm-clear">Clear my answers</button>
             </div>
-            <p class="mm-how">In the print window, choose <strong>Save as PDF</strong> (or <strong>Microsoft Print to PDF</strong>) as the printer. Submitting a written story? Upload this PDF to the matching STAR(T) Stories portal.</p>
+            <p class="mm-how">In the print window, choose <strong>Save as PDF</strong> (or <strong>Microsoft Print to PDF</strong>) as the printer. Submitting a written story? Upload this PDF to the matching My STAR(T) Story submission portal.</p>
           </form>
         </div>
       </div>
@@ -1315,7 +1315,7 @@ def printlib_html(aud):
     rows = '\n'.join(f'              <tr><th scope="row">Module {n}: {titles.get(n, "")}</th><td><ul class="plain-list">' + ''.join(f'<li>{a(f,l)}</li>' for f,l in items) + '</ul></td></tr>' for n, items in PL.BY_MODULE.items())
     mod_intro = ('Each module\'s Trail Tools come first, in the order you use them, then the Mile Marker.' if aud == 'student'
                  else 'Each module\'s Trail Tools come first, in the order students use them, then the Mile Marker.')
-    star_intro = ('One for each capstone story. Fill it in, save it as a PDF, and upload it to that story\'s submission portal. Recording instead? Use it to plan what you\'ll say.' if aud == 'student'
+    star_intro = ('One for each capstone story. Fill it in, save it as a PDF, and upload it to the matching My STAR(T) Story submission portal. Recording instead? Use it to plan what you\'ll say.' if aud == 'student'
                   else 'One per capstone story. Students fill one in and upload it as their final written story, or use it to plan a recording. They also work on paper in class.')
     docs_intro = ('Course documents you\'ll also find in Blackboard.' if aud == 'student'
                   else 'Documents that also live in the Blackboard shell, kept here so you can print or share them from one place.')

@@ -23,7 +23,7 @@ OPTIONS = [
     dict(title='KOOL Online Orientation', topic='Learning online',
          who='KCTCS',
          what='A self-paced orientation to learning online, built for students across KCTCS.',
-         how='Select the orientation\'s name to open it, then work through it start to finish.',
+         how='It\'s inside Blackboard, so sign in to Blackboard first. Then select the orientation\'s name to open it and work through it start to finish.',
          proof='A screenshot of the last screen of the orientation.',
          link='https://alt-5beddfe10b70f.blackboard.com/bbcswebdav/institution/KOOL_Training/Student%20Orientation/content/index.html?one_hash=ACD7EA11670AA61E8BE57DCCCDFC0042&amp;f_hash=13455CECB6D1CBCDC3FF1CAE187CD407#/',
          linktext='Start the KOOL Online Orientation'),
