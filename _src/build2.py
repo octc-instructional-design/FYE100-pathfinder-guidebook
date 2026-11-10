@@ -1483,10 +1483,9 @@ def build_home():
       <h3 id="offline-h">Take the book with you</h3>
       <p>Prefer to read offline or on paper? Download the whole book: How to Use This Book, all 12 modules, and the Merit and STAR(T) Stories guides. The website always has the newest version and the fill-in forms.</p>
       <div class="dl-row">
-        <span class="dl-btn">{TOK['download']}<span><b>PDF</b><small>To print or read on a computer</small></span></span>
+        <a class="dl-btn" href="downloads/Pathfinder-Guidebook-FYE100.pdf" download>{TOK['download']}<span><b>PDF</b><small>To print or read on a computer</small></span></a>
         <a class="dl-btn" href="downloads/Pathfinder-Guidebook-FYE100.epub" download>{TOK['download']}<span><b>EPUB</b><small>For e-readers, phones, and tablets</small></span></a>
       </div>
-      <p><span class="draft-flag">PDF coming soon.</span></p>
     </div>
   </section>
 
