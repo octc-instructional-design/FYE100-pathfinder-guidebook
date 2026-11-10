@@ -1479,7 +1479,7 @@ def build_home():
       <span><span class="pt-title">Printable Library</span><span class="pt-desc">Every Mile Marker, Trail Tool, and STAR(T) Stories form as a fillable PDF. Print it, or type into it and save.</span></span>
       <span class="pt-go" aria-hidden="true">{TOK['next']}</span>
     </a>
-    <div class="offline" role="group" aria-labelledby="offline-h">
+    <div class="offline" id="download" role="group" aria-labelledby="offline-h">
       <h3 id="offline-h">Take the book with you</h3>
       <p>Prefer to read offline or on paper? Download the whole book: How to Use This Book, all 12 modules, and the Merit and STAR(T) Stories guides. The website always has the newest version and the fill-in forms.</p>
       <div class="dl-row">
