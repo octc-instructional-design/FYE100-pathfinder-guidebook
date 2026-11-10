@@ -1041,7 +1041,7 @@ GUIDES = [
         [('glance','At a glance'),('slides','Slides'),('coaching','Coaching notes'),('activities','Active learning ideas'),('discussion','In-class discussion')])
        for n, t in TEACH_MODS] + [
    ('printables.html','7','Printables Library',"Every printable for class, by module, plus other course documents.",None,
-     [('modules','By module'),('capstone','STAR(T) practice guides'),('other','Other course documents'),('using','Using the printables')]),
+     [('modules','By module'),('capstone','STAR(T) fillable forms'),('other','Other course documents'),('using','Using the printables')]),
    ('course-notes.html','Notes','Course Notes',"What's open, what's decided, and ideas for next semester.",None,
      [('open','Open items'),('decisions','Decisions'),('ideas','Ideas for next semester')]),
    ('results-in-action.html','Notes','Results in Action',"What each Inventory showed, and what changed in the course because of it.",6,
@@ -1315,8 +1315,8 @@ def printlib_html(aud):
     rows = '\n'.join(f'              <tr><th scope="row">Module {n}: {titles.get(n, "")}</th><td><ul class="plain-list">' + ''.join(f'<li>{a(f,l)}</li>' for f,l in items) + '</ul></td></tr>' for n, items in PL.BY_MODULE.items())
     mod_intro = ('Each module\'s Trail Tools come first, in the order you use them, then the Mile Marker.' if aud == 'student'
                  else 'Each module\'s Trail Tools come first, in the order students use them, then the Mile Marker.')
-    star_intro = ('One for each capstone story. Fill one in to cover all five steps, then record your story or upload the guide as your written version.' if aud == 'student'
-                  else 'One per capstone story. Students can practice on paper in class, then draft or record their stories from there.')
+    star_intro = ('One for each capstone story. Fill it in, save it as a PDF, and upload it to that story\'s submission portal. Recording instead? Use it to plan what you\'ll say.' if aud == 'student'
+                  else 'One per capstone story. Students fill one in and upload it as their final written story, or use it to plan a recording. They also work on paper in class.')
     docs_intro = ('Course documents you\'ll also find in Blackboard.' if aud == 'student'
                   else 'Documents that also live in the Blackboard shell, kept here so you can print or share them from one place.')
     docs = ''.join(f'<li>{a(f,l)}: {sn if aud=="student" else inn}</li>' for f,l,sn,inn,stu in PL.DOCS if stu or aud != 'student')
@@ -1346,7 +1346,7 @@ def printlib_html(aud):
     <section id="capstone" aria-labelledby="cap-h">
       <div class="row">
         <div class="main">
-          <div class="h2wrap"><h2 id="cap-h">STAR(T) Stories practice guides</h2></div>
+          <div class="h2wrap"><h2 id="cap-h">STAR(T) Stories fillable forms</h2></div>
           <p>{star_intro}</p>
           <ul class="plain-list">{star}</ul>
         </div>
@@ -1365,7 +1365,7 @@ def printlib_html(aud):
       </div>
     </section>"""
 
-PRINT_SECS=[('modules','By module'),('capstone','STAR(T) practice guides'),('other','Other course documents'),('using','Using a printable')]
+PRINT_SECS=[('modules','By module'),('capstone','STAR(T) fillable forms'),('other','Other course documents'),('using','Using a printable')]
 def build_printables():
     d = ROOT/'chapters/printables'; d.mkdir(parents=True, exist_ok=True)
     body = tokens((HERE/'bodies/printables/library.html').read_text())
@@ -1383,7 +1383,7 @@ def build_printables():
       <div class="main">
         <span class="lesson-kicker">Prefer paper?</span>
         <h1>Printable Library</h1>
-        <p class="lesson-sub">Every Mile Marker, Trail Tool, and STAR(T) practice guide as a fillable PDF.</p>
+        <p class="lesson-sub">Every Mile Marker, Trail Tool, and STAR(T) Stories form as a fillable PDF.</p>
       </div>
     </div>
     <div class="row gap-sm"><div class="main"><nav class="page-toc" aria-label="On this page"><span class="pt-label">On this page</span><ul>{toc}</ul></nav></div></div>
@@ -1476,7 +1476,7 @@ def build_home():
     </ol>
     <a class="print-tile" href="chapters/printables/index.html">
       <span class="pt-icon" aria-hidden="true">{ICON_PRINTER}</span>
-      <span><span class="pt-title">Printable Library</span><span class="pt-desc">Every Mile Marker, Trail Tool, and STAR(T) practice guide as a fillable PDF. Print it, or type into it and save.</span></span>
+      <span><span class="pt-title">Printable Library</span><span class="pt-desc">Every Mile Marker, Trail Tool, and STAR(T) Stories form as a fillable PDF. Print it, or type into it and save.</span></span>
       <span class="pt-go" aria-hidden="true">{TOK['next']}</span>
     </a>
     <div class="offline" role="group" aria-labelledby="offline-h">
