@@ -1023,7 +1023,7 @@ GUIDES = [
          "The maps are built from the same source as the book, so they grow as modules are completed. Like the rest of the book, this guide is public. It contains no answer keys or points, and rubrics live in Blackboard with each assignment. The guide coaches how to use them consistently."],
   lessons=[
    ('how-the-book-works.html','1','How the Book Works',"The book, Blackboard, and how a module is put together.",8,
-     [('split','The book and Blackboard'),('anatomy','How a module is built'),('design','Design commitments'),('teaching','Teaching with the book'),('grading','Grading Mile Markers'),('current','Keeping the book current'),('assessment','Course-level assessment'),('reporting','Using the maps')]),
+     [('split','The book and Blackboard'),('anatomy','How a module is built'),('design','Design commitments'),('teaching','Teaching with the book'),('philosophy','How FYE 100 grades'),('grading','Grading Mile Markers'),('late','Late work and recovery'),('current','Keeping the book current'),('assessment','Course-level assessment'),('reporting','Using the maps')]),
    ('course-map.html','2','Course Map',"Every I Can statement, the outcome it serves, and where students show it.",10,
      [('outcomes','Learning outcomes'),('glance','At a glance'),('time','Time on task'),('modules','Module by module')]),
    ('essential-skills-map.html','3','10 Essential Skills Map',"Kentucky Graduate Profile coverage, by module and by skill.",8,
