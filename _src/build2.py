@@ -1081,6 +1081,24 @@ def star_practice(s):
               <textarea id="{pre}-{step}" data-save data-wc="{k}" data-label="{label}" rows="{rows}"></textarea>
               <p class="st-watch"><strong>Watch out:</strong> {watch}</p>
             </fieldset>"""
+    def transfer_box():
+        # Transfer in three short prompts (November 2026), same as the fillable forms. The first box keeps the old id
+        # so a draft a student already saved lands in it.
+        parts = [('tr', 'What this story showed me', 'Start with: &quot;This showed me that I can...&quot;', 2, 'Transfer, what this showed me'),
+                 ('tr-where', 'Where I&#39;ll need this skill next', 'Name one specific class, program, job, or situation.', 1, 'Transfer, where I will need it next'),
+                 ('tr-do', 'What I&#39;ll do when I get there', 'One or two sentences about how you&#39;ll use what you learned.', 2, 'Transfer, what I will do')]
+        fields = '\n'.join(f"""              <label class="mm-sub" for="{pre}-{sid}">{lab}</label>
+              <p class="st-help" id="{pre}-{sid}-h">{hlp}</p>
+              <textarea id="{pre}-{sid}" data-save data-wc="{k}" data-label="{dl}" rows="{n}" aria-describedby="{pre}-{sid}-h"></textarea>""" for sid, lab, hlp, n, dl in parts)
+        return f"""            <fieldset class="mm-field st-step st-transfer ss-tr">
+              <legend><span class="st-letter" aria-hidden="true">T</span><span class="st-name">Transfer</span><span class="st-q">Connect it forward. What does this mean for what comes next?</span></legend>
+              <p class="st-coach">{s['transfer']}</p>
+{fields}
+              <div class="st-eg">
+                <p><strong>Too general:</strong> &quot;This will help me in my future career.&quot;</p>
+                <p><strong>Specific:</strong> &quot;This showed me that I can keep a group on track when plans change. Next fall in clinicals, I&#39;ll work with nurses on different shifts. Before I plan anything, I&#39;ll ask about everyone&#39;s schedule first.&quot;</p>
+              </div>
+            </fieldset>"""
     if k == 'choice':
         grid = '\n'.join(f"""              <li><span class="coin-sm"><img src="../../images/shared/10es/10es-{n:02d}.png" alt="" width="160" height="160"><span class="n">{n}</span></span><span><strong>{ESSENTIAL[n]}</strong><span class="cg-desc">{d}</span></span></li>""" for n,d in CHOICE_OPTIONS)
         opts = ''.join(f'<option>#{n} {ESSENTIAL[n]}</option>' for n,_ in CHOICE_OPTIONS)
@@ -1132,7 +1150,7 @@ def star_practice(s):
       box('t','T','Task','Define your role. What was yours to do?',s['task'],'Your Task is what you were responsible for, not the group&#39;s general goal.',3,'Task'),
       box('a','A','Action','Show what you did, step by step.',"This is the most important step. Use &quot;I&quot;: I decided, I reached out, I chose. "+s['action'],'"We figured it out" hides your part. Describe what you did, even inside a group effort.',6,'Action'),
       box('r','R','Result','Name the outcome. What happened because of what you did?',s['result'],'"It went well" isn&#39;t a result. Name what specifically happened.',3,'Result'),
-      box('tr','T','Transfer','Connect it forward. What does this mean for what comes next?',s['transfer'],'"This will help me in the future" isn&#39;t a Transfer. Name a specific place, role, or situation.',4,'Transfer',True),
+      transfer_box(),
     ])
     return f"""    <div class="row gap-md">
       <div class="main">

@@ -1220,6 +1220,11 @@ img.merit-badge { width: 44px; height: 44px; border-radius: 0; background: none;
 .st-q { font-weight: 400; font-style: italic; color: var(--muted); font-size: .95rem; }
 .st-coach { font-size: .96rem; background: var(--soft-blue); border-left: 3px solid var(--blue); padding: 8px 12px; border-radius: 0 8px 8px 0; margin: 8px 0 !important; }
 .st-transfer { background: #fff7f0; }
+.st-help { font-size: .9rem; font-style: italic; color: var(--muted, #536173); margin: -2px 0 6px !important; }
+.st-eg { margin-top: 14px; border: 1px solid #e8cbbd; background: #fff; border-radius: 8px; padding: 10px 14px; font-size: .93rem; }
+.st-eg p { margin: 0 !important; }
+.st-eg p + p { margin-top: 6px !important; }
+.st-eg strong { color: #8b1a14; }
 @media (max-width: 560px) { .four-stories { grid-template-columns: 1fr; } }
 @media (max-width: 900px) { .fix-list { grid-template-columns: 1fr; } }
 @media (max-width: 700px) {
