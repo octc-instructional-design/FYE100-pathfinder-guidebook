@@ -20,6 +20,15 @@ COMMON = dict(
     Tr=('Connect it forward. What does this mean for what comes next?', None,
         '"This will help me in the future" isn\'t a Transfer. Name a specific place, role, or situation.', 4),
 )
+# Transfer, in three short parts (added November 2026: students were writing one general sentence)
+TR_PARTS = [
+    ('Tr_showed', 'What this story showed me', 'Start with: "This showed me that I can..."', 2),
+    ('Tr_where', "Where I'll need this skill next", 'Name one specific class, program, job, or situation.', 1),
+    ('Tr_do', "What I'll do when I get there", 'One or two sentences about how you\'ll use what you learned.', 2),
+]
+TR_EG = ('"This will help me in my future career."',
+         '"This showed me that I can keep a group on track when plans change. Next fall in clinicals, I\'ll work with nurses on '
+         'different shifts. Before I plan anything, I\'ll ask about everyone\'s schedule first."')
 A_LEAD = 'This is the most important step. Use "I": I decided, I reached out, I chose. '
 
 FORMS = [
@@ -102,6 +111,12 @@ ul.b li::before { content: "\\25CF"; position: absolute; left: 1pt; top: 2pt; fo
 .watch { border-left: 2pt solid #9a3412; padding-left: 8pt; margin-top: 7pt; font-style: italic; font-size: 10.3pt; color: #9a3412; }
 .after { margin-top: 20pt; break-inside: avoid; }
 .keep { break-inside: avoid; }
+.tr-sub { font-weight: 700; margin: 9pt 0 1pt; font-size: 10.8pt; }
+.tr-sub:first-of-type { margin-top: 2pt; }
+.tr-help { font-size: 10pt; font-style: italic; color: #333; margin-bottom: 3pt; }
+.tr-eg { border: .75pt solid #e3c9bd; background: #fdf6f2; border-radius: 3pt; padding: 7pt 9pt; margin-top: 10pt; font-size: 10.2pt; }
+.tr-eg p + p { margin-top: 4pt; }
+.tr-eg b { color: #9a3412; }
 """
 
 
@@ -141,7 +156,15 @@ def build(f):
         sub, prompt, watch, lines = COMMON[k]
         prompt = f.get(k) or prompt
         if k == 'A': prompt = A_LEAD + prompt
-        o.append(f'<div class="card{" tr" if k == "Tr" else ""}"><div class="card-h"><span class="ltr" aria-hidden="true">{"T" if k == "Tr" else k}</span>'
+        if k == 'Tr':
+            # Transfer is scaffolded into three short prompts, because a single open box invites "this will help me in the future"
+            parts = ''.join(f'<p class="tr-sub">{e(lab)}</p><p class="tr-help">{e(help_)}</p>{zone(n)}' for _, lab, help_, n in TR_PARTS)
+            o.append(f'<div class="card tr"><div class="card-h"><span class="ltr" aria-hidden="true">T</span>'
+                     f'<span><b>{names[k]}</b><i>{e(sub)}</i></span></div><div class="card-b"><p class="prompt">{e(prompt)}</p>{parts}'
+                     f'<div class="tr-eg"><p><b>Too general:</b> {e(TR_EG[0])}</p><p><b>Specific:</b> {e(TR_EG[1])}</p></div></div></div>')
+            fields += [(name, f'Transfer: {lab}', 'multi' if n > 1 else 'text') for name, lab, _, n in TR_PARTS]
+            continue
+        o.append(f'<div class="card"><div class="card-h"><span class="ltr" aria-hidden="true">{k}</span>'
                  f'<span><b>{names[k]}</b><i>{e(sub)}</i></span></div><div class="card-b"><p class="prompt">{e(prompt)}</p>{zone(lines)}'
                  f'<p class="watch">Watch out: {e(watch)}</p></div></div>')
         fields.append((k, names[k], 'multi'))
