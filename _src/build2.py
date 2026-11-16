@@ -26,13 +26,13 @@ RUBRIC = """          <table class="rubric">
             <caption class="sr-only">Mile Marker scoring guide</caption>
             <thead><tr><th scope="col">Score</th><th scope="col">What it means</th></tr></thead>
             <tbody>
-              <tr><th scope="row"><span class="lvl">4</span>Strong Progress</th><td>Your response is thoughtful, specific, and clearly connected to the purpose of the Mile Marker. You show strong reflection, effort, and engagement with the topic.</td></tr>
-              <tr><th scope="row"><span class="lvl">3</span>On Track</th><td>Your response addresses the main parts of the task and shows reflection and engagement. Some ideas could be explained in more detail or connected more clearly.</td></tr>
-              <tr><th scope="row"><span class="lvl">2</span>Developing</th><td>Your response is partially complete or too general. More detail, reflection, or clearer connections are needed.</td></tr>
-              <tr><th scope="row"><span class="lvl">1</span>Needs Revision</th><td>Your response is very limited, incomplete, or unclear and does not fully address the task.</td></tr>
-              <tr><th scope="row"><span class="lvl">0</span>No Evidence</th><td>No submission was provided, or the response does not meaningfully engage with the task.</td></tr>
+              <tr><th scope="row"><span class="lvl">4</span>Complete</th><td>Every question is answered.</td></tr>
+              <tr><th scope="row"><span class="lvl">3</span>One missing</th><td>One question is missing or blank.</td></tr>
+              <tr><th scope="row"><span class="lvl">2</span>About half</th><td>About half the questions are answered.</td></tr>
+              <tr><th scope="row"><span class="lvl">1</span>Minimal</th><td>Only one or two are answered.</td></tr>
+              <tr><th scope="row"><span class="lvl">0</span>No Response</th><td>Nothing submitted, or nothing relates to the questions.</td></tr>
             </tbody>
-          </table>"""
+          </table>"""  # not placed on any page: the public book keeps points out; this mirrors the Blackboard rubric
 TOK = {
  'down': svg('<path d="M12 4v16M6 14l6 6 6-6"/>', '2.5', cls=''),
  'upload': svg('<path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v4h16v-4"/>', cls=''),
