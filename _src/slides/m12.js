@@ -9,24 +9,24 @@ build({
   art: __dirname + '/art/m12-title.jpg',
 
   house: { title: 'Breaking Camp', sub: 'Pack up Module 11. This is the last stretch of the trail.',
-    ahead: 'Module 12 and all four STAR(T) Stories are due Sunday by 11:59 PM Central.' },
+    ahead: 'Module 12 and all three STAR(T) Stories are due Sunday by 11:59 PM Central.' },
 
   week: { title: 'Finish strong',
-    items: [['LuStar', 'Finish your four STAR(T) Stories'], ['LuHistory', 'Look back at your Mile Markers'],
+    items: [['LuStar', 'Finish your three STAR(T) Stories'], ['LuHistory', 'Look back at your Mile Markers'],
             ['LuClipboardCheck', 'Retake My Skills Snapshot'], ['LuFlag', 'Plan for finals in your other classes']],
-    skills: [[1, 'Communication'], [5, 'Adaptability & Leadership'], [6, 'Professionalism'], [9, 'Knowledge Application']] },
+    skills: [[1, 'Communication'], [6, 'Professionalism'], [9, 'Knowledge Application']] },
 
   lessons: [
     { kicker: 'Lesson 12.1', title: 'Final review for your STAR(T) Stories',
       async draw(s, k) {
         await rows(s, k, [['LuListOrdered', 'All five steps', 'Situation, Task, Action, Result, Transfer'], ['LuUser', 'The Action is yours', 'say "I," and name what you did'],
                           ['LuEye', 'The skill is evident', 'not just stated'], ['LuMapPin', 'The Transfer is specific', 'where this skill shows up next'],
-                          ['LuMic', 'It sounds like you', 'not a template, and not AI'], ['LuCircleHelp', 'Your fourth story explains your choice', 'up front']], 1.95, 0.7);
+                          ['LuMic', 'It sounds like you', 'not a template, and not AI'], ['LuCircleHelp', 'Your choice story explains your choice', 'up front']], 1.95, 0.7);
       },
       notes: `
         Final review before students submit. Run each story through this list.
-        All five steps are there. The Action is yours: you say "I," not just "we." The skill is evident, not just stated; someone listening could name it even if you didn't. The Transfer is specific: where and how this skill shows up next, not "this will help me." It sounds like you, not a template and not AI. And the fourth story starts by naming the skill and why you chose it.
-        Each story goes in its own labeled journal in Blackboard. Students don't have to submit them all at once.
+        All five steps are there. The Action is yours: you say "I," not just "we." The skill is evident, not just stated; someone listening could name it even if you didn't. The Transfer is specific: where and how this skill shows up next, not "this will help me." It sounds like you, not a template and not AI. And the choice story starts by naming the skill and why you chose it.
+        Each story goes in its own submission portal in Blackboard. Students don't have to submit them all at once.
         If you didn't show the STAR(T) Stories overview deck in Module 11, its fixes and checklist slides work well here.` },
 
     { kicker: 'Trail Tool', title: 'Look back before you write',
@@ -59,7 +59,7 @@ build({
   work: { title: 'Due Sunday by 11:59 PM Central',
     items: [['LuClipboardCheck', 'Task: My Skills Snapshot, End of Semester', 'Rate yourself again, then compare'],
             ['LuFlag', 'Mile Marker #12: My Story to Share', 'Four questions'],
-            ['LuStar', 'STAR(T) Stories, all four', 'Each in its own labeled journal in Blackboard']],
+            ['LuStar', 'STAR(T) Stories, all three', 'Each in its own submission portal in Blackboard']],
     // semester-specific form link lives in term.json
     qr: Object.assign({ label: 'Scan for My Skills Snapshot' }, TERM.snapshot_end) },
 
@@ -82,12 +82,12 @@ build({
       Everything this week is due Sunday, not Monday, so you can grade before final grades are due. Say it twice.
       Thank students. Many of them did harder things this semester than the course ever saw.`,
     week: `
-      This week: finish your four STAR(T) Stories, look back at your Mile Markers, retake My Skills Snapshot, and plan for finals in your other classes.`,
+      This week: finish your three STAR(T) Stories, look back at your Mile Markers, retake My Skills Snapshot, and plan for finals in your other classes.`,
     work: `
       Everything is due Sunday by 11:59 PM Central, earlier than the usual Monday.
       The end-of-semester Skills Snapshot: scan the code on this slide. It's this semester's shared form for all FYE 100 sections. Rate yourself honestly again, then compare with Module 1.
       Mile Marker #12 is four questions.
-      All four STAR(T) Stories, each in its own labeled journal in Blackboard. Students can add context in the journal if they want their instructor to know something.
+      All three STAR(T) Stories, each in its own submission portal in Blackboard. Students can add a note in the portal if they want their instructor to know something.
       In-person sections: today's attendance counts.`,
     mm: `
       Mile Marker #12 is the final reflection, four questions.

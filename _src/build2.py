@@ -404,14 +404,14 @@ CHAPTERS = [
   ],
   builds={'collaboration-snapshot.html':'A, B, C, D','10-2.html':'A','10-3.html':'A','10-4.html':'B','10-5.html':'C, D','trail-tip-ai-plan.html':'C','mile-marker.html':'A, B, C, D'}),
  dict(n=11, title='Making an Impact — Community, Values &amp; Your Pathfinder Journey',
-  desc="See how communities work, connect your strengths and values to how you want to show up in them, and choose your four STAR(T) Stories.",
+  desc="See how communities work, connect your strengths and values to how you want to show up in them, and choose your three STAR(T) Stories.",
   tagline="Your community is closer than you think, and so is your next step on this trail.",
   why=["\"Civic engagement\" can sound like something for other people: politicians, organizers, people with way more free time than you. This module starts somewhere different, with the communities you're already part of and the everyday skill of seeing how they actually work.",
        "It's also your working time for your STAR(T) Stories. Everything you've learned about yourself this semester (strengths, values, interests, and now community) is exactly what those stories are made of."],
   objectives=[("define community broadly and identify at least one community I already belong to and contribute to.", 'Mile Marker #11'),
               ("describe specific ways my everyday actions make a positive impact on the people around me.", 'Mile Marker #11'),
               ("connect my strengths and values to one intentional way I want to grow my community impact going forward.", 'Mile Marker #11'),
-              ("select four experiences from my semester and match each one to an Essential Skill for my STAR(T) Story.", 'Mile Marker #11')],
+              ("select three experiences from my semester and match each one to an Essential Skill for my STAR(T) Stories.", 'Mile Marker #11')],
   es=[4,5,7,9], be=['Responsible','Reflective'], be_note='',
   lessons=[
    ('community-snapshot.html','Trail Tool','Community Snapshot',"One community: how it works, what you bring, and where you're headed.",15,
@@ -434,12 +434,12 @@ CHAPTERS = [
   desc="Look back at how far you've come, finish and submit your STAR(T) Stories, and decide what you're taking with you.",
   tagline="The last mile marker on the trail, and a look at everything you've built along the way.",
   why=["This is the last module of new content. From here, it's about finishing strong: completing your STAR(T) Stories, taking stock of how far you've come, and getting ready for the rest of the semester.",
-       "Your STAR(T) Stories are your capstone: four true stories that show what you've built, in your own voice. Mile Marker #12 is short on purpose, so you can spend most of your time on them."],
-  objectives=[("record four STAR(T) responses, one per selected Essential Skill, that are specific, honest, and clearly structured.", 'your STAR(T) Stories (capstone)'),
+       "Your STAR(T) Stories are your capstone: three true stories that show what you've built, in your own voice. Mile Marker #12 is short on purpose, so you can spend most of your time on them."],
+  objectives=[("record three STAR(T) responses, one per Essential Skill, that are specific, honest, and clearly structured.", 'your STAR(T) Stories (capstone)'),
               ("articulate how each skill connects to my future in college, my career, and my life: the Transfer step.", 'your STAR(T) Stories (capstone)'),
               ("explain my choice of student-selected skill in my own words.", 'your STAR(T) Stories (capstone)'),
               ("reflect honestly on my growth this semester, what I am taking with me, and what I want to work on next.", 'Mile Marker #12')],
-  es=[1,5,6,9], be=['Honest','Reflective'], be_note='Your STAR(T) Stories bring all ten skills together: three assigned, and one you choose.',
+  es=[1,6,9], be=['Honest','Reflective'], be_note='Your STAR(T) Stories bring the semester together: two assigned skills, and one you choose.',
   lessons=[
    ('look-back.html','Trail Tool','Look Back',"Your Mile Markers in one place, and room to notice what stands out.",15,
      [('trail','Your Mile Markers'),('form','Fill in your look back')]),
@@ -979,15 +979,14 @@ GUIDES = [
   source={'setup.html':'ch02/trail-tip-merit.html'}),
  dict(n='S', slug='start', label='STAR(T) Stories Guide', navlabel='Guide', unit='guide', overview='Guide overview', kicker='Part',
   title='STAR(T) Stories Guide', icon='images/shared/start-badge.svg',
-  desc="Your capstone: four true stories that show four Essential Skills. The framework, how to find your stories, how to record them, and a practice guide for each.",
+  desc="Your capstone: three true stories that show three Essential Skills. The framework, how to find your stories, how to record them, and a practice guide for each.",
   tagline="Anyone can claim a skill. Your stories show it.",
-  intro=["Your capstone for FYE 100 is four STAR(T) Stories: short, true stories about times you showed four of the 10 Essential Skills. Each one follows the same five steps: Situation, Task, Action, Result, and Transfer.",
+  intro=["Your capstone for FYE 100 is three STAR(T) Stories: short, true stories about times you showed three of the 10 Essential Skills. Two skills are assigned, and the third is your choice. Each one follows the same five steps: Situation, Task, Action, Result, and Transfer.",
          "You can record your stories, video or audio only, or write them. Recording is strongly encouraged, because \"Tell me about a time when...\" is exactly what you'll hear in job interviews, and telling your story out loud now is the best practice you can get. Recordings are never scored on delivery, only on the story and its structure."],
-  extra='''    <section aria-labelledby="four-h" class="row wide">
+  extra='''    <section aria-labelledby="three-h" class="row wide">
       <div class="main">
-        <div class="h2wrap"><h2 id="four-h">Your four stories</h2></div>
+        <div class="h2wrap"><h2 id="three-h">Your three stories</h2></div>
         <ul class="four-stories">
-          <li><a href="practice-adaptability.html"><span class="coin coin-md"><img src="../../images/shared/10es/10es-05.png" alt="" width="160" height="160"><span class="sn">5</span></span><span class="fs-name">Adaptability &amp; Leadership</span></a></li>
           <li><a href="practice-professionalism.html"><span class="coin coin-md"><img src="../../images/shared/10es/10es-06.png" alt="" width="160" height="160"><span class="sn">6</span></span><span class="fs-name">Professionalism</span></a></li>
           <li><a href="practice-knowledge.html"><span class="coin coin-md"><img src="../../images/shared/10es/10es-09.png" alt="" width="160" height="160"><span class="sn">9</span></span><span class="fs-name">Knowledge Application</span></a></li>
           <li><a href="practice-choice.html"><span class="coin coin-md coin-choice"><span class="choice-mark" aria-hidden="true">?</span></span><span class="fs-name">Your choice</span></a></li>
@@ -1002,14 +1001,12 @@ GUIDES = [
      [('why','Why it matters'),('what',"What you'll turn in"),('how','How to turn it in'),('when',"How you'll build it"),('scored',"How it's scored"),('start','Where to start')]),
    ('the-framework.html','2','The STAR(T) Framework',"Five steps for telling the story of a skill you've actually built.",6,
      [('steps','The five steps'),('example','What it looks like')]),
-   ('find-your-stories.html','3','Find Your Stories',"Four skills, four true stories. Here's how to pick them.",10,
-     [('four','Your four skills'),('prompts','Prompts for every skill'),('mine','Mine your own work'),('good','Is it a good story?')]),
+   ('find-your-stories.html','3','Find Your Stories',"Three skills, three true stories. Here's how to pick them.",10,
+     [('three','Your three skills'),('prompts','Prompts for every skill'),('mine','Mine your own work'),('good','Is it a good story?')]),
    ('tell-it-out-loud.html','4','Tell It Out Loud',"Why recording is worth it, and how to do it in 2 to 4 minutes.",6,
      [('not-speech','Not a speech class'),('ramble','The rambling problem'),('options','Your options'),('record','Recording in Blackboard')]),
-   ('strong-story.html','5','What Makes a Strong Story',"How stories are scored, and three fixes that move a story up.",5,
+   ('strong-story.html','5','What Makes a Strong Story',"How stories are scored, and three fixes that make a story stronger.",5,
      [('levels','How stories are scored'),('upgrade','Three fixes'),('submit','Submitting')]),
-   ('practice-adaptability.html','Trail Tool','Practice Guide: Adaptability &amp; Leadership',"Find your story and draft it, one step at a time.",20,
-     [('find','Find your story'),('form','Draft it')]),
    ('practice-professionalism.html','Trail Tool','Practice Guide: Professionalism',"Find your story and draft it, one step at a time.",20,
      [('find','Find your story'),('form','Draft it')]),
    ('practice-knowledge.html','Trail Tool','Practice Guide: Knowledge Application',"Find your story and draft it, one step at a time.",20,

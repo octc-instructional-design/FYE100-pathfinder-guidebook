@@ -23,17 +23,6 @@ COMMON = dict(
 A_LEAD = 'This is the most important step. Use "I": I decided, I reached out, I chose. '
 
 FORMS = [
- dict(file='STAR-Fillable-Form-Adaptability-and-Leadership', skill='Adaptability & Leadership',
-      subtitle='A story about adjusting when things changed, or stepping up when it mattered.',
-      about="Adaptability & Leadership is about adjusting when things change and stepping up to help others toward a goal. Leadership here doesn't need a title. It shows up when you take initiative, keep someone else going, or keep moving when circumstances shift.",
-      find=['Was there a time your plan fell apart and you had to change course, without falling apart yourself?',
-            'Have you ever stepped up to lead, in a group, at work, or in your family, even though nobody officially asked you to?',
-            'Is there a moment when you helped someone else stay motivated or on track when things got hard?',
-            'Did you have to adjust to a new place, a new system, or new expectations, and figure it out?'],
-      T='For this skill, the Task is often something unexpected landing in your lap, or noticing that someone needed to step up and deciding that someone was you.',
-      A='Show how you responded when things changed: the decisions you made, the steps you took, and how you supported others.',
-      R='Results for this skill often show up in how the group did, in relationships, or in your own growth, not just in getting the task done.',
-      Tr='College, work, and life will keep asking you to adapt and step up. Where specifically do you expect to need this skill next, and what does this story tell you about how you\'ll handle it?'),
  dict(file='STAR-Fillable-Form-Professionalism', skill='Professionalism',
       subtitle='A story about following through, owning a mistake, or being someone others could count on.',
       about='Professionalism is about how you show up: following through, taking responsibility, managing your time and commitments, acting ethically, and communicating with care. Think of a moment when you showed reliability, integrity, or accountability in a real situation.',
@@ -56,12 +45,13 @@ FORMS = [
       R='What changed or got resolved? An honest, imperfect result is more believable than a vague "it went well."',
       Tr='Try this shape: "This showed me that [something specific], and I expect to use this skill when [a specific situation]."'),
  dict(file='STAR-Fillable-Form-Your-Choice', skill='Your Choice',
-      subtitle='The fourth story is yours. Pick the skill you can tell the most honest story about.',
-      about='Three of your four stories are assigned. This one is yours to choose. Pick the skill that connects most honestly to a real experience, from this course or from your life before college. The best choice is the one where you have the most specific, honest thing to say, not the one that sounds most impressive.',
+      subtitle='The third story is yours. Pick the skill you can tell the most honest story about.',
+      about='Two of your three stories are assigned. This one is yours to choose. Pick the skill that connects most honestly to a real experience, from this course or from your life before college. The best choice is the one where you have the most specific, honest thing to say, not the one that sounds most impressive.',
       choice=[(1, 'Communication', 'Listening carefully, responding clearly, and writing or speaking in ways that actually land.'),
               (2, 'Critical & Creative Thinking', 'Evaluating information carefully, questioning assumptions, or finding a new approach to a real problem.'),
               (3, 'Quantitative Reasoning', 'Using numbers, data, or calculations to understand a situation and make a better decision.'),
               (4, 'Interpersonal Relations', 'Handling relationships thoughtfully: understanding other perspectives, building trust, or working through conflict respectfully.'),
+              (5, 'Adaptability & Leadership', 'Adjusting when things change, or stepping up to help others toward a goal, with or without a title.'),
               (7, 'Civic Engagement', 'Taking action in your community and contributing to something beyond yourself.'),
               (8, 'Collaboration & Teamwork', 'Working well with others: contributing to a team, sharing the work, and building toward a shared goal.'),
               (10, 'Information Literacy', 'Finding, evaluating, and using information responsibly, and knowing what to trust before you act on it.')],
@@ -126,7 +116,7 @@ def build(f):
     o = [f'<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>{e(title)}</title><style>{CSS}</style></head><body>',
          '<p class="kicker">Fillable Form</p>', f'<h1>{e(title)}</h1>', f'<p class="sub-title">{e(f["subtitle"])}</p><hr class="gold-rule">',
          f'<div class="intro"><p>{e(f["about"])}</p><p>Use this form for your final story. Fill it in, save it as a PDF, and upload it to the matching '
-         'STAR(T) Stories submission portal in Blackboard. Recording your story instead? Use this form to plan what you\'ll say.</p></div>',
+         'My STAR(T) Story submission portal in Blackboard. Recording your story instead? Use this form to plan what you\'ll say.</p></div>',
          f'<div class="note"><p><b>Two ways to use this form.</b> It matches the {e(f["skill"])} Practice Guide in the STAR(T) Stories Guide. '
          'Type in the boxes and save a PDF, or print it, fill it in by hand, and upload a photo or scan. Aim for a story that runs 2 to 4 minutes out loud.</p></div>',
          f'<div class="names"><div><span class="lab">Name</span>{zone(1)}</div><div><span class="lab">Date</span>{zone(1)}</div></div>']

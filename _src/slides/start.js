@@ -10,10 +10,10 @@ build({
   tagline: 'Anyone can claim a skill. Your stories show it.',
   art: __dirname + '/art/start-title.jpg',
 
-  week: { kicker: 'Capstone · The big picture', title: 'Four true stories, four skills', skillsLabel: 'Your four skills',
+  week: { kicker: 'Capstone · The big picture', title: 'Three true stories, three skills', skillsLabel: 'Your three skills',
     items: [['LuSearch', 'Find a real moment for each skill'], ['LuPencilLine', 'Draft it with a practice guide'],
-            ['LuMic', 'Tell it out loud in 2 to 4 minutes'], ['LuSend', 'Submit each one in its own journal']],
-    skills: [[5, 'Adaptability & Leadership'], [6, 'Professionalism'], [9, 'Knowledge Application'], [0, 'Your choice']] },
+            ['LuMic', 'Tell it out loud in 2 to 4 minutes'], ['LuSend', 'Submit each one in its own portal']],
+    skills: [[6, 'Professionalism'], [9, 'Knowledge Application'], [0, 'Your choice']] },
 
   lessons: [
     { kicker: 'Why STAR(T)', title: 'A claim isn\'t evidence',
@@ -33,7 +33,7 @@ build({
         Here's the idea behind the capstone. Anyone can claim a skill. "I'm a hard worker" is a claim. A specific, true story about a time you worked hard is evidence.
         STAR comes from behavioral interviewing. When an interviewer says "Tell me about a time when...", they're asking for a STAR story. Many employers interview this way because past actions are the best evidence of what you'll do next.
         This course adds a (T), Transfer, which turns a good story into a reflection on where you're headed.
-        Your capstone is four of these stories, for four of the 10 Essential Skills.` },
+        Your capstone is three of these stories, for three of the 10 Essential Skills.` },
 
     { kicker: 'The framework', title: 'Five steps: S, T, A, R, T',
       async draw(s, k) {
@@ -83,13 +83,12 @@ build({
         Transfer: what they're learning in their program isn't just for tests. It's for moments when a real person needs someone who understands the system.
         Point out: it isn't dramatic. A quiet moment at work, in class, or with family is exactly what STAR(T) is built for.` },
 
-    { kicker: 'Find your stories', title: 'Your four skills',
+    { kicker: 'Find your stories', title: 'Your three skills',
       async draw(s, k) {
-        const { M, W, HEX, txt, card, C, b64, BOOK } = k, gap = 0.3, w = (W - 2 * M - 3 * gap) / 4;
-        const sk = [[5, 'Adaptability & Leadership', 'You adjusted, or stepped up without being asked.'],
-                    [6, 'Professionalism', 'You followed through when it was hard.'],
+        const { M, W, HEX, txt, card, C, b64, BOOK } = k, gap = 0.3, w = (W - 2 * M - 2 * gap) / 3;
+        const sk = [[6, 'Professionalism', 'You followed through when it was hard.'],
                     [9, 'Knowledge Application', 'You used something you learned in a real situation.'],
-                    [0, 'Your choice', 'Any other skill. Say which, and why.']];
+                    [0, 'Your choice', 'Any other skill, like Adaptability & Leadership. Say which, and why.']];
         sk.forEach(([n, head, body], i) => {
           const x = M + i * (w + gap);
           card(s, x, 2.0, w, 4.15, n ? HEX.softBlue : HEX.softGold, 'skill card');
@@ -104,11 +103,10 @@ build({
         bar(s, k, 'Real, specific, and yours. It doesn\'t have to be dramatic.', 6.3);
       },
       notes: `
-        Three skills are assigned: Adaptability & Leadership, Professionalism, and Knowledge Application. The fourth is your choice from the other seven.
-        Adaptability & Leadership: a time you adjusted when something changed, stepped up without being asked, or helped someone keep going. Leadership includes leading your own life.
+        Two skills are assigned: Professionalism and Knowledge Application. The third is your choice from the other eight.
         Professionalism: a time you followed through when it was hard, owned a mistake, or were someone others could count on.
         Knowledge Application: a time you used something you learned, in class, at work, or through experience, in a real situation.
-        Your choice: start the story by naming the skill and saying in a sentence or two why you chose it.
+        Your choice: start the story by naming the skill and saying in a sentence or two why you chose it. Adaptability & Leadership is a strong option: a time you adjusted when something changed, stepped up without being asked, or helped someone keep going.
         Stories can come from this course, work, family, or community. Find Your Stories in the guide has prompts for every skill.` },
 
     { kicker: 'Find your stories', title: 'Where to look',
@@ -124,7 +122,7 @@ build({
         Start with your Mile Markers. Module 3 is full of Professionalism and Adaptability. Modules 6 and 8 are full of Knowledge Application. Module 10 is collaboration.
         Then look at work, family, and community. A quiet moment counts: a shift that went sideways, a week you held things together at home, a time you stepped up for a group.
         A good story is real, specific, and yours, and you can say what you did with "I."
-        Find Your Stories in the guide has prompts for all 10 skills. If one sparks a real memory, that might be your fourth story.` },
+        Find Your Stories in the guide has prompts for all 10 skills. If one sparks a real memory, that might be your third story.` },
 
     { kicker: 'Tell it out loud', title: '2 to 4 minutes, mostly Action',
       async draw(s, k) {
@@ -152,7 +150,7 @@ build({
         await cards(s, k, [['LuVideo', 'Video', 'Closest to a real interview.'],
                            ['LuMic', 'Audio only', 'Your voice. Completely fine.'],
                            ['LuSmartphone', 'Your phone', 'Record, then upload.'],
-                           ['LuKeyboard', 'Typed', 'In the box. All five steps.']], 2.05, 3.0, { gold: 0 });
+                           ['LuKeyboard', 'Written', 'The fillable form. All five steps.']], 2.05, 3.0, { gold: 0 });
         bar(s, k, 'Blackboard\'s built-in recorder is the camera button in the submission box.', 5.45);
       },
       notes: `
@@ -160,11 +158,11 @@ build({
         Video, camera on: the closest thing to a real interview. Face a window and look at the camera.
         Audio only: completely fine. A headphone mic often sounds better than the built-in one.
         Record on your phone, then upload: a good backup if the Blackboard recorder gives you trouble.
-        Typed: type directly into the submission box. Uploaded documents aren't accepted, and all five steps are still required. The practice guides can copy a draft for you.
+        Written: fill in the fillable form for that skill, save it as a PDF, and upload it. It's a complete submission, and all five steps are still required.
         Recording in Blackboard: in the submission box, select the camera button in the editor toolbar, allow the camera or microphone, record, preview, then save and submit. On the app, tap + if the camera button isn't showing.
         Find a quiet spot: a closed room, a parked car, an empty study room.` },
 
-    { kicker: 'Make it strong', title: 'Three fixes that move a story up',
+    { kicker: 'Make it strong', title: 'Three fixes that make a story stronger',
       async draw(s, k) {
         const { M, W, HEX, txt, card, C } = k;
         const fx = [['Swap "we" for "I"', 'We reorganized the schedule.', 'I asked for everyone\'s hours and built a new schedule that night.'],
@@ -183,39 +181,38 @@ build({
         });
       },
       notes: `
-        All four stories are scored the same way, on the story and its structure, whether they're recorded or typed.
-        A strong story has all five steps clearly there, an Action in "I" with specific decisions, a concrete Result, and a Transfer that names a real situation ahead. It could only belong to you.
-        Three fixes move almost any story up a level.
+        All three stories are scored the same way, whether they're recorded or written: 1 point for each STAR(T) step the student completes. A step counts when it's there and it's about the student.
+        A strong story goes further: an Action in "I" with specific decisions, a concrete Result, and a Transfer that names a real situation ahead. It could only belong to you.
+        Three fixes make almost any story stronger.
         Swap "we" for "I": "We reorganized the schedule" becomes "I asked each person for their work hours, built a new schedule around them, and sent it to the group that night."
         Make the Result concrete: "It went really well" becomes "Everyone made the next three meetings, and we turned the project in a day early."
         Name where the Transfer goes: "This will help me in my future career" becomes "In clinicals next year I'll be coordinating with nurses on different shifts, and I now know to ask about everyone's constraints before I plan."
-        The full scoring levels are in What Makes a Strong Story in the guide.` },
+        What Makes a Strong Story in the guide shows what each step needs.` },
 
     { kicker: 'Submit', title: 'Before you submit',
       async draw(s, k) {
-        await rows(s, k, [['LuFolderCheck', 'Right journal', 'one for each skill, labeled in Blackboard'],
-                          ['LuTimer', 'Right length', 'about 2 to 4 minutes, or typed in the box'],
+        await rows(s, k, [['LuFolderCheck', 'Right portal', 'one for each skill, labeled in Blackboard'],
+                          ['LuTimer', 'Right length', 'about 2 to 4 minutes, or the fillable form'],
                           ['LuListOrdered', 'All five steps', 'in order'],
                           ['LuCircleHelp', 'Choice story', 'name your skill and why, up front'],
                           ['LuUserCheck', 'Sounds like you', 'not a template, and not AI']], 2.0, 0.78);
         bar(s, k, 'AI can help you remember details. It can\'t tell your story.', 6.0);
       },
       notes: `
-        Each skill has its own labeled journal in Blackboard, so students can pace themselves and submit one story at a time. Because they're journals, students can add context they want their instructor to know.
-        The checklist: the journal matches the skill in the story; about 2 to 4 minutes recorded, or typed in the box rather than uploaded; all five steps in order; for the choice story, the skill and why at the start; and it sounds like the student.
+        Each skill has its own submission portal in Blackboard, so students can pace themselves and submit one story at a time. Students can add a note in the portal if they want their instructor to know something.
+        The checklist: the portal matches the skill in the story; about 2 to 4 minutes recorded, or the fillable form saved as a PDF; all five steps in order; for the choice story, the skill and why at the start; and it sounds like the student.
         On AI: it can help brainstorm which experience to use, or ask questions that help you remember details. It can't tell your story. The stories have to be in the student's own words and voice.
-        All four stories are due with Module 12, on Sunday. Check Blackboard for the date.` },
+        All three stories are due with Module 12, on Sunday. Check Blackboard for the date.` },
   ],
 
   work: { title: 'Due with Module 12, on Sunday',
-    items: [['LuStar', 'STAR(T) Story #1: Adaptability & Leadership', ''],
-            ['LuStar', 'STAR(T) Story #2: Professionalism', ''],
-            ['LuStar', 'STAR(T) Story #3: Knowledge Application', ''],
-            ['LuStar', 'STAR(T) Story #4: Your Choice', 'Name your skill and why at the start']],
-    qr: { url: GUIDE, label: 'Scan for the STAR(T) Stories Guide', display: 'Practice guides for all four stories' } },
+    items: [['LuStar', 'STAR(T) Story #1: Professionalism', ''],
+            ['LuStar', 'STAR(T) Story #2: Knowledge Application', ''],
+            ['LuStar', 'STAR(T) Story #3: Your Choice', 'Name your skill and why at the start']],
+    qr: { url: GUIDE, label: 'Scan for the STAR(T) Stories Guide', display: 'Practice guides for all three stories' } },
 
   disc: { kicker: 'TRY IT OUT LOUD · IN CLASS', title: 'Tell me about a time when...',
-    prompt: ['Pick one of your four skills and tell your partner the story in 2 minutes.',
+    prompt: ['Pick one of your three skills and tell your partner the story in 2 minutes.',
              'Partner: which step was the thinnest? Ask one question about the Action.'],
     format: 'Two minutes each, then swap. Use your phone\'s timer.' },
 
@@ -225,13 +222,13 @@ build({
       Anyone can claim a skill. Your stories show it. This deck walks through the framework, how to pick your stories, how to tell them, and how to make them strong.
       The owl is waving the start flag this time. Your stories are the finish line of the course, and the starting line for every interview after it.`,
     week: `
-      The big picture: four short, true stories, one for each of four Essential Skills.
-      Find a real moment for each skill. Draft it with a practice guide; there's one for each story in the STAR(T) Stories Guide. Tell it out loud in 2 to 4 minutes, or type it. Then submit each one in its own labeled journal in Blackboard.
-      The skills: Adaptability & Leadership, Professionalism, Knowledge Application, and one of your choice.
+      The big picture: three short, true stories, one for each of three Essential Skills.
+      Find a real moment for each skill. Draft it with a practice guide; there's one for each story in the STAR(T) Stories Guide. Tell it out loud in 2 to 4 minutes, or type it. Then submit each one in its own submission portal in Blackboard.
+      The skills: Professionalism, Knowledge Application, and one of your choice.
       Where this deck fits: introduce it in Module 9, work on it in Module 11, and finish in Module 12.`,
     work: `
-      All four stories are due with Module 12, on Sunday, earlier than the usual Monday so instructors can grade before final grades are due.
-      Each story has its own labeled journal in Blackboard. They don't have to go in all at once; students can submit them as they finish.
+      All three stories are due with Module 12, on Sunday, earlier than the usual Monday so instructors can grade before final grades are due.
+      Each story has its own submission portal in Blackboard. They don't have to go in all at once; students can submit them as they finish.
       Scan the code for the STAR(T) Stories Guide. Each practice guide helps students find their story and draft it, and estimates how long the draft runs out loud.`,
     disc: `
       In-class practice. This is the single most useful thing you can do with class time in Modules 11 and 12.

@@ -12,7 +12,7 @@ build({
 
   week: { title: 'Where you already show up',
     items: [['LuUsers', 'See the communities you\'re already in'], ['LuHandHeart', 'Name your offer, and your limit'],
-            ['LuStar', 'Choose your four STAR(T) skills'], ['LuMic', 'Draft one story, out loud']],
+            ['LuStar', 'Choose your three STAR(T) skills'], ['LuMic', 'Draft one story, out loud']],
     skills: [[4, 'Interpersonal Relations'], [5, 'Adaptability & Leadership'], [7, 'Civic Engagement'], [9, 'Knowledge Application']] },
 
   lessons: [
@@ -57,26 +57,26 @@ build({
     { kicker: 'Trail Tip', title: 'Start your STAR(T) Stories',
       async draw(s, k) {
         await rows(s, k, [['LuFolderOpen', 'Gather your Mile Markers', 'your best stories are already written down'],
-                          ['LuStar', 'Choose your four skills', 'three assigned, one your choice'],
+                          ['LuStar', 'Choose your three skills', 'two assigned, one your choice'],
                           ['LuMic', 'Draft one story, then say it out loud', 'start with the one you\'re surest about']], 2.15, 0.95);
         bar(s, k, 'Get one story drafted now, and Module 12 is a finishing week, not a starting week.', 5.2);
       },
       notes: `
         This module is working time for the capstone. Three steps.
         Gather your Mile Markers. The best stories are probably already written down. Forms in the guidebook save only in the browser on the device used, so if a student switched devices, their submitted Mile Markers are in Blackboard.
-        Choose your four skills: Adaptability & Leadership, Professionalism, Knowledge Application, and one of your choice. Students name all four in Mile Marker #11, Question 4.
+        Choose your three skills: Professionalism, Knowledge Application, and one of your choice. Adaptability & Leadership is now one of the choices. Students name all three in Mile Marker #11, Question 4.
         Draft one story, the one you feel surest about, with its practice guide. Then say it out loud once.
         This is a great week to show the STAR(T) Stories overview deck.` },
   ],
 
   work: { title: 'Due Monday by 11:59 PM Central',
-    items: [['LuFlag', 'Mile Marker #11: My Community Impact', 'Part I: your community. Part II: your four STAR(T) skills.'],
+    items: [['LuFlag', 'Mile Marker #11: My Community Impact', 'Part I: your community. Part II: your three STAR(T) skills.'],
             ['LuNotebookPen', 'Online sections: Journal: Getting the Call', 'Private. Only your instructor reads it.'],
             ['LuStar', 'Heads up: STAR(T) Stories', 'Due with Module 12, on Sunday']] },
 
   mm: { title: 'My Community Impact',
     qs: [['Where you show up, and your role'], ['One way you\'ve made, or could make, a difference'],
-         ['One way to show up more intentionally'], ['Your four STAR(T) skills, and the story for each']],
+         ['One way to show up more intentionally'], ['Your three STAR(T) skills, and the story for each']],
     side: [{ text: 'AI use: AI-supported', options: { bold: true, color: '7A5500', breakLine: true } },
            { text: 'AI doesn\'t know your community. You do.', options: { breakLine: true } },
            { text: ' ', options: { breakLine: true, fontSize: 10 } },
@@ -93,17 +93,17 @@ build({
       Two weeks left. STAR(T) Stories are due with Module 12, on Sunday, earlier than usual.
       Consider showing the STAR(T) Stories overview deck this week.`,
     week: `
-      This week: see the communities you're already in, name what you have to offer and what you're not available for, choose your four STAR(T) skills, and draft one story out loud.
+      This week: see the communities you're already in, name what you have to offer and what you're not available for, choose your three STAR(T) skills, and draft one story out loud.
       Four skills, with Civic Engagement as the Skill Spotlight.`,
     work: `
       Everything is due Monday by 11:59 PM Central.
-      Mile Marker #11 has two parts: your community impact, then your four STAR(T) skills with the story you plan for each.
+      Mile Marker #11 has two parts: your community impact, then your three STAR(T) skills with the story you plan for each.
       Online sections: the Getting the Call journal is private. In-person sections: today's attendance counts.
-      Heads up: all four STAR(T) Stories are due with Module 12, on Sunday.`,
+      Heads up: all three STAR(T) Stories are due with Module 12, on Sunday.`,
     mm: `
       Mile Marker #11 has two parts.
       Part I. One: name a community and your role in it, including small, everyday ways you contribute. Two: using people, rules, and influence, one specific way you've made, or could make, a positive difference. Small and real is exactly right. Three: as your circles grow, one way you want to show up more intentionally.
-      Part II. Four: for each of your four STAR(T) skills, the experience you plan to tell, in a phrase or sentence.
+      Part II. Four: for each of your three STAR(T) skills, the experience you plan to tell, in a phrase or sentence.
       It's AI-supported, but AI doesn't know your community. You do.`,
     disc: `
       In-person discussion. This is the in-class version of the private online journal, Getting the Call.

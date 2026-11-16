@@ -1169,7 +1169,7 @@ img.merit-badge { width: 44px; height: 44px; border-radius: 0; background: none;
 .coin-md .sn { position: absolute; right: -5px; bottom: -5px; width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 800; font-size: .85rem; display: grid; place-items: center; border: 3px solid #fff; }
 .coin-choice { border-radius: 50%; background: var(--soft-gold); border: 3px dashed var(--gold); display: grid; place-items: center; }
 .choice-mark { font-size: 1.8rem; font-weight: 800; color: #6b4a00; }
-.four-stories { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.four-stories { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .four-stories a { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; padding: 18px 12px; border: 2px solid var(--border); border-radius: var(--radius); background: #fff; text-decoration: none; color: var(--navy); font-weight: 800; height: 100%; }
 .four-stories a:hover { border-color: var(--blue); }
 .four-stories a:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
@@ -1191,6 +1191,7 @@ img.merit-badge { width: 44px; height: 44px; border-radius: 0; background: none;
 .skill-stories { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .skill-stories li { display: grid; grid-template-columns: 70px 1fr; gap: 14px; align-items: start; border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; background: #fff; }
 .skill-stories h3 { font-size: 1.08rem; margin-bottom: 4px; }
+.skill-stories li:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .skill-stories p { margin: 0 0 6px; font-size: .97rem; }
 .skill-stories a { font-weight: 700; }
 .focus-tag { display: inline-block; font-size: .72rem; font-weight: 800; color: #6b4a00; background: var(--soft-gold); border: 1px solid var(--gold); border-radius: 999px; padding: 1px 8px; vertical-align: middle; margin-left: 4px; }
@@ -1219,7 +1220,8 @@ img.merit-badge { width: 44px; height: 44px; border-radius: 0; background: none;
 .st-q { font-weight: 400; font-style: italic; color: var(--muted); font-size: .95rem; }
 .st-coach { font-size: .96rem; background: var(--soft-blue); border-left: 3px solid var(--blue); padding: 8px 12px; border-radius: 0 8px 8px 0; margin: 8px 0 !important; }
 .st-transfer { background: #fff7f0; }
-@media (max-width: 900px) { .four-stories { grid-template-columns: 1fr 1fr; } .fix-list { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .four-stories { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .fix-list { grid-template-columns: 1fr; } }
 @media (max-width: 700px) {
   .skill-stories, .choice-grid { grid-template-columns: 1fr; }
   .pace-guide li { grid-template-columns: 1fr; gap: 2px; }

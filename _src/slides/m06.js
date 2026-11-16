@@ -28,7 +28,7 @@ build({
         This week's Skill Spotlight is #9, Knowledge Application: turning "I know that" into "I did something with it."
         Left: where most students start. You can name the kind of work you're interested in and what it requires. Right: where you're headed. You use what you've learned to solve real problems on your path, and you reflect on your experiences to judge how well a career fits, with reasons.
         This module is Knowledge Application in practice: connecting what you know about yourself to real academic decisions.
-        It's also one of the three assigned STAR(T) Story skills. Start noticing moments when something you learned showed up somewhere else.` },
+        It's also one of the two assigned STAR(T) Story skills. Start noticing moments when something you learned showed up somewhere else.` },
 
     { kicker: 'Lesson 6.2', title: 'Explore your interests with Career Coach',
       async draw(s, k) {

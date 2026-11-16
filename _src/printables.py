@@ -2,7 +2,7 @@
 and the Instructor Guide's Printables Library. Files live in downloads/printables/.
 
 BY_MODULE: module number -> [(file stem, label)], Trail Tools first in the order students use them, then the Mile Marker.
-STAR: the four STAR(T) Stories fillable forms (built by star_forms.py), used for final submissions.
+STAR: the three STAR(T) Stories fillable forms (built by star_forms.py), used for final submissions.
 DOCS: (file stem, label, student note, instructor note, students?) for other course documents.
 Never add answer keys: the book is public.
 """
@@ -31,7 +31,6 @@ BY_MODULE = {
       ('Mile-Marker-12-My-Story-to-Share', 'Mile Marker #12: My Story to Share')],
 }
 STAR = [
- ('STAR-Fillable-Form-Adaptability-and-Leadership', 'Fillable Form: Adaptability &amp; Leadership (#5)'),
  ('STAR-Fillable-Form-Professionalism', 'Fillable Form: Professionalism (#6)'),
  ('STAR-Fillable-Form-Knowledge-Application', 'Fillable Form: Knowledge Application (#9)'),
  ('STAR-Fillable-Form-Your-Choice', 'Fillable Form: Your Choice'),

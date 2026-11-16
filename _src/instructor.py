@@ -184,7 +184,7 @@ def course_map(C):
       <div class="row"><div class="main">
         <div class="h2wrap"><h2 id="time-h">Time on task</h2></div>
         <p>Approximate minutes for each module's pages in the book, taken from the "About X minutes" estimates students see on every lesson, Trail Tip, Trail Tool, and Mile Marker. Mile Marker times are for writing the responses, not just reading the page.</p>
-        <p>The course is designed for about <strong>2 hours a week</strong> in all. Students don't need to read every page closely; the lessons support the Mile Marker, and the Mile Marker is the piece that counts. The book times don't include work done in Blackboard or on outside sites: AI Chats, discussions and journals (or class meetings for in-person sections), Merit activities, outside assessments such as Career Coach, HIGH5, and the Values Card Sort, and the four STAR(T) Stories in Module 12.</p>
+        <p>The course is designed for about <strong>2 hours a week</strong> in all. Students don't need to read every page closely; the lessons support the Mile Marker, and the Mile Marker is the piece that counts. The book times don't include work done in Blackboard or on outside sites: AI Chats, discussions and journals (or class meetings for in-person sections), Merit activities, outside assessments such as Career Coach, HIGH5, and the Values Card Sort, and the three STAR(T) Stories in Module 12.</p>
       </div></div>
       <div class="row wide gap-sm"><div class="main">
         <div class="table-scroll" role="region" aria-label="Time on task" tabindex="0">
@@ -270,7 +270,7 @@ def es_map(C):
     out.append(f'''    <div class="row gap-md">
       <div class="main">
         <p class="lede">How FYE 100 introduces and builds all ten skills in the Kentucky Graduate Profile.</p>
-        <p>The Kentucky Council on Postsecondary Education (CPE) defines 10 Essential Skills every graduate should be able to show. FYE 100 introduces all ten in <a href="../ch01/1-2.html">Lesson 1.2</a>, gives most of them a Skill Spotlight lesson, and has students tell the story of four of them in the STAR(T) Stories capstone. Learn more on the <a href="https://cpe.ky.gov/ourwork/kygradprofile.html">Kentucky Graduate Profile</a> page.</p>
+        <p>The Kentucky Council on Postsecondary Education (CPE) defines 10 Essential Skills every graduate should be able to show. FYE 100 introduces all ten in <a href="../ch01/1-2.html">Lesson 1.2</a>, gives most of them a Skill Spotlight lesson, and has students tell the story of three of them in the STAR(T) Stories capstone. Learn more on the <a href="https://cpe.ky.gov/ourwork/kygradprofile.html">Kentucky Graduate Profile</a> page.</p>
       </div>
     </div>
 ''' + print_btn() + f'''
@@ -301,7 +301,7 @@ def es_map(C):
     out.append(f'''    <section id="anchors" aria-labelledby="an-h">
       <div class="row"><div class="main">
         <div class="h2wrap"><h2 id="an-h">Course focus skills and anchors</h2></div>
-        <p>Two skills carry the course's institutional assessment. Both are also assigned STAR(T) Stories, along with Adaptability &amp; Leadership. Students choose their fourth story skill.</p>
+        <p>Two skills carry the course's institutional assessment. They are also the two assigned STAR(T) Stories. Students choose the skill for their third story, and Adaptability &amp; Leadership is one of the options.</p>
         <ul class="dots anchors">{anc}</ul>
       </div></div>
     </section>
@@ -596,7 +596,7 @@ def capstone_block():
     <section id="capstone" aria-labelledby="cap-h">
       <div class="row"><div class="main">
         <div class="h2wrap"><h2 id="cap-h">Capstone overview: STAR(T) Stories</h2></div>
-        <p>One deck for the whole capstone: why STAR(T), the five steps, a worked example, the four skills, where to find stories, how to tell them in 2 to 4 minutes, three fixes that move a story up, and a submission checklist. It ends with an in-class practice round. Introduce it in Module 9, use it for working time in Module 11, and come back to it in Module 12.</p>
+        <p>One deck for the whole capstone: why STAR(T), the five steps, a worked example, the three skills, where to find stories, how to tell them in 2 to 4 minutes, three fixes that make a story stronger, and a submission checklist. It ends with an in-class practice round. Introduce it in Module 9, use it for working time in Module 11, and come back to it in Module 12.</p>
         <div class="dl-row">
           <a class="dl-btn" href="../../downloads/slides/{f}" download>[[download]]<span><b>Download the slides</b><small>PowerPoint, {n} slides with speaker notes</small></span></a>
           <a class="dl-btn" href="{view}">[[see]]<span><b>View online</b><small>Opens in Microsoft's web viewer</small></span></a>

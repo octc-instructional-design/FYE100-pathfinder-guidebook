@@ -68,7 +68,7 @@ build({
         Thought traps sneak into drafts. "We" instead of "I." All-or-nothing results. Picking a story because it sounds impressive instead of because it's true. And a vague Transfer.
         Run the draft through the 4C Check. Clarity: what story am I actually telling? Context: what mattered most? Credibility: is this accurate, or did I round up? Consequences: so what? What does it mean going forward?
         That last one is the Transfer, and it's the part of the story an interviewer cares about most.
-        Mile Marker #9 is this draft. Students can use it as one of their four capstone stories.` },
+        Mile Marker #9 is this draft. Students can use it as one of their three capstone stories.` },
   ],
 
   work: { title: 'Due Monday by 11:59 PM Central',
@@ -82,7 +82,7 @@ build({
            { text: 'AI can ask you questions about your draft. It can\'t tell your story.', options: { breakLine: true } },
            { text: ' ', options: { breakLine: true, fontSize: 10 } },
            { text: 'Hold onto this draft.', options: { bold: true, color: '7A5500', breakLine: true } },
-           { text: 'It can become one of your four STAR(T) Stories.' }] },
+           { text: 'It can become one of your three STAR(T) Stories.' }] },
 
   notes: {
     title: `

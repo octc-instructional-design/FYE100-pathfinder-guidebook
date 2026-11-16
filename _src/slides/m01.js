@@ -74,7 +74,7 @@ build({
         Each module opens with a Skill Spotlight on one of them.
         Kentucky describes three levels. Benchmark is where most students start, about the level of finishing high school. Milestone is the target after two years of college: you can use the skill on your own in real situations. Capstone is the bachelor's degree level.
         This week students rate themselves with the My Skills Snapshot. Encourage honesty over generosity: a realistic starting point makes growth easier to see. They'll take it again at the end.
-        Plant the seed: the final project is four STAR(T) Stories showing these skills in action.` },
+        Plant the seed: the final project is three STAR(T) Stories showing these skills in action.` },
 
     { kicker: 'Lesson 1.3', title: 'Sounding right isn\'t being right',
       async draw(s, k) {

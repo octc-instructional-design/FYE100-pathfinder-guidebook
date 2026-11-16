@@ -28,7 +28,7 @@ build({
         It's a pattern, not a performance. Being someone people can count on, not being perfect.
         Left: where most students start. You know deadlines matter and you follow through. Right: where you're headed. You actually use time management to get things done, and you take accountability when things go wrong.
         This module is Professionalism in practice: time management and organization are the content.
-        Professionalism is one of the three assigned STAR(T) Story skills, so start noticing moments when you followed through when it wasn't easy.` },
+        Professionalism is one of the two assigned STAR(T) Story skills, so start noticing moments when you followed through when it wasn't easy.` },
 
     { kicker: 'Lesson 3.2 · Trail Tools', title: 'Look back, then look ahead',
       async draw(s, k) {

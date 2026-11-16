@@ -38,7 +38,7 @@ build({
         It's more than being friendly. It's knowing how your own background and experience shape the way you show up with people, and being able to work with people who see things differently.
         Left side: where most students start. You notice that people are different. Right side: where this course is headed. You can explain how your own story shapes your relationships, and you engage with other views instead of watching them from a distance.
         Ask: Where does this skill show up in this module? (Everywhere: reaching out to your Success Coach, asking for help, emailing an instructor.)
-        Point out: this is a common pick for the fourth STAR(T) Story at the end of the semester, so start noticing moments where how you treated someone changed what happened.` },
+        Point out: this is a common pick for the third STAR(T) Story, the one students choose, at the end of the semester, so start noticing moments where how you treated someone changed what happened.` },
 
     { kicker: 'Lesson 2.2', title: "Who's your Success Coach?",
       async draw(s, k) {

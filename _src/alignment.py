@@ -81,9 +81,9 @@ PLANNED = {
    'define community broadly and identify at least one community I already belong to and contribute to.',
    'describe specific ways my everyday actions make a positive impact on the people around me.',
    'connect my strengths and values to one intentional way I want to grow my community impact going forward.',
-   'select four experiences from my semester and match each one to an Essential Skill for my STAR(T) Story.']),
+   'select three experiences from my semester and match each one to an Essential Skill for my STAR(T) Stories.']),
  12: dict(be=['Reflective'], objectives=[
-   'record four STAR(T) responses, one per selected Essential Skill, that are specific, honest, and clearly structured.',
+   'record three STAR(T) responses, one per Essential Skill, that are specific, honest, and clearly structured.',
    'articulate how each skill connects to my future in college, my career, and my life: the Transfer step.',
    'explain my choice of student-selected skill in my own words.',
    'reflect honestly on my growth this semester, what I am taking with me, and what I want to work on next.']),
@@ -104,7 +104,7 @@ ES_DEF = {
 }
 # Planned Skill Spotlights for modules not yet built
 PLANNED_SPOTLIGHT = {10: 8, 11: 7}
-STAR_ASSIGNED = [5, 6, 9]
+STAR_ASSIGNED = [6, 9]
 
 # AI Literacy (BE framework, Tier 1 Benchmark)
 BE_DEF = [

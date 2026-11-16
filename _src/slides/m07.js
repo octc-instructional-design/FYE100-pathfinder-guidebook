@@ -26,7 +26,7 @@ build({
         This week's Skill Spotlight is #5, Adaptability & Leadership. Leadership is a pattern, not a position.
         Left: where most students start. You can describe how people cooperate and how new situations call for doing things differently. Right: where you're headed. You actually contribute to a shared goal, adjust with a positive mindset, and encourage others when things change.
         The shift is from understanding how it works to doing it, in real situations, with real people, under real pressure.
-        This is one of the three assigned STAR(T) Story skills. Starting college is itself a big adjustment; that may be a story.` },
+        It's one of the strongest choices for the third STAR(T) Story, the one students pick. Starting college is itself a big adjustment; that may be a story.` },
 
     { kicker: 'Lesson 7.2', title: 'Why your values matter',
       async draw(s, k) {
