@@ -79,3 +79,30 @@ table.rubric { border-collapse: collapse; width: 100%; font-size: .92em; }
 .lesson-list { list-style: none; padding-left: 0; } .lesson-list li { margin: .45em 0; padding-left: .7em; border-left: 3px solid #3bb3e5; }
 h2.h-card { color: #00467f; font-size: 1.1em; margin: 1.1em 0 .3em; }
 .card-head h2.h-card { color: #fff; margin: 0; }
+
+/* Before You Start (preface) and A Note from a Pathfinder */
+.pf-paper { font-size: 1em; }
+.pf-head { text-align: center; margin: 0 0 1.4em; }
+.pf-eyebrow { font-size: .75em; font-weight: bold; letter-spacing: .14em; text-transform: uppercase; color: #00467f; margin: 0 0 .6em; }
+.pf-head h1, .pf-more h2, .pf-callout h3, .pf-callout h4 { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; color: #011d41; }
+.pf-head h1 { font-size: 2.4em; margin: 0 0 .5em; }
+.pf-intro { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; font-size: 1.18em; line-height: 1.6; margin: 0 auto; max-width: 32em; }
+.pf-source { font-size: .88em; color: #52606d; margin: .8em auto 0; }
+.pf-notes, .pf-more ul { list-style: none; margin: 0; padding: 0; }
+.pf-note, .pf-more li, .pf-callout { border: 1px solid #e6dccb; border-top: 4px solid #e7a614; background: #fffdf8; border-radius: 4px; padding: .9em 1.1em .8em; margin: 0 0 1em; page-break-inside: avoid; break-inside: avoid; }
+.pf-q, .pf-callout .pf-label { font-size: .78em; font-weight: bold; letter-spacing: .1em; text-transform: uppercase; color: #00467f; margin: 0 0 .4em; }
+.pf-quote, .pf-callout blockquote { margin: 0; padding: 0; border: 0; }
+.pf-quote p, .pf-adapted, .pf-callout blockquote p { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; font-size: 1.3em; line-height: 1.4; color: #011d41; margin: 0; }
+.pf-more .pf-quote p, .pf-adapted { font-size: 1.08em; }
+.pf-quote p:before { content: "\201C"; color: #b87d00; }
+.pf-quote p:after { content: "\201D"; color: #b87d00; }
+.pf-attr { font-size: .85em; color: #52606d; margin: .6em 0 0; }
+.pf-more h2 { text-align: center; font-size: 1.35em; margin: 1.4em 0 .8em; }
+.pf-try { border: 2px solid #00467f; border-radius: 8px; padding: .9em 1.1em; margin: 1.4em 0 0; page-break-inside: avoid; break-inside: avoid; }
+.pf-try h2 { font-size: 1.1em; color: #00467f; margin: 0 0 .4em; }
+.pf-cal { display: none; }
+.pf-callout h3 { font-size: 1.25em; margin: 0 0 .5em; }
+.pf-callout h4 { font-size: 1.05em; margin: .7em 0 .1em; }
+.pf-callout .pf-ask { margin-top: .8em; padding-top: .6em; border-top: 1px dashed #d8c9ad; }
+.pf-prompt { display: block; margin-top: .4em; background: #eef3f8; border-left: 4px solid #00467f; padding: .5em .8em; }
+.pf-paper h2, .pf-note h2 { border: 0; padding: 0; }
