@@ -1,7 +1,7 @@
 {
   "term": "Spring 2027",
   "code": "4266",
-  "note": "Semester-specific links used on the slides. Update this file each semester, then rebuild the decks that use it (m01.js, m05.js, m12.js).",
+  "note": "Semester-specific values used on the slides. Update this file each semester, then rebuild the decks that use it (m01, m05, m07, m08, m09, m10, m11, m12).",
   "snapshot_start": {
     "url": "https://forms.cloud.microsoft/r/q1qNGUcQEH?origin=QRCode",
     "display": "forms.cloud.microsoft/r/q1qNGUcQEH"
@@ -13,5 +13,9 @@
   "aai": {
     "url": "https://forms.cloud.microsoft/r/J3LD45NjZX?origin=QRCode",
     "display": "forms.cloud.microsoft/r/J3LD45NjZX"
+  },
+  "catchup": {
+    "first": "Tuesday, March 16",
+    "second": "Tuesday, April 6"
   }
 }

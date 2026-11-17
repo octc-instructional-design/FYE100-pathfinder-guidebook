@@ -1,4 +1,5 @@
 const { build } = require('./deck.js');
+const TERM = require('./term.json');
 const { bar, spotlight, grid4, rows, qrPanel } = require('./helpers.js');
 
 build({
@@ -112,6 +113,7 @@ build({
     house: `
       INSTRUCTOR SLIDE. Edit the announcements box before class. Hide this slide when recording for online sections (right-click the slide, Hide Slide).
       Merit Activity #3, the last one, is due with this module. Remind students to use the Activity #3 link.
+      Catch-up reminder: individual work from Modules 8 to 11, including Merit Activity #3, stays open until ${TERM.catchup.second}.
       Online sections: if you're hosting a virtual meet-up for Merit this week, put the date and time here.`,
     week: `
       This week: find how you show up in a group, take 16Personalities, and pick three strategies that fit you. Merit Activity #3 is also due.

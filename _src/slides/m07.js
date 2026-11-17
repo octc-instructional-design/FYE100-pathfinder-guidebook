@@ -1,4 +1,5 @@
 const { build } = require('./deck.js');
+const TERM = require('./term.json');
 const { bar, spotlight, cards, rows, qrPanel } = require('./helpers.js');
 
 build({
@@ -95,6 +96,7 @@ build({
     house: `
       INSTRUCTOR SLIDE. Edit the announcements box before class. Hide this slide when recording for online sections (right-click the slide, Hide Slide).
       Merit Activity #2 is due with this module. Remind students to use the Activity #2 link on the Merit platform.
+      Catch-up reminder: individual work from Modules 1 to 7, including Merit Activities #1 and #2, stays open until ${TERM.catchup.first}, after spring break.
       Online sections: if you're hosting a virtual meet-up for Merit this week, put the date and time here.`,
     week: `
       This week: sort your Top 5 values, find your Top 5 strengths, and name one blind spot. Merit Activity #2 is also due.

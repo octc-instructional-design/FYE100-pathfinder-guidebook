@@ -1,4 +1,5 @@
 const { build } = require('./deck.js');
+const TERM = require('./term.json');
 const { pair, bar, spotlight, cards, rows, qrPanel } = require('./helpers.js');
 
 build({
@@ -8,7 +9,7 @@ build({
   art: __dirname + '/art/m08-title.jpg',
 
   house: { title: 'Breaking Camp', sub: 'Pack up Module 7, then look ahead to Module 8.',
-    ahead: 'Module 8 work is due Monday by 11:59 PM Central. Spring break comes after this module.' },
+    ahead: `Module 8 is due Monday, before spring break. Behind? Modules 1 to 7 stay open until ${TERM.catchup.first}.` },
 
   week: { title: 'Find a career that fits your life',
     items: [['LuSunrise', 'Start with the life you want'], ['LuSearch', 'Research one career, well'],
@@ -113,6 +114,7 @@ build({
     house: `
       INSTRUCTOR SLIDE. Edit the announcements box before class. Hide this slide when recording for online sections (right-click the slide, Hide Slide).
       Spring break follows this module. Remind students that Module 8 is due before break, and that Module 9 picks up after.
+      If students are behind, break is their catch-up week: individual work from Modules 1 to 7 stays open until ${TERM.catchup.first} at 11:59 PM. Students who are caught up don't need to do anything. Module 8 belongs to the second window, which closes ${TERM.catchup.second}.
       Registration for next semester is coming. If you know the opening date, put it here.`,
     week: `
       This week: start with the life you want, research one career well, check the fit honestly, and get two practical things done: a Handshake profile and an early start on registration.

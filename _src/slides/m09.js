@@ -1,4 +1,5 @@
 const { build } = require('./deck.js');
+const TERM = require('./term.json');
 const { bar, spotlight, grid4, cards, rows } = require('./helpers.js');
 
 build({
@@ -92,6 +93,7 @@ build({
     house: `
       INSTRUCTOR SLIDE. Edit the announcements box before class. Hide this slide when recording for online sections (right-click the slide, Hide Slide).
       Welcome back from spring break. Quick check-in: Module 8 submissions, the extra credit schedule, and registration.
+      Last call: individual work from Modules 1 to 7 closes ${TERM.catchup.first} at 11:59 PM. After that, the instructor hides those modules; grades and feedback stay visible.
       From here on, the STAR(T) Stories are the throughline. Consider showing the capstone overview deck this week.`,
     week: `
       This week: notice your thinking traps, use the 4C Check, draft your first STAR(T) story, and practice in the AI Chat.
