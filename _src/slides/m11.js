@@ -9,7 +9,7 @@ build({
   art: __dirname + '/art/m11-title.jpg',
 
   house: { title: 'Breaking Camp', sub: 'Pack up Module 10, then look ahead to Module 11.',
-    ahead: `Module 11 is due Monday. Modules 8 to 11 stay open until ${TERM.catchup.second}. STAR(T) Stories: Sunday, with Module 12.` },
+    ahead: `Module 11 is due Monday. Modules 8 to 11 stay open until Tuesday, the next day. STAR(T) Stories: Sunday, with Module 12.` },
 
   week: { title: 'Where you already show up',
     items: [['LuUsers', 'See the communities you\'re already in'], ['LuHandHeart', 'Name your offer, and your limit'],
@@ -92,7 +92,7 @@ build({
     house: `
       INSTRUCTOR SLIDE. Edit the announcements box before class. Hide this slide when recording for online sections (right-click the slide, Hide Slide).
       Two weeks left. STAR(T) Stories are due with Module 12, on Sunday, earlier than usual.
-      Last catch-up date: individual work from Modules 8 to 11 closes ${TERM.catchup.second} at 11:59 PM, the day after Module 11 is due. Module 12 and the STAR(T) Stories keep their Sunday deadline.
+      Last catch-up date: individual work from Modules 8 to 11 closes Tuesday at 11:59 PM, the day after Module 11 is due. Module 12 and the STAR(T) Stories keep their Sunday deadline.
       Consider showing the STAR(T) Stories overview deck this week.`,
     week: `
       This week: see the communities you're already in, name what you have to offer and what you're not available for, choose your three STAR(T) skills, and draft one story out loud.

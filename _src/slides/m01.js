@@ -49,7 +49,7 @@ build({
       notes: `
         Most students skim the syllabus once and never look at it again. It's one of the most common first-year mistakes.
         Four things to find in every syllabus, this week: every deadline, the late work policy, how your instructor wants to be contacted and how fast they respond, and the AI policy.
-        Use FYE 100 as the example. Weekly work is due Monday, but individual work has catch-up dates: Modules 1 to 7 stay open until ${TERM.catchup.first}, and Modules 8 to 11 until ${TERM.catchup.second}. Late work turned in by then can still earn full credit. Not every course works this way, which is exactly why you read each syllabus.
+        Use FYE 100 as the example. Weekly work is due Monday, but individual work has catch-up dates: Modules 1 to 7 stay open until the Tuesday after Spring Break, and Modules 8 to 11 until the Tuesday after Module 11 is due. Late work turned in by then can still earn full credit. Not every course works this way, which is exactly why you read each syllabus.
         When something is unclear, ask before you act on your assumption. "I read the syllabus and wasn't sure how this works" is a professional way to ask, and it shows you read it.
         Lesson 1.1 also covers four unspoken expectations: follow all the directions, communicate like a professional, manage your own deadlines, and academic integrity. Pick one to emphasize for your section.
         Option: run the syllabus speed hunt here.` },
