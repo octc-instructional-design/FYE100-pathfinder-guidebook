@@ -1032,7 +1032,7 @@ GUIDES = [
    ('how-the-book-works.html','1','How the Book Works',"The book, Blackboard, and how a module is put together.",8,
      [('split','The book and Blackboard'),('anatomy','How a module is built'),('design','Design commitments'),('teaching','Teaching with the book'),('grading','Grading and late work'),('current','Keeping the book current'),('assessment','Course-level assessment'),('reporting','Using the maps')]),
    ('grading.html','2','Grading and Late Work',"How FYE 100 grades, the rubrics, AI Chats, catch-up dates, and IP grades.",10,
-     [('philosophy','Why FYE 100 grades this way'),('floor','What every section shares'),('credit','What earns credit'),('mile-markers','Grading Mile Markers'),('stories','Scoring STAR(T) Stories'),('ai-chats','Scoring AI Chats'),('late','Late work and recovery'),('gradebook','The gradebook'),('ip','IP grades'),('coaching','Coaching a student who falls behind')]),
+     [('philosophy','Why FYE 100 grades this way'),('floor','What every section shares'),('credit','What earns credit'),('mile-markers','Grading Mile Markers'),('stories','Scoring STAR(T) Stories'),('ai-chats','Scoring AI Chats'),('late','Late work and recovery'),('gradebook','The gradebook'),('ip','IP grades'),('outreach','Reaching out'),('coaching','Coaching a student who falls behind')]),
    ('course-map.html','3','Course Map',"Every I Can statement, the outcome it serves, and where students show it.",10,
      [('outcomes','Learning outcomes'),('glance','At a glance'),('time','Time on task'),('modules','Module by module')]),
    ('essential-skills-map.html','4','10 Essential Skills Map',"Kentucky Graduate Profile coverage, by module and by skill.",8,
