@@ -25,7 +25,7 @@ build({
       },
       notes: `
         Welcome back. This week's Skill Spotlight is #2, Critical & Creative Thinking.
-        It isn't overthinking or arguing. It's pausing on purpose before you react, decide, or assume. Much of the stress in decisions is really confusion about what you're deciding.
+        It means pausing on purpose before you react, decide, or assume, not overthinking or arguing. Much of the stress in decisions is really confusion about what you're deciding.
         Left: where most students start. You describe a problem using whatever information you happen to have, and don't always notice how your own perspective shapes it. Right: where you're headed. You figure out what's really going on with relevant information, seek out other perspectives, and name what matters to reach a clear conclusion.
         It shows up in everyday decisions, in news and social media, and in your STAR(T) stories.` },
 
