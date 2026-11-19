@@ -466,8 +466,15 @@ def head(title, depth):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
-<link rel="icon" type="image/png" sizes="48x48" href="{up}images/shared/icon-48.png">
-<link rel="apple-touch-icon" href="{up}images/shared/icon-180.png">
+<link rel="icon" type="image/svg+xml" href="{up}images/shared/app-icon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="{up}images/shared/app-icon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="{up}images/shared/app-icon-48.png">
+<link rel="apple-touch-icon" href="{up}images/shared/app-icon-180.png">
+<link rel="manifest" href="{up}manifest.webmanifest">
+<meta name="theme-color" content="#00467f">
+<meta name="apple-mobile-web-app-title" content="FYE 100">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="stylesheet" href="{up}css/styles.css?v={V}">
 <script src="{up}js/book.js?v={V}" defer></script>
 </head>
