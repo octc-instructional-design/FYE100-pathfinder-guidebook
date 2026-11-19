@@ -26,7 +26,7 @@ RUBRIC = """          <table class="rubric">
             <caption class="sr-only">Mile Marker scoring guide</caption>
             <thead><tr><th scope="col">Score</th><th scope="col">What it means</th></tr></thead>
             <tbody>
-              <tr><th scope="row"><span class="lvl">4</span>Complete</th><td>Every question is answered.</td></tr>
+              <tr><th scope="row"><span class="lvl">4</span>Complete</th><td>Every prompt is answered.</td></tr>
               <tr><th scope="row"><span class="lvl">3</span>One missing</th><td>One question is missing or blank.</td></tr>
               <tr><th scope="row"><span class="lvl">2</span>About half</th><td>About half the questions are answered.</td></tr>
               <tr><th scope="row"><span class="lvl">1</span>Minimal</th><td>Only one or two are answered.</td></tr>
@@ -466,8 +466,15 @@ def head(title, depth):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
-<link rel="icon" type="image/png" sizes="48x48" href="{up}images/shared/icon-48.png">
-<link rel="apple-touch-icon" href="{up}images/shared/icon-180.png">
+<link rel="icon" type="image/svg+xml" href="{up}images/shared/app-icon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="{up}images/shared/app-icon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="{up}images/shared/app-icon-48.png">
+<link rel="apple-touch-icon" href="{up}images/shared/app-icon-180.png">
+<link rel="manifest" href="{up}manifest.webmanifest">
+<meta name="theme-color" content="#00467f">
+<meta name="apple-mobile-web-app-title" content="FYE 100">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="stylesheet" href="{up}css/styles.css?v={V}">
 <script src="{up}js/book.js?v={V}" defer></script>
 </head>
@@ -489,7 +496,7 @@ def bookbar(depth, where):
       </span>
     </a>
     <nav class="bar-nav" aria-label="Book">
-      <a class="bar-btn" href="{up}index.html">{ICON['home']}<span class="bar-lbl">Home</span></a>
+{isearch.bar_link(up) if where not in ('Instructor Guide', 'Search') else ''}      <a class="bar-btn" href="{up}index.html">{ICON['home']}<span class="bar-lbl">Home</span></a>
       <a class="bar-btn" href="{up}chapters/help/index.html">{ICON['help']}<span class="bar-lbl">How to use</span></a>
       <a class="contents-btn" href="{up}index.html#contents">{ICON['menu']}<span><span class="long">Book </span>Contents</span></a>
     </nav>
@@ -1259,7 +1266,7 @@ def build_guide(g):
         label = num if num in SPECIAL else t
         page = head(f'{t} | {g["title"]} | {BOOK}', 2) + bookbar(2, where) + \
           '\n<div class="shell">\n' + sidebar(g, f) + '\n  <main id="main" class="reading' + (' workspace' if num in ('Workspace', 'Notes') else '') + '">\n' + crumbs(g, label) + \
-          lesson_header(g, i) + '\n' + body + pagenav(g, f) + '  </main>\n</div>\n' + FOOT
+          (isearch.mini_form() if g['slug']=='instructor' else '') + lesson_header(g, i) + '\n' + body + pagenav(g, f) + '  </main>\n</div>\n' + FOOT
         write(d/f, page)
     intro = '\n'.join(f'          <p>{p}</p>' for p in g['intro'])
     cards = []
@@ -1293,7 +1300,7 @@ def build_guide(g):
 <div class="shell">
 """ + sidebar(g, 'index.html') + f"""
   <main id="main" class="reading opener">
-
+{isearch.mini_form() if g['slug']=='instructor' else ''}
     <section aria-labelledby="why" class="row wide gap-sm">
       <div class="main">
         <div class="sticky">
@@ -1408,7 +1415,7 @@ def build_printables():
     write(d/'index.html', page)
 
 # ------------------------------------------------------------------ help page
-HELP_SECS=[('split','The book and Blackboard'),('module','How each module is laid out'),('reading',"You don't have to read every word"),('save','Keep your work safe'),('scoring','How Mile Markers are scored'),('ai','AI use labels'),('around','Getting around'),('guides','The guides'),('access','Reading your way')]
+HELP_SECS=[('split','The book and Blackboard'),('module','How each module is laid out'),('reading',"You don't have to read every word"),('save','Keep your work safe'),('scoring','How Mile Markers are scored'),('ai','AI use labels'),('around','Getting around'),('phone','Put the book on your phone'),('guides','The guides'),('access','Reading your way')]
 def build_help():
     d = ROOT/'chapters/help'; d.mkdir(parents=True, exist_ok=True)
     body = tokens((HERE/'bodies/help/how-to-use.html').read_text())
@@ -1536,6 +1543,7 @@ def build_home():
     write(ROOT/'index.html', home)
 
 import instructor
+import isearch
 INSTR = instructor.pages(CHAPTERS, LATER, ESSENTIAL, HERE)
 for ch in CHAPTERS: build_chapter(ch)
 for g in GUIDES: build_guide(g)
@@ -1543,4 +1551,46 @@ build_help()
 build_before()
 build_printables()
 build_home()
+
+def build_isearch():
+    g = next(x for x in GUIDES if x['slug']=='instructor')
+    page = head(f'Search | {g["title"]} | {BOOK}', 2) + bookbar(2, g['title']) + '\n<div class="shell">\n' + sidebar(g, 'search.html') + '''
+  <main id="main" class="reading">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="index.html">Instructor Guide</a></li>
+        <li><span aria-current="page">Search</span></li>
+      </ol>
+    </nav>
+    <h1 class="isearch-h1">Search the book</h1>
+    <p class="lede">Every lesson, Mile Marker, Trail Tip, and guide, plus this Instructor Guide. Results link straight to the section.</p>
+''' + isearch.page_body() + f'''  </main>
+</div>
+<script src="../../js/isearch.js?v={V}"></script>
+''' + FOOT
+    write(ROOT/'chapters/instructor/search.html', page)
+
+build_isearch()
+
+def build_ssearch():
+    page = head(f'Search | {BOOK}', 2) + bookbar(2, 'Search') + '''
+<div class="shell solo">
+  <main id="main" class="reading">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../index.html">Home</a></li>
+        <li><span aria-current="page">Search</span></li>
+      </ol>
+    </nav>
+    <h1 class="isearch-h1">Search the book</h1>
+    <p class="lede">Find any lesson, Mile Marker, Trail Tip, or guide. Results take you straight to the section.</p>
+''' + isearch.student_body() + f'''  </main>
+</div>
+<script src="../../js/isearch.js?v={V}"></script>
+''' + FOOT
+    write(ROOT/'chapters/help/search.html', page)
+
+build_ssearch()
+isearch.build_index(ROOT)
 print('built', [c['n'] for c in CHAPTERS])
