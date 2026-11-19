@@ -25,7 +25,7 @@ build({
       },
       notes: `
         This week's Skill Spotlight is #3, Quantitative Reasoning.
-        It isn't math for a test. It's thinking clearly with numbers in real life, and you already do it: comparing prices, splitting a bill, figuring out whether you can afford something before payday.
+        It means thinking clearly with numbers in real life, not doing math for a test, and you already do it: comparing prices, splitting a bill, figuring out whether you can afford something before payday.
         Left: where most students start, working with numbers. Right: where you're headed, thinking with them, from calculating to reasoning.
         A note on math anxiety, from the lesson: it's real and common, and it usually means something went wrong in how you were taught, not that you can't do this. This level doesn't require algebra. It takes attention, honesty, and a willingness to look at numbers without flinching.` },
 
