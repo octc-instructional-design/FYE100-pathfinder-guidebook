@@ -1836,3 +1836,9 @@ body:has(.review-banner) main::before { content: ""; position: fixed; inset: 0; 
 /* Sample message an instructor can send */
 .say { margin: .4rem 0 0; padding: .8rem 1rem; background: #f2f6fa; border-left: 4px solid #e7a614; border-radius: 4px; }
 .say p { margin: 0; }
+
+/* Small illustration beside text (Ten of Flags) */
+.card-fig { float: right; width: 180px; margin: 0 0 12px 20px; }
+.card-fig img { display: block; width: 100%; height: auto; }
+.card-fig figcaption { font-size: .8rem; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+@media (max-width: 560px) { .card-fig { float: none; width: 160px; margin: 8px auto 12px; } }
