@@ -26,7 +26,7 @@ RUBRIC = """          <table class="rubric">
             <caption class="sr-only">Mile Marker scoring guide</caption>
             <thead><tr><th scope="col">Score</th><th scope="col">What it means</th></tr></thead>
             <tbody>
-              <tr><th scope="row"><span class="lvl">4</span>Complete</th><td>Every question is answered.</td></tr>
+              <tr><th scope="row"><span class="lvl">4</span>Complete</th><td>Every prompt is answered.</td></tr>
               <tr><th scope="row"><span class="lvl">3</span>One missing</th><td>One question is missing or blank.</td></tr>
               <tr><th scope="row"><span class="lvl">2</span>About half</th><td>About half the questions are answered.</td></tr>
               <tr><th scope="row"><span class="lvl">1</span>Minimal</th><td>Only one or two are answered.</td></tr>
