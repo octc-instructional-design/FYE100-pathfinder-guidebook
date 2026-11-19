@@ -1777,3 +1777,28 @@ h2.h-card { display: block; background-image: none; padding: 0; font-size: 1.2re
 .shot-fig { margin: 18px 0; }
 .shot-fig img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 8px; }
 .shot-fig figcaption { font-size: .85rem; color: var(--muted); margin-top: 8px; }
+/* Instructor search */
+.isearch { margin: 0 0 22px; }
+.isearch label { display: block; font-size: .82rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+.isearch-row { display: flex; gap: 8px; }
+.isearch input[type=search] { flex: 1 1 auto; min-width: 0; font: inherit; font-size: 1rem; padding: 10px 14px; border: 2px solid var(--border); border-radius: 999px; background: #fff; color: var(--ink); }
+.isearch input[type=search]:focus { outline: 3px solid var(--gold); outline-offset: 1px; border-color: var(--blue); }
+.isearch button { font: inherit; font-weight: 800; padding: 10px 20px; border: 0; border-radius: 999px; background: var(--blue); color: #fff; cursor: pointer; }
+.isearch button:hover { background: var(--navy); }
+.isearch-filter { border: 0; padding: 0; margin: 0 0 14px; display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; }
+.isearch-filter legend { float: left; font-weight: 800; color: var(--navy); margin-right: 6px; padding: 0; }
+.isearch-filter label { display: inline-flex; align-items: center; gap: 6px; }
+.isearch-status { color: var(--muted); margin: 0 0 10px; }
+.isearch-results { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.isearch-results li { padding: 14px 0; border-top: 1px solid var(--border); }
+.isearch-results a { font-weight: 800; font-size: 1.05rem; text-decoration: none; }
+.isearch-results a:hover { text-decoration: underline; }
+.isr-sec { font-weight: 600; color: var(--muted); }
+.isr-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: .82rem; color: var(--muted); margin-top: 4px; }
+.isr-tag { font-size: .7rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: 1px 8px; border-radius: 4px; }
+.isr-s { background: var(--soft-blue, #eef5fb); color: var(--blue); }
+.isr-i { background: #fdf6e3; color: #6b4a00; }
+.isearch-results p { margin: 6px 0 0; font-size: .95rem; }
+.isearch-results mark { background: #fbe7a8; color: inherit; padding: 0 2px; border-radius: 2px; }
+.isearch-h1 { margin-top: 4px; }
+@media print { .isearch { display: none; } }

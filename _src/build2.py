@@ -1257,7 +1257,7 @@ def build_guide(g):
         label = num if num in SPECIAL else t
         page = head(f'{t} | {g["title"]} | {BOOK}', 2) + bookbar(2, where) + \
           '\n<div class="shell">\n' + sidebar(g, f) + '\n  <main id="main" class="reading' + (' workspace' if num in ('Workspace', 'Notes') else '') + '">\n' + crumbs(g, label) + \
-          lesson_header(g, i) + '\n' + body + pagenav(g, f) + '  </main>\n</div>\n' + FOOT
+          (isearch.form() if g['slug']=='instructor' else '') + lesson_header(g, i) + '\n' + body + pagenav(g, f) + '  </main>\n</div>\n' + FOOT
         write(d/f, page)
     intro = '\n'.join(f'          <p>{p}</p>' for p in g['intro'])
     cards = []
@@ -1291,7 +1291,7 @@ def build_guide(g):
 <div class="shell">
 """ + sidebar(g, 'index.html') + f"""
   <main id="main" class="reading opener">
-
+{isearch.form() if g['slug']=='instructor' else ''}
     <section aria-labelledby="why" class="row wide gap-sm">
       <div class="main">
         <div class="sticky">
@@ -1534,6 +1534,7 @@ def build_home():
     write(ROOT/'index.html', home)
 
 import instructor
+import isearch
 INSTR = instructor.pages(CHAPTERS, LATER, ESSENTIAL, HERE)
 for ch in CHAPTERS: build_chapter(ch)
 for g in GUIDES: build_guide(g)
@@ -1541,4 +1542,26 @@ build_help()
 build_before()
 build_printables()
 build_home()
+
+def build_isearch():
+    g = next(x for x in GUIDES if x['slug']=='instructor')
+    page = head(f'Search | {g["title"]} | {BOOK}', 2) + bookbar(2, g['title']) + '\n<div class="shell">\n' + sidebar(g, 'search.html') + '''
+  <main id="main" class="reading">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="index.html">Instructor Guide</a></li>
+        <li><span aria-current="page">Search</span></li>
+      </ol>
+    </nav>
+    <h1 class="isearch-h1">Search the book</h1>
+    <p class="lede">Every lesson, Mile Marker, Trail Tip, and guide, plus this Instructor Guide. Results link straight to the section.</p>
+''' + isearch.page_body() + f'''  </main>
+</div>
+<script src="../../js/isearch.js?v={V}"></script>
+''' + FOOT
+    write(ROOT/'chapters/instructor/search.html', page)
+
+build_isearch()
+isearch.build_index(ROOT)
 print('built', [c['n'] for c in CHAPTERS])

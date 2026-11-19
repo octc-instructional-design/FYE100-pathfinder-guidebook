@@ -1,0 +1,100 @@
+# Instructor search: builds two section-level indexes from the finished site and the search page.
+# Student pages and Instructor Guide pages go in separate files so a future student search
+# can load only the student file. Both live with the Instructor Guide for now.
+import json, re
+from pathlib import Path
+
+try:
+    from bs4 import BeautifulSoup
+except ImportError:  # the search index is optional; the rest of the book still builds
+    BeautifulSoup = None
+
+SKIP = {'search.html'}
+
+def _clean(t):
+    return re.sub(r'\s+', ' ', t).strip()
+
+def _loc(soup, kind):
+    c = soup.select('nav.crumbs li')
+    parts = [_clean(li.get_text(' ')) for li in c[1:]]  # drop Home
+    if not parts:
+        return 'Instructor Guide' if kind == 'i' else 'Pathfinder Guidebook'
+    return ' · '.join(parts)
+
+def page_entries(path, rel, kind):
+    html = path.read_text(encoding='utf-8')
+    if 'http-equiv="refresh"' in html:
+        return []
+    soup = BeautifulSoup(html, 'html.parser')
+    main = soup.find('main')
+    if not main:
+        return []
+    h1 = main.find('h1') or soup.find('h1')
+    title = _clean(h1.get_text(' ')) if h1 else _clean(soup.title.get_text()).split('|')[0].strip()
+    loc = _loc(soup, kind)
+    for t in main.select('script, style, nav, svg, button, .pagenav, .mm-actions, .sr-only'):
+        t.decompose()
+    out = []
+    secs = main.find_all('section', id=True)
+    if secs:
+        first = []
+        for el in main.children:
+            if getattr(el, 'name', None) == 'section' and el.get('id'):
+                break
+            if getattr(el, 'get_text', None):
+                first.append(el.get_text(' '))
+        lead = _clean(' '.join(first))
+        if lead:
+            out.append(dict(u=rel, t=title, s='', l=loc, k=kind, x=lead[:4000]))
+        for s in secs:
+            if s.find_parent('section', id=True):
+                continue  # nested sections are covered by their parent
+            h = s.find(['h2', 'h3'])
+            head = _clean(h.get_text(' ')) if h else ''
+            txt = _clean(s.get_text(' '))
+            if txt:
+                out.append(dict(u=f'{rel}#{s["id"]}', t=title, s=head, l=loc, k=kind, x=txt[:6000]))
+    else:
+        txt = _clean(main.get_text(' '))
+        if txt:
+            out.append(dict(u=rel, t=title, s='', l=loc, k=kind, x=txt[:8000]))
+    return out
+
+def build_index(root):
+    if BeautifulSoup is None:
+        print('search index skipped: bs4 not installed')
+        return
+    stu, ins = [], []
+    for p in sorted((root/'chapters').rglob('*.html')):
+        if p.name in SKIP:
+            continue
+        rel = p.relative_to(root).as_posix()
+        kind = 'i' if p.parent.name == 'instructor' else 's'
+        (ins if kind == 'i' else stu).extend(page_entries(p, rel, kind))
+    d = root/'chapters/instructor'
+    (d/'search-student.json').write_text(json.dumps(stu, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
+    (d/'search-instructor.json').write_text(json.dumps(ins, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
+    print(f'search index: {len(stu)} student sections, {len(ins)} instructor sections')
+
+def form(value=''):
+    return f'''    <form class="isearch" action="search.html" method="get" role="search" aria-label="Search the book">
+      <label for="isq">Search the whole book and this guide</label>
+      <div class="isearch-row">
+        <input id="isq" name="q" type="search" value="{value}" placeholder="Try gradebook, SIFT, or Merit" autocomplete="off" spellcheck="false">
+        <button type="submit">Search</button>
+      </div>
+    </form>
+'''
+
+def page_body():
+    return form() + '''
+    <fieldset class="isearch-filter">
+      <legend>Show</legend>
+      <label><input type="radio" name="isk" value="all" checked> Everything</label>
+      <label><input type="radio" name="isk" value="s"> Student pages</label>
+      <label><input type="radio" name="isk" value="i"> Instructor Guide</label>
+    </fieldset>
+    <p class="isearch-status" id="iss" role="status" aria-live="polite"></p>
+    <ol class="isearch-results" id="isr"></ol>
+    <noscript><p>Search needs JavaScript. You can still browse the guide from the menu.</p></noscript>
+'''
