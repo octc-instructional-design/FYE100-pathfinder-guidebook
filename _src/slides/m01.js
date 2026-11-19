@@ -223,7 +223,7 @@ build({
       Why college, and why OCTC. What success looks like for you this semester, in your own terms. One strength you already bring. One goal with two concrete steps; the test is whether someone else could tell you reached it, and whether you could put each step on a calendar. And where AI shows up in your life and how you feel about using it for school. Any honest position is a good answer there.
       It's AI-supported: AI can help you think, but the writing is yours. The guidebook has an optional AI thinking partner prompt and a fill-in form that saves a PDF. There's a printable handout in Blackboard too.
       You'll come back to this reflection at the end of the course, so honest beats perfect.
-      Every Mile Marker allows two attempts, and the last attempt is the one graded. If your instructor's feedback names a question that needs more, you can revise and resubmit.`,
+      Every Mile Marker allows two attempts, and the higher score counts. If your instructor's feedback names a prompt that needs more, you can revise and resubmit.`,
     disc: `
       In-person introductions. Model it first with your own answer.
       Pairs for three minutes, then each person introduces their partner to the room. Introducing someone else lowers the stakes on day one.
