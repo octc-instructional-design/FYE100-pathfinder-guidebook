@@ -1,6 +1,6 @@
-# Instructor search: builds two section-level indexes from the finished site and the search page.
-# Student pages and Instructor Guide pages go in separate files so a future student search
-# can load only the student file. Both live with the Instructor Guide for now.
+# Book search: builds two section-level indexes from the finished site.
+# search-index.json (site root) holds student pages; the student search loads only that file.
+# chapters/instructor/search-instructor.json holds the Instructor Guide; only the instructor search loads it.
 import json, re
 from pathlib import Path
 
@@ -32,7 +32,7 @@ def page_entries(path, rel, kind):
     h1 = main.find('h1') or soup.find('h1')
     title = _clean(h1.get_text(' ')) if h1 else _clean(soup.title.get_text()).split('|')[0].strip()
     loc = _loc(soup, kind)
-    for t in main.select('script, style, nav, svg, button, .pagenav, .mm-actions, .sr-only'):
+    for t in main.select('script, style, nav, svg, button, form.isearch-sm, form.isearch, h1, .pagenav, .mm-actions, .sr-only, .skillbar, .lesson-kicker, .lesson-meta, .chapter-kicker'):
         t.decompose()
     out = []
     secs = main.find_all('section', id=True)
@@ -72,7 +72,9 @@ def build_index(root):
         kind = 'i' if p.parent.name == 'instructor' else 's'
         (ins if kind == 'i' else stu).extend(page_entries(p, rel, kind))
     d = root/'chapters/instructor'
-    (d/'search-student.json').write_text(json.dumps(stu, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
+    old = d/'search-student.json'
+    if old.exists(): old.unlink()
+    (root/'search-index.json').write_text(json.dumps(stu, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
     (d/'search-instructor.json').write_text(json.dumps(ins, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
     print(f'search index: {len(stu)} student sections, {len(ins)} instructor sections')
 
@@ -87,11 +89,11 @@ def mini_form():
     </form>
 '''
 
-def form(value=''):
+def form(value='', label='Search the whole book and this guide', ph='Try gradebook, SIFT, or Merit'):
     return f'''    <form class="isearch" action="search.html" method="get" role="search" aria-label="Search the book">
-      <label for="isq">Search the whole book and this guide</label>
+      <label for="isq">{label}</label>
       <div class="isearch-row">
-        <input id="isq" name="q" type="search" value="{value}" placeholder="Try gradebook, SIFT, or Merit" autocomplete="off" spellcheck="false">
+        <input id="isq" name="q" type="search" value="{value}" placeholder="{ph}" autocomplete="off" spellcheck="false">
         <button type="submit">Search</button>
       </div>
     </form>
@@ -106,6 +108,18 @@ def page_body():
       <label><input type="radio" name="isk" value="i"> Instructor Guide</label>
     </fieldset>
     <p class="isearch-status" id="iss" role="status" aria-live="polite"></p>
-    <ol class="isearch-results" id="isr"></ol>
+    <ol class="isearch-results" id="isr" data-files="../../search-index.json,search-instructor.json" data-tags="1"></ol>
     <noscript><p>Search needs JavaScript. You can still browse the guide from the menu.</p></noscript>
 '''
+
+def student_body():
+    return form(label='Search the book', ph='Try financial aid, SIFT, or Success Coach').replace('class="isearch"', 'class="isearch isearch-student"') + '''
+    <p class="isearch-status" id="iss" role="status" aria-live="polite"></p>
+    <ol class="isearch-results" id="isr" data-files="../../search-index.json" data-tags="0"></ol>
+    <noscript><p>Search needs JavaScript. You can still find everything from Book Contents.</p></noscript>
+'''
+
+def bar_link(up):
+    """The search button in the top bar on student pages, styled like Home and How to use."""
+    icon = ICON_SEARCH.replace('width="16" height="16"', 'width="18" height="18"')
+    return f'      <a class="bar-btn" href="{up}chapters/help/search.html">{icon}<span class="bar-lbl">Search</span></a>\n'

@@ -489,7 +489,7 @@ def bookbar(depth, where):
       </span>
     </a>
     <nav class="bar-nav" aria-label="Book">
-      <a class="bar-btn" href="{up}index.html">{ICON['home']}<span class="bar-lbl">Home</span></a>
+{isearch.bar_link(up) if where not in ('Instructor Guide', 'Search') else ''}      <a class="bar-btn" href="{up}index.html">{ICON['home']}<span class="bar-lbl">Home</span></a>
       <a class="bar-btn" href="{up}chapters/help/index.html">{ICON['help']}<span class="bar-lbl">How to use</span></a>
       <a class="contents-btn" href="{up}index.html#contents">{ICON['menu']}<span><span class="long">Book </span>Contents</span></a>
     </nav>
@@ -1563,5 +1563,25 @@ def build_isearch():
     write(ROOT/'chapters/instructor/search.html', page)
 
 build_isearch()
+
+def build_ssearch():
+    page = head(f'Search | {BOOK}', 2) + bookbar(2, 'Search') + '''
+<div class="shell solo">
+  <main id="main" class="reading">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../index.html">Home</a></li>
+        <li><span aria-current="page">Search</span></li>
+      </ol>
+    </nav>
+    <h1 class="isearch-h1">Search the book</h1>
+    <p class="lede">Find any lesson, Mile Marker, Trail Tip, or guide. Results take you straight to the section.</p>
+''' + isearch.student_body() + f'''  </main>
+</div>
+<script src="../../js/isearch.js?v={V}"></script>
+''' + FOOT
+    write(ROOT/'chapters/help/search.html', page)
+
+build_ssearch()
 isearch.build_index(ROOT)
 print('built', [c['n'] for c in CHAPTERS])

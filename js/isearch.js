@@ -67,7 +67,7 @@
     }
     status.textContent = shown.length ? (res.length > shown.length ? 'Top ' + shown.length + ' results for "' + q + '"' : shown.length + (shown.length === 1 ? ' result' : ' results') + ' for "' + q + '"') : 'No results for "' + q + '". Try a shorter or different word.';
     list.innerHTML = shown.map(function (e) {
-      var tag = e.k === 'i' ? '<span class="isr-tag isr-i">Instructor Guide</span>' : '<span class="isr-tag isr-s">Student page</span>';
+      var tag = !showTags ? '' : e.k === 'i' ? '<span class="isr-tag isr-i">Instructor Guide</span>' : '<span class="isr-tag isr-s">Student page</span>';
       var head = esc(e.t) + (e.s && e.s !== e.t ? ' <span class="isr-sec">› ' + esc(e.s) + '</span>' : '');
       return '<li><a href="../../' + e.u + '">' + head + '</a><span class="isr-meta">' + tag + esc(e.l) + '</span><p>' + snippet(e, ts) + '</p></li>';
     }).join('');
@@ -79,10 +79,11 @@
 
   var q0 = new URLSearchParams(location.search).get('q');
   if (q0) input.value = q0;
-  Promise.all(['search-student.json', 'search-instructor.json'].map(function (f) {
+  var files = (list.getAttribute('data-files') || 'search-index.json').split(','), showTags = list.getAttribute('data-tags') === '1';
+  Promise.all(files.map(function (f) {
     return fetch(f).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; });
   })).then(function (parts) {
-    data = parts[0].concat(parts[1]).map(prep);
+    data = [].concat.apply([], parts).filter(Boolean).map(prep);
     if (!data.length) status.textContent = 'The search index could not be loaded.';
     run();
   });

@@ -1813,3 +1813,6 @@ h2.h-card { display: block; background-image: none; padding: 0; font-size: 1.2re
 @media (max-width: 640px) { .isearch-sm { justify-content: stretch; } .isearch-sm input[type=search], .isearch-sm input[type=search]:focus { width: 100%; } }
 @media (prefers-reduced-motion: reduce) { .isearch-sm input[type=search] { transition: none; } }
 @media print { .isearch-sm { display: none; } }
+/* Student search page: light field, so it reads as the book's search, not the Instructor Guide's */
+.isearch-student input[type=search] { background: #eef5fb; border-color: #cfe0ef; }
+.isearch-student input[type=search]:focus { background: #fff; }
