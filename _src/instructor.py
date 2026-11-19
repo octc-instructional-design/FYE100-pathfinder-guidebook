@@ -137,6 +137,7 @@ def course_map(C):
         </div>
         <h3 class="sub-h">Institutional assessment anchors</h3>
         <ul class="dots anchors">{anc}</ul>
+        <p>CLO 2 has no single anchor. The course itself is a campus resource that students locate and use all semester, so passing FYE 100 meets CLO 2.</p>
       </div></div>
     </section>
 
