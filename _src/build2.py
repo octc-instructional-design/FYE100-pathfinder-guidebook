@@ -1433,6 +1433,24 @@ def build_help():
 """ + body + '  </main>\n</div>\n' + FOOT
     write(d/'index.html', page)
 
+
+# ------------------------------------------------------------------ before you start (preface)
+def build_before():
+    d = ROOT/'chapters/help'; d.mkdir(parents=True, exist_ok=True)
+    body = tokens((HERE/'bodies/help/before-you-start.html').read_text())
+    page = head(f'Before You Start | {BOOK}', 2) + bookbar(2, 'Before You Start') + """
+<div class="pf-page">
+<div class="shell solo">
+  <main id="main" class="reading" aria-labelledby="pf-title">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../index.html">Home</a></li>
+        <li><span aria-current="page">Before You Start</span></li>
+      </ol>
+    </nav>
+""" + body + '  </main>\n</div>\n</div>\n' + FOOT
+    write(d/'before-you-start.html', page)
+
 # ------------------------------------------------------------------ home
 ICON_PRINTER = '<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></svg>'
 def build_home():
@@ -1476,7 +1494,7 @@ def build_home():
     <h1>{BOOK}</h1>
     <p class="tagline">Your guide to college, from your first week to the skills you'll carry with you.</p>
     <a class="start-btn" href="chapters/ch01/index.html">Start reading {TOK['next']}</a>
-    <p class="hero-sub"><a href="chapters/help/index.html">New here? How to use this book</a></p>
+    <p class="hero-sub"><a href="chapters/help/before-you-start.html">New here? Start with Before You Start</a></p>
   </div>
   {banner_svg('START HERE', home=True)}
   {HERO_TREE}
@@ -1484,7 +1502,7 @@ def build_home():
 </div>
 
 <main id="main" class="home">
-  <p class="home-intro">This guidebook holds the readings for FYE 100. Your course in Blackboard tells you what's due and when. This is where you read, think, and get ready. New to the book? Start with <a href="chapters/help/index.html">How to Use This Book</a>.</p>
+  <p class="home-intro">This guidebook holds the readings for FYE 100. Your course in Blackboard tells you what's due and when. This is where you read, think, and get ready. New to the book? Read <a href="chapters/help/before-you-start.html">Before You Start</a>, a few notes from last semester's students, then <a href="chapters/help/index.html">How to Use This Book</a>.</p>
 
   <section aria-labelledby="contents" class="gap-md">
     <div class="h2wrap"><h2 id="contents">Contents</h2></div>
@@ -1498,7 +1516,7 @@ def build_home():
     </a>
     <div class="offline" id="download" role="group" aria-labelledby="offline-h">
       <h3 id="offline-h">Take the book with you</h3>
-      <p>Prefer to read offline or on paper? Download the whole book: How to Use This Book, all 12 modules, and the Merit and STAR(T) Stories guides. The website always has the newest version and the fill-in forms.</p>
+      <p>Prefer to read offline or on paper? Download the whole book: Before You Start, How to Use This Book, all 12 modules, and the Merit and STAR(T) Stories guides. The website always has the newest version and the fill-in forms.</p>
       <div class="dl-row">
         <a class="dl-btn" href="downloads/Pathfinder-Guidebook-FYE100.pdf" download>{TOK['download']}<span><b>PDF</b><small>To print or read on a computer</small></span></a>
         <a class="dl-btn" href="downloads/Pathfinder-Guidebook-FYE100.epub" download>{TOK['download']}<span><b>EPUB</b><small>For e-readers, phones, and tablets</small></span></a>
@@ -1522,6 +1540,7 @@ INSTR = instructor.pages(CHAPTERS, LATER, ESSENTIAL, HERE)
 for ch in CHAPTERS: build_chapter(ch)
 for g in GUIDES: build_guide(g)
 build_help()
+build_before()
 build_printables()
 build_home()
 print('built', [c['n'] for c in CHAPTERS])

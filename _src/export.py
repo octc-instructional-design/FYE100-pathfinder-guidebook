@@ -10,10 +10,11 @@ ROOT = B.ROOT
 OUT = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else HERE / 'export'); OUT.mkdir(parents=True, exist_ok=True)
 SITE = 'https://octc-instructional-design.github.io/FYE100-pathfinder-guidebook/'
 TITLE = 'Pathfinder Guidebook: FYE 100 Strategies for College Success'
-# Units, in reading order: How to Use This Book, the 12 modules, then the two student guides.
+# Units, in reading order: Before You Start, How to Use This Book, the 12 modules, then the two student guides.
 # The Instructor Guide stays online only.
 STUDENT_GUIDES = ('merit', 'start')
-UNITS = [dict(dir='chapters/help', key='help', head='How to Use This Book', kicker=None, src=None)]
+UNITS = [dict(dir='chapters/help', key='before', head='Before You Start', kicker=None, src=None, page='chapters/help/before-you-start.html'),
+         dict(dir='chapters/help', key='help', head='How to Use This Book', kicker=None, src=None)]
 for ch in B.CHAPTERS:
     UNITS.append(dict(dir=f"chapters/ch{ch['n']:02d}", key=f"ch{ch['n']:02d}", head=f"Module {ch['n']}: {ch['title']}",
                       kicker=f"Module {ch['n']}", src=ch, es=ch['es'], es_label='10 Essential Skills in this module', module=True))
@@ -25,7 +26,7 @@ for g in B.GUIDES:
 pages = []   # (key, unit index, relpath, title)
 for u_i, u in enumerate(UNITS):
     d, k = u['dir'], u['key']
-    pages.append((f'{k}-index', u_i, f'{d}/index.html', u['head']))
+    pages.append((f'{k}-index', u_i, u.get('page', f'{d}/index.html'), u['head']))
     for l in (u['src']['lessons'] if u['src'] else []):
         f, num, t = l[0], l[1], l[2]
         title = f'{num} {t}' if u.get('module') and num not in B.SPECIAL else t
@@ -55,7 +56,7 @@ def extract(relpath, mode):
     main = soup.find('main')
     main.name = 'section'; main.attrs = {}
     for sel in ['.skillbar.slim', 'nav.crumbs', 'nav.pagenav', '.jump-btn', '.start-row', '.rest', '.banner-art',
-                '.mm-actions', '.mm-how', '.mm-err', '.mm-print-title', 'script', '.draft-flag', '.in-course', '.end-links']:
+                '.mm-actions', '.mm-how', '.mm-err', '.mm-print-title', 'script', '.pf-next', '.draft-flag', '.in-course', '.end-links']:
         for el in main.select(sel): el.decompose()
     # wrappers left empty once web-only pieces are gone (their margins can push a blank page into the PDF)
     for div in reversed(main.find_all('div')):
