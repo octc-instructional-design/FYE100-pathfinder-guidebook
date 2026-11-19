@@ -1842,3 +1842,32 @@ body:has(.review-banner) main::before { content: ""; position: fixed; inset: 0; 
 .card-fig img { display: block; width: 100%; height: auto; }
 .card-fig figcaption { font-size: .8rem; color: var(--muted); margin-top: 6px; line-height: 1.4; }
 @media (max-width: 560px) { .card-fig { float: none; width: 160px; margin: 8px auto 12px; } }
+
+/* Reaching Out: 12-week checkpoint calendar */
+.cp-key { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 18px; padding: 0; margin: 12px 0 0; font-size: .9rem; color: var(--muted); }
+.cp-chip { display: inline-block; font-size: .68rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; border-radius: 4px; padding: 1px 6px; margin-right: 4px; vertical-align: 1px; white-space: nowrap; }
+.cp-chip.chk { background: var(--soft-blue); color: var(--blue); }
+.cp-chip.msg { background: #ede7f6; color: #4a2f86; }
+.cp-chip.flag { background: #fde4cf; color: #8a3b00; }
+.cp-chip.kud { background: #e3f3e5; color: #1f6b2a; }
+.cp-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
+.cp-wk { border: 1px solid var(--border); border-top: 4px solid var(--blue); border-radius: 10px; padding: 12px 14px 14px; background: #fff; min-width: 0; }
+.cp-wk.cp-break { border-top-color: var(--gold); background: var(--soft-gold); }
+.cp-n { margin: 0; font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); display: flex; justify-content: space-between; gap: 8px; }
+.cp-n span { color: var(--muted); font-weight: 600; letter-spacing: .03em; }
+.cp-goal { margin: 4px 0 8px; font-weight: 700; color: var(--navy); font-size: 1.02rem; line-height: 1.3; }
+.cp-wk ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 7px; font-size: .9rem; line-height: 1.45; }
+@media print { .cp-wk { break-inside: avoid; } .cp-chip, .cp-wk.cp-break { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+
+/* Kudos callout and comment examples */
+.kudos-call { background: #e3f3e5; border-left: 5px solid #2e7d32; border-radius: 8px; padding: 14px 16px; margin: 6px 0 14px; color: #153d1c; }
+.kudos-call p { margin: 0; }
+.cm-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 12px; }
+.cm-no, .cm-yes { border-radius: 10px; padding: 12px 14px; min-width: 0; }
+.cm-no { background: #fbebeb; border-left: 5px solid #b3261e; }
+.cm-yes { background: #e3f3e5; border-left: 5px solid #2e7d32; }
+.cm-no p, .cm-yes p { margin: 0 0 6px; }
+.cm-lbl { font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.cm-no .cm-lbl { color: #9b1c1c; } .cm-yes .cm-lbl { color: #1f6b2a; }
+.cm-why { font-size: .85rem; color: var(--muted); margin: 0 !important; }
+.shot-sm { max-width: 430px; }
