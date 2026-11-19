@@ -1890,3 +1890,21 @@ body:has(.review-banner) main::before { content: ""; position: fixed; inset: 0; 
 .cp-wk.cp-break ul li { display: block; }
 .rec-tag-row { margin: 8px 0 4px; font-size: .92rem; color: var(--muted); }
 .rec-tag { display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #fff; background: var(--blue); border-radius: 4px; padding: 3px 9px; margin-right: 8px; vertical-align: 1px; }
+
+/* Kudos: spring green, celebratory */
+.kudos-panel { position: relative; overflow: hidden; margin: 10px 0 18px; padding: 20px 22px 18px; border-radius: 14px;
+  background: linear-gradient(135deg, #f1fbd9 0%, #dcf3a8 100%); border: 2px solid #9ccc3c; color: #24400a; }
+.kudos-panel::after { content: ""; position: absolute; right: -40px; top: -40px; width: 160px; height: 160px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,.65) 0 30%, rgba(255,255,255,0) 70%); pointer-events: none; }
+.kudos-panel p { margin: 0 0 10px; position: relative; }
+.kz-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; position: relative; }
+.kz-star { width: 38px; height: 38px; flex: none; fill: #f2b705; stroke: #b58400; stroke-width: 1; filter: drop-shadow(0 1px 0 rgba(0,0,0,.08)); }
+.kz-lead { font-size: 1.12rem; font-weight: 800; color: #2f5a07; margin: 0 !important; line-height: 1.3; }
+.kz-list { list-style: none; padding: 0; margin: 12px 0 14px; display: grid; gap: 8px; position: relative; }
+.kz-list li { display: grid; grid-template-columns: 13rem 1fr; gap: 4px 14px; align-items: baseline; background: rgba(255,255,255,.7); border-radius: 999px; padding: 8px 16px; }
+.kz-name { font-weight: 800; color: #3b6b0b; }
+.kz-name::before { content: "\2605"; color: #e0a800; margin-right: 6px; }
+.kz-goal { border-top: 1px dashed #9ccc3c; padding-top: 10px; margin: 0 !important; }
+@media (max-width: 560px) { .kz-list li { grid-template-columns: 1fr; border-radius: 12px; } }
+@media print { .kudos-panel { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+.kudos-panel::after { display: none; }
