@@ -202,10 +202,10 @@ build({
         Each skill has its own submission portal in Blackboard, so students can pace themselves and submit one story at a time. Students can add a note in the portal if they want their instructor to know something.
         The checklist: the portal matches the skill in the story; about 2 to 4 minutes recorded, or the fillable form saved as a PDF; all five steps in order; for the choice story, the skill and why at the start; and it sounds like the student.
         On AI: it can help brainstorm which experience to use, or ask questions that help you remember details. It can't tell your story. The stories have to be in the student's own words and voice.
-        All three stories are due with Module 12, on Sunday. Check Blackboard for the date.` },
+        All three stories are due with Module 12, on Monday. Check Blackboard for the date.` },
   ],
 
-  work: { title: 'Due with Module 12, on Sunday',
+  work: { title: 'Due with Module 12, on Monday',
     items: [['LuStar', 'STAR(T) Story #1: Professionalism', ''],
             ['LuStar', 'STAR(T) Story #2: Knowledge Application', ''],
             ['LuStar', 'STAR(T) Story #3: Your Choice', 'Name your skill and why at the start']],
@@ -227,7 +227,7 @@ build({
       The skills: Professionalism, Knowledge Application, and one of your choice.
       Where this deck fits: introduce it in Module 9, work on it in Module 11, and finish in Module 12.`,
     work: `
-      All three stories are due with Module 12, on Sunday, earlier than the usual Monday so instructors can grade before final grades are due.
+      All three stories are due with Module 12, on Monday. That Monday is the last day to submit anything in the course, so there's no catch-up date after it.
       Each story has its own submission portal in Blackboard. They don't have to go in all at once; students can submit them as they finish.
       Scan the code for the STAR(T) Stories Guide. Each practice guide helps students find their story and draft it, and estimates how long the draft runs out loud.`,
     disc: `

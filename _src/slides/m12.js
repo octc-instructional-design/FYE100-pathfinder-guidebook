@@ -9,7 +9,7 @@ build({
   art: __dirname + '/art/m12-title.jpg',
 
   house: { title: 'Breaking Camp', sub: 'Pack up Module 11. This is the last stretch of the trail.',
-    ahead: 'Module 12 and all three STAR(T) Stories are due Sunday by 11:59 PM Central.' },
+    ahead: 'Module 12 and all three STAR(T) Stories are due Monday by 11:59 PM Central, the last day to submit anything.' },
 
   week: { title: 'Finish strong',
     items: [['LuStar', 'Finish your three STAR(T) Stories'], ['LuHistory', 'Look back at your Mile Markers'],
@@ -56,7 +56,7 @@ build({
         Know your grades: where you stand, and what a final can and can't change. The grades Trail Tip from Module 6 shows how. If a final can't raise a grade enough, the Success Coach can help think through options.` },
   ],
 
-  work: { title: 'Due Sunday by 11:59 PM Central',
+  work: { title: 'Due Monday by 11:59 PM Central',
     items: [['LuClipboardCheck', 'Task: My Skills Snapshot, End of Semester', 'Rate yourself again, then compare'],
             ['LuFlag', 'Mile Marker #12: My Story to Share', 'Four questions'],
             ['LuStar', 'STAR(T) Stories, all three', 'Each in its own submission portal in Blackboard']],
@@ -79,12 +79,12 @@ build({
       The owl is ready to graduate.`,
     house: `
       INSTRUCTOR SLIDE. Edit the announcements box before class. Hide this slide when recording for online sections (right-click the slide, Hide Slide).
-      Everything this week is due Sunday, not Monday, so you can grade before final grades are due. Say it twice.
+      Everything this week is due Monday, and that Monday is the last day to submit anything in the course. Final grades are due 48 hours later. Say it twice.
       Thank students. Many of them did harder things this semester than the course ever saw.`,
     week: `
       This week: finish your three STAR(T) Stories, look back at your Mile Markers, retake My Skills Snapshot, and plan for finals in your other classes.`,
     work: `
-      Everything is due Sunday by 11:59 PM Central, earlier than the usual Monday.
+      Everything is due Monday by 11:59 PM Central. It's the last day to submit anything in the course, so there's no catch-up date after it.
       The end-of-semester Skills Snapshot: scan the code on this slide. It's this semester's shared form for all FYE 100 sections. Rate yourself honestly again, then compare with Module 1.
       Mile Marker #12 is four questions.
       All three STAR(T) Stories, each in its own submission portal in Blackboard. Students can add a note in the portal if they want their instructor to know something.

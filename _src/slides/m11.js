@@ -9,7 +9,7 @@ build({
   art: __dirname + '/art/m11-title.jpg',
 
   house: { title: 'Breaking Camp', sub: 'Pack up Module 10, then look ahead to Module 11.',
-    ahead: `Module 11 is due Monday. Modules 8 to 11 stay open until Tuesday, the next day. STAR(T) Stories: Sunday, with Module 12.` },
+    ahead: `Module 11 is due Monday. Modules 8 to 11 stay open until Tuesday, the next day. STAR(T) Stories: Monday, with Module 12.` },
 
   week: { title: 'Where you already show up',
     items: [['LuUsers', 'See the communities you\'re already in'], ['LuHandHeart', 'Name your offer, and your limit'],
@@ -73,7 +73,7 @@ build({
   work: { title: 'Due Monday by 11:59 PM Central',
     items: [['LuFlag', 'Mile Marker #11: My Community Impact', 'Part I: your community. Part II: your three STAR(T) skills.'],
             ['LuNotebookPen', 'Online sections: Journal: Getting the Call', 'Private. Only your instructor reads it.'],
-            ['LuStar', 'Heads up: STAR(T) Stories', 'Due with Module 12, on Sunday']] },
+            ['LuStar', 'Heads up: STAR(T) Stories', 'Due with Module 12, on Monday']] },
 
   mm: { title: 'My Community Impact',
     qs: [['Where you show up, and your role'], ['One way you\'ve made, or could make, a difference'],
@@ -91,8 +91,8 @@ build({
       The owl made some friends.`,
     house: `
       INSTRUCTOR SLIDE. Edit the announcements box before class. Hide this slide when recording for online sections (right-click the slide, Hide Slide).
-      Two weeks left. STAR(T) Stories are due with Module 12, on Sunday, earlier than usual.
-      Last catch-up date: individual work from Modules 8 to 11 closes Tuesday at 11:59 PM, the day after Module 11 is due. Module 12 and the STAR(T) Stories keep their Sunday deadline.
+      Two weeks left. STAR(T) Stories are due with Module 12, on Monday.
+      Last catch-up date: individual work from Modules 8 to 11 closes Tuesday at 11:59 PM, the day after Module 11 is due. Module 12 and the STAR(T) Stories are due the Monday after that, the last day for any work in the course.
       Consider showing the STAR(T) Stories overview deck this week.`,
     week: `
       This week: see the communities you're already in, name what you have to offer and what you're not available for, choose your three STAR(T) skills, and draft one story out loud.
@@ -101,7 +101,7 @@ build({
       Everything is due Monday by 11:59 PM Central.
       Mile Marker #11 has two parts: your community impact, then your three STAR(T) skills with the story you plan for each.
       Online sections: the Getting the Call journal is private. In-person sections: today's attendance counts.
-      Heads up: all three STAR(T) Stories are due with Module 12, on Sunday.`,
+      Heads up: all three STAR(T) Stories are due with Module 12, on Monday.`,
     mm: `
       Mile Marker #11 has two parts.
       Part I. One: name a community and your role in it, including small, everyday ways you contribute. Two: using people, rules, and influence, one specific way you've made, or could make, a positive difference. Small and real is exactly right. Three: as your circles grow, one way you want to show up more intentionally.
