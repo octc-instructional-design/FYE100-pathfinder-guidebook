@@ -1774,3 +1774,6 @@ h2.h-card { display: block; background-image: none; padding: 0; font-size: 1.2re
 .pf-more li { background: #fffdf8; border: 1px solid #e6dccb; border-top: 3px solid var(--gold); border-radius: 4px; padding: 18px 20px 16px; min-width: 0; }
 .pf-quote.pf-sm p, .pf-adapted { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; font-size: 1.12rem; line-height: 1.5; color: var(--navy); margin: 0; }
 .pf-more .pf-attr { margin-top: 10px; font-size: .85rem; }
+.shot-fig { margin: 18px 0; }
+.shot-fig img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 8px; }
+.shot-fig figcaption { font-size: .85rem; color: var(--muted); margin-top: 8px; }
