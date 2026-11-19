@@ -1888,3 +1888,5 @@ body:has(.review-banner) main::before { content: ""; position: fixed; inset: 0; 
 .cp-wk ul li { display: grid; grid-template-columns: 5.4rem 1fr; gap: 8px; align-items: baseline; }
 .cp-wk ul li .cp-chip { justify-self: start; margin: 0; }
 .cp-wk.cp-break ul li { display: block; }
+.rec-tag-row { margin: 8px 0 4px; font-size: .92rem; color: var(--muted); }
+.rec-tag { display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #fff; background: var(--blue); border-radius: 4px; padding: 3px 9px; margin-right: 8px; vertical-align: 1px; }

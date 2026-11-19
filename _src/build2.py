@@ -1034,7 +1034,7 @@ GUIDES = [
    ('grading.html','2','Grading and Late Work',"How FYE 100 grades, the rubrics, AI Chats, catch-up dates, and IP grades.",10,
      [('philosophy','Why FYE 100 grades this way'),('floor','What every section shares'),('credit','What earns credit'),('mile-markers','Grading Mile Markers'),('stories','Scoring STAR(T) Stories'),('ai-chats','Scoring AI Chats'),('late','Late work and recovery'),('gradebook','The gradebook'),('ip','IP grades'),('coaching','Coaching a student who falls behind')]),
    ('reaching-out.html','3','Reaching Out: Checkpoints and Early Alerts',"The 12-week checkpoint calendar, Starfish flags and kudos, and how to write to the student.",10,
-     [('expectation','What every section does'),('checkpoints','12-week checkpoint calendar'),('starfish','Getting into Starfish'),('flags','Raising a flag'),('kudos','Kudos'),('comments','Writing the comment'),('message','A first message')]),
+     [('expectation','What every section does'),('checkpoints','Recommended checkpoint calendar'),('starfish','Getting into Starfish'),('flags','Raising a flag'),('kudos','Kudos'),('comments','Writing the comment'),('message','A first message')]),
    ('course-map.html','4','Course Map',"Every I Can statement, the outcome it serves, and where students show it.",10,
      [('outcomes','Learning outcomes'),('glance','At a glance'),('time','Time on task'),('modules','Module by module')]),
    ('essential-skills-map.html','5','10 Essential Skills Map',"Kentucky Graduate Profile coverage, by module and by skill.",8,
