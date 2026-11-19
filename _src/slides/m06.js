@@ -47,7 +47,7 @@ build({
         Career Coach is OCTC's career exploration tool, and it connects your results directly to OCTC programs and regional job information.
         Scan the code to get to OCTC's Career Coaching page, then open Career Coach, make an account with your KCTCS email, and choose the Detailed Assessment. Your results get used again in Module 8, so save them.
         The assessment measures six interest types: Realistic, Investigative, Artistic, Social, Enterprising, and Conventional. Look at your mix, not just your top type. Your results are a mirror, not a map.
-        Mile Marker #6, Question 1 asks for your top two or three types and whether they feel accurate. Online sections reflect on them in the Career Coach journal.
+        Mile Marker #6, Prompt 1 asks for your top two or three types and whether they feel accurate. Online sections reflect on them in the Career Coach journal.
         If Career Coach gives a student trouble, the lesson offers the free O*NET Interest Profiler as another option.` },
 
     { kicker: 'Lesson 6.3', title: 'How credentials stack',
@@ -62,7 +62,7 @@ build({
         Picking a program means choosing a credential, a timeline, and a direction. Most students never get this explained before their first class.
         At OCTC, many credentials are built to stack. Courses package into certificates, certificates can build into diplomas, and diplomas can build into AAS degrees, which are career degrees. AA and AS degrees are built to transfer to a four-year university.
         You don't always have to start at the bottom, and you don't have to stop at the top.
-        Mile Marker #6, Question 2 asks students to name one program or pathway at OCTC worth exploring. Lesson 6.3 shows how to connect interest results to real programs.
+        Mile Marker #6, Prompt 2 asks students to name one program or pathway at OCTC worth exploring. Lesson 6.3 shows how to connect interest results to real programs.
         Program requirements change. Students should confirm everything with their Success Coach or the catalog.` },
 
     { kicker: 'Lesson 6.4', title: 'Plan like a strategist',
@@ -127,7 +127,7 @@ build({
       Mile Marker #6 is the main assignment, and it's built to bring to an advising appointment.
       Online sections: the Career Coach journal is private; only the instructor reads it. In-person sections: today's attendance counts.`,
     mm: `
-      Mile Marker #6 has four questions.
+      Mile Marker #6 has four prompts.
       One: your top two or three interest types from Career Coach, and whether they feel accurate.
       Two: one OCTC program or pathway you want to know more about, and why.
       Three: five specific questions for your Success Coach, most important first. About your situation, your program, and your timeline, not questions any student could ask.
@@ -136,7 +136,7 @@ build({
     disc: `
       In-person discussion, and an in-class version of the private online Career Coach journal. Keep sharing optional; some students won't want to share their results.
       Pairs for three minutes, then ask a few students to share the program they named and their question about it.
-      Collect the questions on the board. Many will be good Success Coach questions for Mile Marker #6, Question 3.
+      Collect the questions on the board. Many will be good Success Coach questions for Mile Marker #6, Prompt 3.
       For online recordings: pose the questions as a lead-in to the journal.`,
   },
 }).catch(e => { console.error(e); process.exit(1); });

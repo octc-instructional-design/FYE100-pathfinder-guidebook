@@ -39,8 +39,8 @@ build({
       },
       notes: `
         Two Trail Tools this week, and they do different jobs.
-        Where My Time Goes is looking back: an honest log of where your time and energy actually went. No judging and no fixing yet. Just notice. It feeds Mile Marker #3, Question 1.
-        My Week at a Glance is looking ahead: a plan for next week. It feeds Question 3. A plan built on the week you wish you had won't survive the week you actually have, so do the log first.
+        Where My Time Goes is looking back: an honest log of where your time and energy actually went. No judging and no fixing yet. Just notice. It feeds Mile Marker #3, Prompt 1.
+        My Week at a Glance is looking ahead: a plan for next week. It feeds Prompt 3. A plan built on the week you wish you had won't survive the week you actually have, so do the log first.
         Lesson 3.2's three steps: name your priorities before you touch the calendar, sorted into Must, Should, and Could. Know your energy before you block your time. Block broadly and leave white space for real life.
         If everything feels like a Must, it isn't. What actually has a deadline? What actually has consequences?
         Both tools are fillable in the guidebook, and fillable PDFs are with the module in Blackboard. Attaching them to the Mile Marker is optional.` },
@@ -86,7 +86,7 @@ build({
         Time isn't the only resource. You can have a free afternoon and still get nothing done because something else is empty: your energy.
         Five batteries. Physical: sleep, food, movement. Mental: focus and decisions, which have a daily limit. Emotional: your capacity to handle stress and conflict. Social: connection, which some people refill with people and others refill alone. Spiritual: meaning and purpose, whatever that looks like for you.
         Running low is a signal to act. Running out is burnout, which the lesson describes as exhaustion, cynicism, and feeling ineffective.
-        Mile Marker #3, Question 2 asks which battery is most depleted and one small, realistic way to recharge it.
+        Mile Marker #3, Prompt 2 asks which battery is most depleted and one small, realistic way to recharge it.
         If a student's batteries are all empty, that's a conversation to have privately, and the Counseling Center is a good next step.` },
 
     { kicker: 'Bonus Read', title: 'Divergent Minds: Your brain, your way',
@@ -101,7 +101,7 @@ build({
         Neurodivergence is an umbrella term for brains that work differently from what school and work systems were designed around: ADHD, autism, dyslexia, and more. It isn't a measure of intelligence. Many people never had a formal diagnosis, and you don't need one for the strategies to help.
         Four areas from the lesson: starting tasks, time blindness, working memory, and transitions. The lesson has strategies for each, and they help any brain.
         If any of this sounds like you, OCTC Accessibility Services is there to help.
-        Note for instructors: some students will recognize themselves here for the first time. Mile Marker #3, Question 4 invites them to notice what resonated without naming a diagnosis. Keep that invitation open and private.` },
+        Note for instructors: some students will recognize themselves here for the first time. Mile Marker #3, Prompt 4 invites them to notice what resonated without naming a diagnosis. Keep that invitation open and private.` },
   ],
 
   work: { title: 'Due Monday by 11:59 PM Central',
@@ -116,7 +116,7 @@ build({
            { text: 'Use AI to think it through. Write it in your own words.', options: { breakLine: true } },
            { text: ' ', options: { breakLine: true, fontSize: 10 } },
            { text: 'Start with your log.', options: { bold: true, color: '7A5500', breakLine: true } },
-           { text: 'Question 1 needs real entries, so start tracking early in the week.' }] },
+           { text: 'Prompt 1 needs real entries, so start tracking early in the week.' }] },
 
   notes: {
     title: `
@@ -137,7 +137,7 @@ build({
       Online sections: the Where Does My Time Go? discussion. First post by Friday, replies by Monday. In-person sections: today's attendance counts.
       The Student Course Feedback Survey is optional, and it helps me adjust the course while you're still in it.`,
     mm: `
-      Mile Marker #3 has four questions.
+      Mile Marker #3 has four prompts.
       One, your patterns: from your Where My Time Goes log, when were you most focused, where did time slip away, and what does that cost you? Use your real log, not a general statement.
       Two, your energy: which of the five batteries is lowest, what's draining it, and one small, realistic way to recharge it this week.
       Three, your week: from My Week at a Glance, your non-negotiables, where you put your most important work and why, and one part of the plan that reflects what you value.

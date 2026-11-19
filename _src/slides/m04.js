@@ -101,7 +101,7 @@ build({
         This happens to almost everyone. A student asks AI for topic ideas. Then an outline. Then a sample introduction "just to see." Then to polish a paragraph. By the end, they can't say how much of the paper is theirs. They weren't trying to cheat. The line moved one small step at a time.
         That's AI creep. The Creep Meter shows the stages: brainstorming, outlining, drafting, revising, rewriting, submitting. The farther AI moves into creating the work, the higher the stakes, and the more transparency matters.
         The fix: set your boundary before you start, based on the assignment's AI use label, and notice if you drift.
-        Mile Marker #4, Question 4 asks where your AI use landed this week, and whether that's where you meant to land. Not using AI is a complete answer. Honesty is what earns the credit, not landing at one stage.` },
+        Mile Marker #4, Prompt 4 asks where your AI use landed this week, and whether that's where you meant to land. Not using AI is a complete answer. Honesty is what earns the credit, not landing at one stage.` },
 
     { kicker: 'Trail Tip', title: 'Recording in class: ask first',
       async draw(s, k) {
@@ -151,12 +151,12 @@ build({
       Merit Activity #1: submit your reflection on the Merit platform, using the link for Activity #1. The Merit Guide in the back of the guidebook covers what counts and what proof to include.
       In-person sections: today's attendance counts.`,
     mm: `
-      Mile Marker #4 has four questions.
+      Mile Marker #4 has four prompts.
       One: the study strategy, habit, or tool you focused on this week, and why. Be specific: "I tried reviewing my notes out loud the night before class," not "I studied more."
       Two: how you actually used it and what you noticed. Honest beats hopeful.
       Three: one SMART goal for keeping it going: specific, measurable, achievable, relevant, and time-bound.
       Four: where your AI use landed on the Creep Meter this week, in any course, and whether that's where you meant to land. Not using AI is a complete answer.
-      It's AI-supported, but the answer to Question 4 must be in your own words.`,
+      It's AI-supported, but the answer to Prompt 4 must be in your own words.`,
     disc: `
       In-person discussion, tied to SIFT and the AI Chat.
       Pairs for three minutes, then ask for two or three examples. Common answers: health claims, celebrity news, AI-generated images.

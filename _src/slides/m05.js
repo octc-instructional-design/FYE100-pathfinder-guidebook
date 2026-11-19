@@ -38,8 +38,8 @@ build({
       },
       notes: `
         Same pattern as Module 3: look back, then look ahead.
-        The Dollar Tracker is looking back: where your money actually went in the last week or two. It feeds Mile Marker #5, Question 1.
-        The Budget Builder is looking ahead: a zero-based budget, where every dollar coming in gets a job, including savings, until nothing is left without a plan. It feeds Question 4.
+        The Dollar Tracker is looking back: where your money actually went in the last week or two. It feeds Mile Marker #5, Prompt 1.
+        The Budget Builder is looking ahead: a zero-based budget, where every dollar coming in gets a job, including savings, until nothing is left without a plan. It feeds Prompt 4.
         Privacy matters here. The Mile Marker never asks for dollar amounts, and the tools stay in your browser or on your paper.
         Both are fillable in the guidebook, and there are fillable PDFs in Blackboard.` },
 
@@ -122,7 +122,7 @@ build({
       Mile Marker #5 is the main assignment, with no dollar amounts required.
       Online sections: the money tip discussion. Post your tip by Monday. Replies are optional, but encouraged. In-person sections: today's attendance counts.`,
     mm: `
-      Mile Marker #5 has five questions, and none of them needs a dollar amount.
+      Mile Marker #5 has five prompts, and none of them needs a dollar amount.
       One: what you noticed from the Dollar Tracker, what surprised you or confirmed a hunch. Two: your financial situation, described honestly for clarity, not judgment. Three: one small, realistic thing you'll do differently, or keep doing. Four: your zero-based budget from the Budget Builder, described without amounts. Five: if you used AI, what you left out to protect your privacy. If you didn't use AI, say so.
       It's AI-supported, with one firm rule: never share real account numbers, income, or debt with an AI tool.`,
     disc: `

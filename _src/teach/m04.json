@@ -6,13 +6,13 @@
   "coaching": [
     {"head": "Students need to read the source document before the AI Chat.",
      "body": "Is This Legit? is a role-play built on a source document that lives in Blackboard. Students who skip it flounder in the chat. Put \"read first\" in your announcement, and use the instructor key in Blackboard when you review the chats."},
-    {"head": "Question 1: \"I studied more\" isn't a strategy.",
+    {"head": "Prompt 1: \"I studied more\" isn't a strategy.",
      "body": "Look for a named strategy and how the student used it. The four from Lesson 4.2 (retrieval practice, spaced practice, asking why, and interleaving) give students words for what they tried."},
-    {"head": "Question 2 rewards honesty over success.",
+    {"head": "Prompt 2 rewards honesty over success.",
      "body": "A strategy that didn't work, explained honestly, is a strong answer. Say so in your feedback; students often assume they have to report that everything went well."},
     {"head": "SMART goals drift back to vague.",
-     "body": "Question 3 is where \"study more\" reappears. Ask: could someone else tell whether you did it, and when? A goal like \"Quiz myself for 15 minutes after each biology class, starting this week\" is the target."},
-    {"head": "Question 4 is about honesty, not where AI use landed.",
+     "body": "Prompt 3 is where \"study more\" reappears. Ask: could someone else tell whether you did it, and when? A goal like \"Quiz myself for 15 minutes after each biology class, starting this week\" is the target."},
+    {"head": "Prompt 4 is about honesty, not where AI use landed.",
      "body": "Full credit depends on an honest account of where AI use landed and whether that was intentional, not on staying at brainstorming. \"I didn't use AI\" is a complete answer. Don't penalize candor; it's what the question is building."},
     {"head": "Merit #1 is the first real deadline outside Blackboard.",
      "body": "Students forget that the reflection goes on the Merit platform, and that there are three separate links. Remind them early in the week, and point them to the Merit Guide for what counts and what proof to include."},
@@ -46,7 +46,7 @@
      "steps": ["Read a short scenario of AI creep, like the one at the start of Lesson 4.4, one step at a time.",
                "At each step, students hold up fingers for where it sits on the Creep Meter.",
                "Discuss where the line would be for an AI-supported assignment, and what attribution would look like."],
-     "why": "Makes the Creep Meter concrete before students place their own use on it in Question 4.",
+     "why": "Makes the Creep Meter concrete before students place their own use on it in Prompt 4.",
      "online": "Walk through the scenario in your recorded mini-lecture and pause at each step."}
   ],
   "discussion": {

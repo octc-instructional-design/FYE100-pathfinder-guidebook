@@ -5,12 +5,12 @@
   },
   "coaching": [
     {"head": "Career Coach comes first.",
-     "body": "The whole module, including the online journal and Mile Marker #6, Question 1, uses the Career Coach results. Students who skip ahead to the Mile Marker get stuck. Point them to the assessment on day one, and remind them to use their KCTCS email so the results are saved for Module 8."},
+     "body": "The whole module, including the online journal and Mile Marker #6, Prompt 1, uses the Career Coach results. Students who skip ahead to the Mile Marker get stuck. Point them to the assessment on day one, and remind them to use their KCTCS email so the results are saved for Module 8."},
     {"head": "Results are a mirror, not a map.",
      "body": "Some students are thrown when their results don't match the program they're already in. That's useful information, not a problem. Ask what does and doesn't fit, and look at the mix of interest types instead of the top one."},
-    {"head": "Question 3: questions any student could ask don't count.",
+    {"head": "Prompt 3: questions any student could ask don't count.",
      "body": "\"What classes should I take?\" is the common weak question. Push for questions tied to the student's own program, schedule, and timeline, in priority order."},
-    {"head": "Question 4 is a sketch, not a registration.",
+    {"head": "Prompt 4 is a sketch, not a registration.",
      "body": "Students sometimes freeze because they don't know the exact courses. A realistic load and a rough list are enough; the point is to bring something concrete to advising."},
     {"head": "AI and programs: check everything.",
      "body": "AI tools can sound confident about program requirements and get them wrong. Reinforce the module's rule: use AI to think, use the Success Coach and the catalog to decide, and keep student ID and birth date out of prompts."},
@@ -30,7 +30,7 @@
      "online": "Ask students to name their top two types in the journal and say which one surprised them."},
     {"title": "Five good questions",
      "time": "10 minutes",
-     "materials": "Mile Marker #6, Question 3 on the screen",
+     "materials": "Mile Marker #6, Prompt 3 on the screen",
      "steps": ["Students draft their five Success Coach questions.",
                "Partners swap and mark any question that any student could ask.",
                "Each student rewrites one marked question to be about their own program and timeline."],
@@ -51,6 +51,6 @@
                "Name one OCTC program you want to know more about, and one question about it."],
     "format": "Talk with a partner for 3 minutes, then share one question with the room.",
     "source": "An in-class version of the private online journal: My Career Coach Interest Snapshot.",
-    "facilitate": "Keep sharing optional. Collect the questions on the board; many make good Success Coach questions for Mile Marker #6, Question 3."
+    "facilitate": "Keep sharing optional. Collect the questions on the board; many make good Success Coach questions for Mile Marker #6, Prompt 3."
   }
 }

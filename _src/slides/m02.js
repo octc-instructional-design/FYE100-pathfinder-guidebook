@@ -166,7 +166,7 @@ build({
            { text: 'Use AI to think it through. Write it in your own words.', options: { breakLine: true } },
            { text: ' ', options: { breakLine: true, fontSize: 10 } },
            { text: 'Start with your coach.', options: { bold: true, color: '7A5500', breakLine: true } },
-           { text: 'Question 1 needs your Success Coach by name, so finish Task #2 first.' }] },
+           { text: 'Prompt 1 needs your Success Coach by name, so finish Task #2 first.' }] },
 
 
   notes: {
@@ -188,7 +188,7 @@ build({
       The Mile Marker is the big one, and it's next.
       In-person sections: today's attendance point counts too.`,
     mm: `
-      Mile Marker #2 is three questions.
+      Mile Marker #2 is three prompts.
       One: three people at OCTC who can help you. Start with your Success Coach, by name. At least two should be people who work here. Naming a person, not just an office, is what makes it real.
       Two: two specific ways you'll use that network. Not "I'll reach out when I need help." When, how, and for what.
       Three: one campus resource you haven't used yet, why it matters for you, and one next step.

@@ -56,7 +56,7 @@ build({
         Strengths are patterns of thinking, behaving, and interacting that come naturally and energize you. What feels easy to you often looks remarkable to someone else.
         Before HIGH5, take two minutes for a baseline: what do people compliment you on, and what makes time disappear? Write it in the My HIGH5 Results Trail Tool. Comparing your guess with your results is often the most interesting part.
         Scan the code for HIGH5. It's 120 short statements, about 15 to 20 minutes. Answer honestly. The Top 5 is free; no need to buy the report. If it asks you to sign up, use your KCTCS email.
-        Save your Top 5 exactly as reported. Mile Marker #7, Question 1 asks for them that way.` },
+        Save your Top 5 exactly as reported. Mile Marker #7, Prompt 1 asks for them that way.` },
 
     { kicker: 'Lesson 7.3', title: 'Every strength has a blind spot',
       async draw(s, k) {
@@ -68,7 +68,7 @@ build({
       notes: `
         Every strength has an overuse pattern. Taken too far, or used in the wrong setting, even your best qualities can work against you. That's a blind spot: easy for you to miss, often easy for others to see.
         Three examples from the lesson. A Deliverer may take on too much and burn out, or move faster than others are ready for. An Analyst may overthink or keep researching when it's time to act. An Empathizer may struggle with boundaries or take on other people's stress.
-        Mile Marker #7, Question 5 asks students to name one blind spot connected to their strengths and what it looks like when it shows up.
+        Mile Marker #7, Prompt 5 asks students to name one blind spot connected to their strengths and what it looks like when it shows up.
         Ask: what's a blind spot someone has pointed out to you, kindly or not?` },
   ],
 
@@ -108,7 +108,7 @@ build({
       Merit Activity #2: submit your reflection on the Merit platform, using the Activity #2 link. The Merit Guide covers what counts.
       Online sections: the Top 5 Values journal is private. In-person sections: today's attendance counts, and bring your values results for the discussion.`,
     mm: `
-      Mile Marker #7 has six questions.
+      Mile Marker #7 has six prompts.
       One: your Top 5 HIGH5 strengths, exactly as reported, spelling and capitalization included.
       Two: in your own words, what each strength means for how you think and work. Did anything surprise you compared with your baseline?
       Three: three specific ways to use your strengths in your learning this semester, and how one shows up in group work.

@@ -121,11 +121,11 @@ build({
     work: `
       Everything is due Monday by 11:59 PM Central.
       16Personalities is an ungraded task, but Mile Marker #10 uses the result.
-      Mile Marker #10 is three questions.
+      Mile Marker #10 is three prompts.
       Merit Activity #3 is the last required Merit activity. Use the Activity #3 link on the Merit platform.
       Online sections: That One Time Group Work Went Sideways. First post by Friday, replies by Monday. In-person sections: today's attendance counts; bring a group work story and your type.`,
     mm: `
-      Mile Marker #10 has three questions.
+      Mile Marker #10 has three prompts.
       One: your 16Personalities type in your own words, one short phrase, plus two collaboration strengths and one or two challenges that honestly fit.
       Two: pick one challenge and explain why it happens for you, as a tendency, not a flaw. Sharing anything about neurodivergence is always optional.
       Three: in one simple, respectful sentence, what you need from teammates to do your best work.

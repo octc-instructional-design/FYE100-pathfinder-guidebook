@@ -38,7 +38,7 @@ build({
       },
       notes: `
         Before writing the final reflection, take a quick look back at the trail.
-        Mile Marker #1 is the starting line. Mile Marker #12, Question 1 asks students to open it and compare.
+        Mile Marker #1 is the starting line. Mile Marker #12, Prompt 1 asks students to open it and compare.
         The Look Back Trail Tool lists every Mile Marker with room to jot what stands out. Students don't need to reread everything; skimming is enough.
         And the end-of-semester Skills Snapshot: students rate themselves again and compare with Module 1.
         Guidebook forms save only in the browser on the device a student used. If they switched devices, their submitted Mile Markers are in Blackboard.` },
@@ -86,18 +86,18 @@ build({
     work: `
       Everything is due Monday by 11:59 PM Central. It's the last day to submit anything in the course, so there's no catch-up date after it.
       The end-of-semester Skills Snapshot: scan the code on this slide. It's this semester's shared form for all FYE 100 sections. Rate yourself honestly again, then compare with Module 1.
-      Mile Marker #12 is four questions.
+      Mile Marker #12 is four prompts.
       All three STAR(T) Stories, each in its own submission portal in Blackboard. Students can add a note in the portal if they want their instructor to know something.
       In-person sections: today's attendance counts.`,
     mm: `
-      Mile Marker #12 is the final reflection, four questions.
+      Mile Marker #12 is the final reflection, four prompts.
       One, growth: open Mile Marker #1 and compare. Two or three specific ways you've grown, academically, personally, or professionally. If your thinking about AI changed, you can include that.
       Two, lessons learned: what you wish you'd known at the start, and one habit, strategy, or tool you'll keep using.
       Three, words of wisdom: a short message to who you were in the first week, or to a future FYE 100 student.
       Four, still growing: one area where you still want to grow, and one concrete next step.
       It's AI-supported: AI can ask questions that help you remember, but it wasn't there for your semester. The guidebook has an optional AI thinking partner interview prompt.`,
     disc: `
-      In-person closing discussion, built from Mile Marker #12, Question 3.
+      In-person closing discussion, built from Mile Marker #12, Prompt 3.
       Pairs for three minutes, then invite volunteers to share one piece of advice with the room. Consider collecting them, anonymously and with permission, to share with next semester's students.
       Close the course: thank students, and remind them their Success Coach is still there after FYE 100 ends.
       For online recordings: share a few words of wisdom from past students, if you have them, and invite students to write their own.`,

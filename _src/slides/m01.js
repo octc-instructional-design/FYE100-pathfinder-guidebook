@@ -219,7 +219,7 @@ build({
       Online sections also have the Trailhead Introductions discussion: first post by Friday, replies by Monday. In-person sections: today's attendance counts.
       There's also an optional Syllabus and Blackboard Scavenger Hunt for practice.`,
     mm: `
-      Mile Marker #1 is five short questions about where you are right now.
+      Mile Marker #1 is five short prompts about where you are right now.
       Why college, and why OCTC. What success looks like for you this semester, in your own terms. One strength you already bring. One goal with two concrete steps; the test is whether someone else could tell you reached it, and whether you could put each step on a calendar. And where AI shows up in your life and how you feel about using it for school. Any honest position is a good answer there.
       It's AI-supported: AI can help you think, but the writing is yours. The guidebook has an optional AI thinking partner prompt and a fill-in form that saves a PDF. There's a printable handout in Blackboard too.
       You'll come back to this reflection at the end of the course, so honest beats perfect.
@@ -227,7 +227,7 @@ build({
     disc: `
       In-person introductions. Model it first with your own answer.
       Pairs for three minutes, then each person introduces their partner to the room. Introducing someone else lowers the stakes on day one.
-      Listen for strengths students mention in passing, like work ethic, caring for family, or a trade skill, and name them. Those are Mile Marker #1, Question 3.
+      Listen for strengths students mention in passing, like work ethic, caring for family, or a trade skill, and name them. Those are Mile Marker #1, Prompt 3.
       For online recordings: this is the Trailhead Introductions discussion. Ask students to answer the same two questions in their first post.`,
   },
 }).catch(e => { console.error(e); process.exit(1); });

@@ -41,7 +41,7 @@ build({
         Assumptions are the invisible fill-in-the-blank. Biases are the lens that colors your thinking: confirmation bias, familiarity bias, the halo effect, and negativity bias.
         And thought traps are the quicksand: jumping to conclusions, all-or-nothing thinking, overgeneralizing, mind reading, and catastrophizing.
         Everyone falls into these. The skill is noticing.
-        Mile Marker #9, Question 1 asks which trap or bias feels most like you, with a real example, and a better question to ask yourself next time.
+        Mile Marker #9, Prompt 1 asks which trap or bias feels most like you, with a real example, and a better question to ask yourself next time.
         Ask: which of these did you fall into this week? Model one of your own first.` },
 
     { kicker: 'Lesson 9.4 · Trail Tool', title: 'The 4C Check',
@@ -104,7 +104,7 @@ build({
       Mile Marker #9 is in two parts: name your thinking pattern, then write and check your first STAR(T) draft.
       In-person sections: today's attendance counts.`,
     mm: `
-      Mile Marker #9 has four questions.
+      Mile Marker #9 has four prompts.
       One: which thinking trap or bias feels most like you, a real example, and a better question to ask next time.
       Two: one real experience, written with all five STAR(T) steps.
       Three: reread the draft with the 4C Check and say what you changed.

@@ -94,7 +94,7 @@ build({
   work: { title: 'Due Monday by 11:59 PM Central',
     items: [['LuBriefcase', 'Task: Set Up Your Handshake Profile', 'Share your profile link'],
             ['LuBot', 'AI Chat: What Future Do You Want Your Career to Make Possible?', 'A conversation with Coach Pathfinder'],
-            ['LuFlag', 'Mile Marker #8: My Career Snapshot', 'Part 1: your Career Research Guide. Part 2: three questions.'],
+            ['LuFlag', 'Mile Marker #8: My Career Snapshot', 'Part 1: your Career Research Guide. Part 2: three prompts.'],
             ['LuStar', 'Extra credit: Submit your next-semester schedule', 'After you meet with your Success Coach. Details in Blackboard.']] },
 
   mm: { title: 'My Career Snapshot',
@@ -123,13 +123,13 @@ build({
       Everything is due Monday by 11:59 PM Central.
       The Handshake task: set up your profile and share the link.
       The AI Chat with Coach Pathfinder is a short conversation about what you want your career to make possible.
-      Mile Marker #8 has two parts: upload your completed Career Research Guide, then answer three questions. A submission without the guide is incomplete.
+      Mile Marker #8 has two parts: upload your completed Career Research Guide, then answer three prompts. A submission without the guide is incomplete.
       Extra credit, the only extra credit in the course: meet with your Success Coach, build your next-semester schedule, and submit a screenshot. Details in Blackboard.
       In-person sections: today's attendance counts.`,
     mm: `
       Mile Marker #8 has two parts.
       Part 1: the Career Research Guide, all five sections, researched with Career Coach and O*NET. Upload it with the Mile Marker.
-      Part 2, three questions. One: the headline version of what you found: education, regional salary, outlook, and work environment. Two: does it fit? Connect your research to your strengths, values, and work style from Modules 6 and 7. Three: one clear area of alignment, one area of friction, and the one question you still need answered.
+      Part 2, three prompts. One: the headline version of what you found: education, regional salary, outlook, and work environment. Two: does it fit? Connect your research to your strengths, values, and work style from Modules 6 and 7. Three: one clear area of alignment, one area of friction, and the one question you still need answered.
       Honest beats impressive. Naming friction is part of a good fit analysis, not a sign you chose wrong.
       There's a handout with both parts in Blackboard for students who want one file.`,
     disc: `

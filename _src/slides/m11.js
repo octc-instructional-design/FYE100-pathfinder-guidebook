@@ -39,7 +39,7 @@ build({
         You're already in more communities than you think, and already shaping how they work.
         Every community runs on a system with four parts. People: who's involved and what role each tends to play. Rules: the official ones and the unwritten ones everyone just knows. Influence: who actually shapes what happens, which isn't always the person with the title. Leverage points: small things that, if they changed, would change a lot.
         The lesson's worked example: four people share a kitchen, the dishes pile up, everyone's annoyed, and nobody's said anything. Walk it through the four parts. Where's the leverage point?
-        The Community Snapshot Trail Tool walks students through one community for Mile Marker #11, Questions 1 and 2.` },
+        The Community Snapshot Trail Tool walks students through one community for Mile Marker #11, Prompts 1 and 2.` },
 
     { kicker: 'Lesson 11.3', title: 'Your strengths, your community',
       async draw(s, k) {
@@ -65,7 +65,7 @@ build({
       notes: `
         This module is working time for the capstone. Three steps.
         Gather your Mile Markers. The best stories are probably already written down. Forms in the guidebook save only in the browser on the device used, so if a student switched devices, their submitted Mile Markers are in Blackboard.
-        Choose your three skills: Professionalism, Knowledge Application, and one of your choice. Adaptability & Leadership is now one of the choices. Students name all three in Mile Marker #11, Question 4.
+        Choose your three skills: Professionalism, Knowledge Application, and one of your choice. Adaptability & Leadership is now one of the choices. Students name all three in Mile Marker #11, Prompt 4.
         Draft one story, the one you feel surest about, with its practice guide. Then say it out loud once.
         This is a great week to show the STAR(T) Stories overview deck.` },
   ],
@@ -82,7 +82,7 @@ build({
            { text: 'AI doesn\'t know your community. You do.', options: { breakLine: true } },
            { text: ' ', options: { breakLine: true, fontSize: 10 } },
            { text: 'Small and real', options: { bold: true, color: '7A5500', breakLine: true } },
-           { text: 'is exactly right for Question 2.' }] },
+           { text: 'is exactly right for Prompt 2.' }] },
 
   notes: {
     title: `
