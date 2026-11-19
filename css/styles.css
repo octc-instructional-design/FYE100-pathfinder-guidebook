@@ -1802,3 +1802,14 @@ h2.h-card { display: block; background-image: none; padding: 0; font-size: 1.2re
 .isearch-results mark { background: #fbe7a8; color: inherit; padding: 0 2px; border-radius: 2px; }
 .isearch-h1 { margin-top: 4px; }
 @media print { .isearch { display: none; } }
+/* Quiet search box on Instructor Guide pages */
+.isearch-sm { position: relative; display: flex; justify-content: flex-end; margin: -4px 0 12px; }
+.isearch-sm input[type=search] { width: 220px; max-width: 100%; font: inherit; font-size: .88rem; padding: 6px 34px 6px 12px; border: 1px solid var(--border); border-radius: 999px; background: #fff; color: var(--ink); transition: width .15s ease; }
+.isearch-sm input[type=search]::placeholder { color: var(--muted); }
+.isearch-sm input[type=search]:focus { width: 300px; outline: 2px solid var(--gold); outline-offset: 1px; border-color: var(--blue); }
+.isearch-sm button { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); display: grid; place-items: center; width: 28px; height: 28px; border: 0; border-radius: 50%; background: transparent; color: var(--muted); cursor: pointer; }
+.isearch-sm button:hover, .isearch-sm button:focus-visible { color: var(--blue); background: var(--soft-blue, #eef5fb); }
+.opener .isearch-sm { margin: 0 0 10px; }
+@media (max-width: 640px) { .isearch-sm { justify-content: stretch; } .isearch-sm input[type=search], .isearch-sm input[type=search]:focus { width: 100%; } }
+@media (prefers-reduced-motion: reduce) { .isearch-sm input[type=search] { transition: none; } }
+@media print { .isearch-sm { display: none; } }

@@ -1257,7 +1257,7 @@ def build_guide(g):
         label = num if num in SPECIAL else t
         page = head(f'{t} | {g["title"]} | {BOOK}', 2) + bookbar(2, where) + \
           '\n<div class="shell">\n' + sidebar(g, f) + '\n  <main id="main" class="reading' + (' workspace' if num in ('Workspace', 'Notes') else '') + '">\n' + crumbs(g, label) + \
-          (isearch.form() if g['slug']=='instructor' else '') + lesson_header(g, i) + '\n' + body + pagenav(g, f) + '  </main>\n</div>\n' + FOOT
+          (isearch.mini_form() if g['slug']=='instructor' else '') + lesson_header(g, i) + '\n' + body + pagenav(g, f) + '  </main>\n</div>\n' + FOOT
         write(d/f, page)
     intro = '\n'.join(f'          <p>{p}</p>' for p in g['intro'])
     cards = []
@@ -1291,7 +1291,7 @@ def build_guide(g):
 <div class="shell">
 """ + sidebar(g, 'index.html') + f"""
   <main id="main" class="reading opener">
-{isearch.form() if g['slug']=='instructor' else ''}
+{isearch.mini_form() if g['slug']=='instructor' else ''}
     <section aria-labelledby="why" class="row wide gap-sm">
       <div class="main">
         <div class="sticky">

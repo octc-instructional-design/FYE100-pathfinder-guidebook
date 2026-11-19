@@ -76,6 +76,17 @@ def build_index(root):
     (d/'search-instructor.json').write_text(json.dumps(ins, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
     print(f'search index: {len(stu)} student sections, {len(ins)} instructor sections')
 
+ICON_SEARCH = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>'
+
+def mini_form():
+    """A quiet search box for the top of Instructor Guide pages."""
+    return f'''    <form class="isearch-sm" action="search.html" method="get" role="search" aria-label="Search the book">
+      <label for="isq-sm" class="sr-only">Search the book and this guide</label>
+      <input id="isq-sm" name="q" type="search" placeholder="Search the book" autocomplete="off" spellcheck="false">
+      <button type="submit">{ICON_SEARCH}<span class="sr-only">Search</span></button>
+    </form>
+'''
+
 def form(value=''):
     return f'''    <form class="isearch" action="search.html" method="get" role="search" aria-label="Search the book">
       <label for="isq">Search the whole book and this guide</label>
