@@ -1871,3 +1871,20 @@ body:has(.review-banner) main::before { content: ""; position: fixed; inset: 0; 
 .cm-no .cm-lbl { color: #9b1c1c; } .cm-yes .cm-lbl { color: #1f6b2a; }
 .cm-why { font-size: .85rem; color: var(--muted); margin: 0 !important; }
 .shot-sm { max-width: 430px; }
+
+/* Checkpoint calendar as horizontal rows (overrides the card grid) */
+.cp-grid { display: block; border-top: 2px solid var(--blue); }
+.cp-wk { display: grid; grid-template-columns: 7.5rem 12rem 1fr; gap: 4px 18px; align-items: start; border: 0; border-bottom: 1px solid var(--border); border-radius: 0; padding: 12px 4px; background: none; }
+.cp-wk.cp-break { background: var(--soft-gold); border-top: 0; }
+.cp-n { display: block; font-size: .8rem; }
+.cp-n span { display: block; margin-top: 2px; }
+.cp-goal { margin: 0; font-size: .98rem; }
+.cp-wk ul { gap: 5px; }
+@media (max-width: 760px) {
+  .cp-wk { grid-template-columns: 1fr; gap: 2px; }
+  .cp-n { display: flex; gap: 8px; } .cp-n span { margin: 0; }
+  .cp-goal { margin-bottom: 6px; }
+}
+.cp-wk ul li { display: grid; grid-template-columns: 5.4rem 1fr; gap: 8px; align-items: baseline; }
+.cp-wk ul li .cp-chip { justify-self: start; margin: 0; }
+.cp-wk.cp-break ul li { display: block; }
