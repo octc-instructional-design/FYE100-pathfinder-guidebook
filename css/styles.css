@@ -1816,3 +1816,9 @@ h2.h-card { display: block; background-image: none; padding: 0; font-size: 1.2re
 /* Student search page: light field, so it reads as the book's search, not the Instructor Guide's */
 .isearch-student input[type=search] { background: #eef5fb; border-color: #cfe0ef; }
 .isearch-student input[type=search]:focus { background: #fff; }
+
+/* Put the book on your phone */
+.app-intro { display: flow-root; }
+.app-icon-demo { float: left; width: 64px; height: 64px; border-radius: 14px; margin: .2rem 1rem .4rem 0; box-shadow: 0 1px 3px rgba(0,0,0,.18); }
+.app-steps { margin: 0; padding-left: 1.3rem; display: grid; gap: .45rem; }
+.app-steps li { padding-left: .2rem; }
