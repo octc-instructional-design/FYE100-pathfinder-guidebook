@@ -33,14 +33,14 @@ build({
       async draw(s, k) {
         await cards(s, k, [['LuFlag', 'Mile Marker #1', 'Where you started. Compare it with now.'],
                            ['LuHistory', 'Look Back', 'Skim your Mile Markers. Jot what stands out.'],
-                           ['LuClipboardCheck', 'My Skills Snapshot', 'Retake it and reflect on what changed.']], 2.05, 3.2, { gold: 0 });
+                           ['LuClipboardCheck', 'My Skills Snapshot', 'Retake it, then reflect on your semester.']], 2.05, 3.2, { gold: 0 });
         bar(s, k, 'Switched devices? Your submitted Mile Markers are in Blackboard.', 5.6);
       },
       notes: `
         Before writing the final reflection, take a quick look back at the trail.
         Mile Marker #1 is the starting line. Mile Marker #12, Prompt 1 asks students to open it and compare.
         The Look Back Trail Tool lists every Mile Marker with room to jot what stands out. Students don't need to reread everything; skimming is enough.
-        And the end-of-semester Skills Snapshot: students rate themselves again and answer a few questions about what's changed since Module 1.
+        And the end-of-semester Skills Snapshot: students rate themselves again and answer a few reflection questions about their semester.
         Guidebook forms save only in the browser on the device a student used. If they switched devices, their submitted Mile Markers are in Blackboard.` },
 
     { kicker: 'Trail Tip', title: 'Finishing strong',
