@@ -9,6 +9,9 @@
   if (week < 0) state = 'before';
   else if (T.breakAfter && week === T.breakAfter) state = 'break';
   else { var n = (T.breakAfter && week > T.breakAfter) ? week : week + 1; if (n >= 1 && n <= T.modules.length) { cur = n; state = 'on'; } else if (n === T.modules.length + 1 && today.getDay() === 1) state = 'last'; }
+  // Preview: add ?ondeck=7 (or ?ondeck=break) to any page to see a week before it arrives.
+  var pv = (location.search.match(/[?&]ondeck=([^&]+)/) || [])[1];
+  if (pv === 'break') { state = 'break'; cur = null; } else if (pv && +pv >= 1 && +pv <= T.modules.length) { state = 'on'; cur = +pv; }
   var mod = function (n) { for (var i = 0; i < T.modules.length; i++) if (T.modules[i].n === n) return T.modules[i]; };
   var root = (document.querySelector('meta[name="book-root"]') || {}).content || '';
 
