@@ -212,7 +212,7 @@ build({
       The coins on the right are the four Essential Skills this module builds: Communication, Adaptability & Leadership, Professionalism, and Information Literacy.`,
     work: `
       Everything is due Monday by 11:59 PM Central.
-      The My Skills Snapshot is your starting point on the 10 skills and on AI. Scan the code on this slide to open it. It's completion only, so be honest, not generous. You'll retake it at the end and compare.
+      The My Skills Snapshot is your starting point on the 10 skills and on AI. Scan the code on this slide to open it. It ends with a few short reflection questions. It's completion only, so be honest, not generous. You'll retake it at the end.
         INSTRUCTOR NOTE: the QR code opens this semester's shared Snapshot form for all FYE 100 sections. It changes each semester.
       The BE Check is a short matching quiz on the five BE behaviors from Lesson 1.3.
       Mile Marker #1 is the main assignment, next slide.
