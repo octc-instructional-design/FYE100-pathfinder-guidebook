@@ -5,7 +5,7 @@ HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
 import hashlib
 # cache-buster: changes whenever styles.css or book.js changes, so browsers never keep stale styles
-V = hashlib.sha1((ROOT/'css/styles.css').read_bytes() + (ROOT/'js/book.js').read_bytes()).hexdigest()[:8]
+V = hashlib.sha1((ROOT/'css/styles.css').read_bytes() + (ROOT/'js/book.js').read_bytes() + (ROOT/'js/ondeck.js').read_bytes() + (HERE/'schedule.json').read_bytes()).hexdigest()[:8]
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -477,6 +477,9 @@ def head(title, depth):
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="stylesheet" href="{up}css/styles.css?v={V}">
 <script src="{up}js/book.js?v={V}" defer></script>
+<meta name="book-root" content="{up}">
+<script src="{up}js/term.js?v={V}" defer></script>
+<script src="{up}js/ondeck.js?v={V}" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -901,7 +904,7 @@ def build_chapter(ch):
     opener = head(f'Module {n}: {re.sub("<[^>]+>","",ch["title"])} | {BOOK}', 2) + bookbar(2, where) + f'''
 <div class="banner">
   <div class="inner">
-    <p class="chapter-kicker"><span class="chapter-num" aria-hidden="true">{n}</span>Module {n}</p>
+    <p class="chapter-kicker"><span class="chapter-num" aria-hidden="true">{n}</span>Module {n}<span class="od-flag" data-ondeck-mod="{n}" hidden>On deck this week</span></p>
     <h1>{ch['title']}</h1>
     <p class="tagline">{ch['tagline']}</p>
   </div>
@@ -1469,7 +1472,7 @@ def build_home():
         les = '\n'.join(
           f'              <li><a href="chapters/ch{n:02d}/{f}"><span class="{"n tip-n" if num in SPECIAL else "n"}">{num}</span><span>{tt}</span></a></li>'
           for f,num,tt,*_ in ch['lessons'])
-        toc.append(f'''        <li>
+        toc.append(f'''        <li data-mod="{n}">
           <span class="cnum" aria-hidden="true">{n}</span>
           <div>
             <h3><a href="chapters/ch{n:02d}/index.html"><span class="sr-only">Module {n}: </span>{ch['title']}</a></h3>
@@ -1511,6 +1514,7 @@ def build_home():
 </div>
 
 <main id="main" class="home">
+  <p class="ondeck-band" id="ondeck" hidden></p>
   <p class="home-intro">This guidebook holds the readings for FYE 100. Your course in Blackboard tells you what's due and when. This is where you read, think, and get ready. New to the book? Read <a href="chapters/help/before-you-start.html">Before You Start</a>, a few notes from last semester's students, then <a href="chapters/help/index.html">How to Use This Book</a>.</p>
 
   <section aria-labelledby="contents" class="gap-md">
@@ -1547,6 +1551,13 @@ def build_home():
 import instructor
 import isearch
 INSTR = instructor.pages(CHAPTERS, LATER, ESSENTIAL, HERE)
+def write_term():
+    import json as _j
+    sc = _j.loads((HERE/'schedule.json').read_text())
+    mods = [{'n': ch['n'], 't': re.sub('<[^>]+>', '', ch['title']).replace('&amp;', '&'), 'u': f"chapters/ch{ch['n']:02d}/index.html"} for ch in CHAPTERS]
+    js = '/* Written by the build from _src/schedule.json. Edit that file, not this one. */\nwindow.FYE_TERM = ' + _j.dumps({'term': sc['term'], 'start': sc['start'], 'breakAfter': sc['break_after'], 'modules': mods}, ensure_ascii=False) + ';\n'
+    (ROOT/'js/term.js').write_text(js, encoding='utf-8')
+write_term()
 for ch in CHAPTERS: build_chapter(ch)
 for g in GUIDES: build_guide(g)
 build_help()

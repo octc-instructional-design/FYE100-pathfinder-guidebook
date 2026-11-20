@@ -1,0 +1,6 @@
+{
+  "note": "The one place the book knows the term's dates. Each module runs Monday to Sunday. Update start (the Monday Module 1 opens) and break_after (the module Spring Break follows) each term, then rebuild. The book only uses this to highlight the module on deck this week; nothing is locked.",
+  "term": "Spring 2027",
+  "start": "2027-01-11",
+  "break_after": 8
+}

@@ -13,8 +13,11 @@
 <meta name="apple-mobile-web-app-title" content="FYE 100">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="stylesheet" href="css/styles.css?v=9e87dcc6">
-<script src="js/book.js?v=9e87dcc6" defer></script>
+<link rel="stylesheet" href="css/styles.css?v=d11de8d2">
+<script src="js/book.js?v=d11de8d2" defer></script>
+<meta name="book-root" content="">
+<script src="js/term.js?v=d11de8d2" defer></script>
+<script src="js/ondeck.js?v=d11de8d2" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -113,12 +116,13 @@
 </div>
 
 <main id="main" class="home">
+  <p class="ondeck-band" id="ondeck" hidden></p>
   <p class="home-intro">This guidebook holds the readings for FYE 100. Your course in Blackboard tells you what's due and when. This is where you read, think, and get ready. New to the book? Read <a href="chapters/help/before-you-start.html">Before You Start</a>, a few notes from last semester's students, then <a href="chapters/help/index.html">How to Use This Book</a>.</p>
 
   <section aria-labelledby="contents" class="gap-md">
     <div class="h2wrap"><h2 id="contents">Contents</h2></div>
     <ol class="toc">
-        <li>
+        <li data-mod="1">
           <span class="cnum" aria-hidden="true">1</span>
           <div>
             <h3><a href="chapters/ch01/index.html"><span class="sr-only">Module 1: </span>Your Pathfinder Journey Begins</a></h3>
@@ -138,7 +142,7 @@
             </details>
           </div>
         </li>
-        <li>
+        <li data-mod="2">
           <span class="cnum" aria-hidden="true">2</span>
           <div>
             <h3><a href="chapters/ch02/index.html"><span class="sr-only">Module 2: </span>Building Your Support System</a></h3>
@@ -159,7 +163,7 @@
             </details>
           </div>
         </li>
-        <li>
+        <li data-mod="3">
           <span class="cnum" aria-hidden="true">3</span>
           <div>
             <h3><a href="chapters/ch03/index.html"><span class="sr-only">Module 3: </span>My Time Plan — Managing Time &amp; Energy</a></h3>
@@ -181,7 +185,7 @@
             </details>
           </div>
         </li>
-        <li>
+        <li data-mod="4">
           <span class="cnum" aria-hidden="true">4</span>
           <div>
             <h3><a href="chapters/ch04/index.html"><span class="sr-only">Module 4: </span>Your Academic Toolkit</a></h3>
@@ -201,7 +205,7 @@
             </details>
           </div>
         </li>
-        <li>
+        <li data-mod="5">
           <span class="cnum" aria-hidden="true">5</span>
           <div>
             <h3><a href="chapters/ch05/index.html"><span class="sr-only">Module 5: </span>Financial Planning with Purpose</a></h3>
@@ -221,7 +225,7 @@
             </details>
           </div>
         </li>
-        <li>
+        <li data-mod="6">
           <span class="cnum" aria-hidden="true">6</span>
           <div>
             <h3><a href="chapters/ch06/index.html"><span class="sr-only">Module 6: </span>Map Your Path — Academic Planning</a></h3>
@@ -241,7 +245,7 @@
             </details>
           </div>
         </li>
-        <li>
+        <li data-mod="7">
           <span class="cnum" aria-hidden="true">7</span>
           <div>
             <h3><a href="chapters/ch07/index.html"><span class="sr-only">Module 7: </span>Knowing Your Strengths &amp; Values</a></h3>
@@ -260,7 +264,7 @@
             </details>
           </div>
         </li>
-        <li>
+        <li data-mod="8">
           <span class="cnum" aria-hidden="true">8</span>
           <div>
             <h3><a href="chapters/ch08/index.html"><span class="sr-only">Module 8: </span>Explore Your Career Options</a></h3>
@@ -279,7 +283,7 @@
             </details>
           </div>
         </li>
-        <li>
+        <li data-mod="9">
           <span class="cnum" aria-hidden="true">9</span>
           <div>
             <h3><a href="chapters/ch09/index.html"><span class="sr-only">Module 9: </span>Think It Through — Critical Thinking + STAR(T) Introduction</a></h3>
@@ -299,7 +303,7 @@
             </details>
           </div>
         </li>
-        <li>
+        <li data-mod="10">
           <span class="cnum" aria-hidden="true">10</span>
           <div>
             <h3><a href="chapters/ch10/index.html"><span class="sr-only">Module 10: </span>Team Up — Collaboration &amp; People Skills</a></h3>
@@ -320,7 +324,7 @@
             </details>
           </div>
         </li>
-        <li>
+        <li data-mod="11">
           <span class="cnum" aria-hidden="true">11</span>
           <div>
             <h3><a href="chapters/ch11/index.html"><span class="sr-only">Module 11: </span>Making an Impact — Community, Values &amp; Your Pathfinder Journey</a></h3>
@@ -339,7 +343,7 @@
             </details>
           </div>
         </li>
-        <li>
+        <li data-mod="12">
           <span class="cnum" aria-hidden="true">12</span>
           <div>
             <h3><a href="chapters/ch12/index.html"><span class="sr-only">Module 12: </span>Reflecting Back, Moving Forward</a></h3>
@@ -390,7 +394,7 @@
   </div>
   <div class="inner foot-low">
     <p class="eeo">The Kentucky Community and Technical College System is an equal educational and employment opportunity institution and does not discriminate on the basis of race, religion, color, sex, gender identity, gender presentation, national origin, age, disability, family medical history, or genetic information. Further, we vigilantly prevent discrimination based on sexual orientation, parental status, marital status, political affiliation, military service, or any other non-merit based factor.</p>
-    <span class="edition">Spring 2027 edition · Updated November 19, 2026</span>
+    <span class="edition">Spring 2027 edition · Updated November 20, 2026</span>
   </div>
 </footer>
 </body>

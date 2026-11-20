@@ -1908,3 +1908,15 @@ body:has(.review-banner) main::before { content: ""; position: fixed; inset: 0; 
 @media (max-width: 560px) { .kz-list li { grid-template-columns: 1fr; border-radius: 12px; } }
 @media print { .kudos-panel { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
 .kudos-panel::after { display: none; }
+
+/* On deck this week: points to the current module; nothing is locked */
+.ondeck-band { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin: 0 0 18px; padding: 10px 14px; background: var(--soft-gold); border-left: 5px solid var(--gold); border-radius: 8px; font-size: .98rem; }
+.ondeck-band .od-k { font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--navy); background: var(--gold); border-radius: 4px; padding: 2px 8px; }
+.ondeck-band a { font-weight: 600; color: var(--navy); text-decoration: none; }
+.ondeck-band a:hover, .ondeck-band a:focus-visible { text-decoration: underline; }
+.ondeck-band .od-n { font-weight: 800; }
+.od-tag { display: inline-block; margin-left: 8px; font-size: .68rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--navy); background: var(--gold); border-radius: 4px; padding: 2px 7px; vertical-align: 2px; }
+.toc > li.od-current .cnum { background: var(--gold); color: var(--navy); }
+.od-flag { display: inline-block; margin-left: 12px; font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--navy); background: var(--gold); border-radius: 4px; padding: 2px 8px; vertical-align: 1px; }
+.od-flag[hidden] { display: none; }
+@media print { .ondeck-band, .od-tag, .od-flag { display: none !important; } }
